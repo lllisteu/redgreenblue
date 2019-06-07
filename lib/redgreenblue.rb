@@ -10,3 +10,5 @@ require 'redgreenblue/48bit'
 require 'redgreenblue/hex'
 
 require 'redgreenblue/lazy'
+
+require 'redgreenblue/rgb565'
