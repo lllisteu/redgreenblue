@@ -26,6 +26,10 @@ class Test_rgb565 < Test::Unit::TestCase
 		end
 	end
 
+	def test_binary
+		assert_equal '1111100000011111', RGB.hex('f0f').rgb565_binary
+	end
+
 	def test_factory
 		assert_equal [0, 0, 0], RGB.rgb565("\x00\x00".b).rgb
 	end
