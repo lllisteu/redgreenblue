@@ -13,5 +13,7 @@ require 'redgreenblue/lazy'
 require 'redgreenblue/nice'
 
 require 'redgreenblue/rgb565'
+require 'redgreenblue/bgr24bit'
+require 'redgreenblue/gif'
 
 require 'redgreenblue/random'
