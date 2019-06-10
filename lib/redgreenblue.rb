@@ -13,3 +13,5 @@ require 'redgreenblue/lazy'
 require 'redgreenblue/nice'
 
 require 'redgreenblue/rgb565'
+
+require 'redgreenblue/random'
