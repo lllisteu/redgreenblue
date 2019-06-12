@@ -17,3 +17,5 @@ require 'redgreenblue/bgr24bit'
 require 'redgreenblue/gif'
 
 require 'redgreenblue/random'
+
+require 'redgreenblue/os'
