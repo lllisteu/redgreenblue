@@ -14,4 +14,13 @@ class RGB
     ])
   end
 
+  def invert!
+    self.red, self.green, self.blue = 1-red, 1-green, 1-blue
+    self
+  end
+
+  def invert
+    dup.invert!
+  end
+
 end
