@@ -6,12 +6,18 @@ class Test_base < Test::Unit::TestCase
 
   def test_initialize
     assert_equal [ 0.5, 0.5, 0.5 ], [ RGB.new.red, RGB.new.green, RGB.new.blue ]
+    assert_equal [ 0.5, 0.5, 0.5 ], RGB.new.values
   end
 
   # assign v, expect r
   def helper(v,r)
     c = RGB.new([v,v,v])
     assert_equal [r,r,r], [ c.red, c.green, c.blue ]
+    assert_equal [r,r,r], c.to_a
+
+    c = RGB.new
+    c.values = [v,v,v]
+    assert_equal [r,r,r], c.values
 
     c = RGB.new
     c.red   = v
