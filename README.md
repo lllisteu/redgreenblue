@@ -1,5 +1,7 @@
 # redgreenblue
 
+[![Gem Version](https://badge.fury.io/rb/redgreenblue.svg)](https://rubygems.org/gems/redgreenblue)
+
 redgreenblue is a simple [Ruby](https://www.ruby-lang.org/) library for handling RGB colors.
 
 It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, or hexadecimal notation.
@@ -21,6 +23,8 @@ color
 => RGB #1aff88 (red=0.10000 green=1.00000 blue=0.53333)
 color.rgb
 => [26, 255, 136]
+color.blacken! 0.2
+=> RGB #14cc6d (red=0.08000 green=0.80000 blue=0.42667)
 ```
 
 ## License
