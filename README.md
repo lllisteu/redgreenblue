@@ -1,6 +1,6 @@
-# redgreenblue
+[GitHub](https://github.com/lllisteu/redgreenblue) • [RubyGems](https://rubygems.org/gems/redgreenblue)
 
-[![Gem Version](https://badge.fury.io/rb/redgreenblue.svg)](https://rubygems.org/gems/redgreenblue)
+# redgreenblue
 
 redgreenblue is a simple [Ruby](https://www.ruby-lang.org/) library for handling RGB colors.
 
