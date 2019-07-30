@@ -2,7 +2,7 @@
 
 # redgreenblue
 
-redgreenblue is a simple [Ruby](https://www.ruby-lang.org/) library for handling RGB colors.
+redgreenblue is a simple [Ruby](https://www.ruby-lang.org/) library for handling [RGB colors](https://en.wikipedia.org/wiki/RGB_color_model).
 
 It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, or hexadecimal notation.
 
@@ -26,6 +26,12 @@ color.rgb
 color.blacken! 0.2
 => RGB #14cc6d (red=0.08000 green=0.80000 blue=0.42667)
 ```
+
+## Resources
+
+* [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) on Wikipedia
+* _Color Ordered_, by Rolf Kuehni and Andreas Schwarz (2008), ISBN 978-0-19-518968-1
+* _Psychology_, by Henry Gleitman, James Gross, Daniel Reisberg (2010), ISBN 978-0-393-93250-8
 
 ## License
 
