@@ -3,7 +3,7 @@ require_relative 'lib/redgreenblue/version'
 Gem::Specification.new do |s|
 
   s.name     = 'redgreenblue'
-  s.summary  = 'RGB colors for Ruby'
+  s.summary  = 'A simple Ruby library for handling RGB colors'
   s.version  = RGB::VERSION
 
   s.homepage = 'https://github.com/lllisteu/redgreenblue'
