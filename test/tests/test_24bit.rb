@@ -19,8 +19,15 @@ class Test_24bit < Test::Unit::TestCase
     c = RGB.new
     c.rgb = [value, value, value]
     assert_equal [result, result, result], c.rgb
+    c.rgb = value, value, value
+    assert_equal [result, result, result], c.rgb
 
+  end
+
+  def helper_factory(value,result)
     c = RGB.rgb [value, value, value]
+    assert_equal [result, result, result], c.rgb
+    c = RGB.rgb value, value, value
     assert_equal [result, result, result], c.rgb
   end
 
@@ -28,6 +35,7 @@ class Test_24bit < Test::Unit::TestCase
     (0..255).each do |v|
       helper_r_g_b(v, v)
       helper_rgb(v,v)
+      helper_factory(v,v)
     end
   end
 

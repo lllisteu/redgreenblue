@@ -32,13 +32,13 @@ class RGB
     [r,g,b]
   end
 
-  def rgb=(rgb)
-    self.r, self.g, self.b = rgb
+  def rgb=(*rgb)
+    self.r, self.g, self.b = rgb.flatten
   end
 
 # factory method
 
-  def self.rgb(rgb)
+  def self.rgb(*rgb)
     c = self.new
     c.rgb = rgb
     c
