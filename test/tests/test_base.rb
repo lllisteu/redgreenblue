@@ -13,10 +13,13 @@ class Test_base < Test::Unit::TestCase
   def helper(v,r)
     c = RGB.new([v,v,v])
     assert_equal [r,r,r], [ c.red, c.green, c.blue ]
+    c = RGB.new v,v,v
     assert_equal [r,r,r], c.to_a
 
     c = RGB.new
     c.values = [v,v,v]
+    assert_equal [r,r,r], c.values
+    c.values = v,v,v
     assert_equal [r,r,r], c.values
 
     c = RGB.new

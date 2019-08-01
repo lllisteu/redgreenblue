@@ -2,8 +2,8 @@ class RGB
 
   attr_reader :red, :green, :blue
 
-  def initialize(a=[0.5, 0.5, 0.5])
-    self.values = a
+  def initialize(*a)
+    self.values = a.any? ? a : [ 0.5, 0.5, 0.5 ]
   end
 
   def red=(n)
@@ -24,8 +24,8 @@ class RGB
 
   alias to_a values
 
-  def values=(a)
-    self.red, self.green, self.blue = a
+  def values=(*a)
+    self.red, self.green, self.blue = a.flatten
   end
 
   private
