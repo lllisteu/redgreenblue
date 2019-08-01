@@ -9,6 +9,8 @@ require 'redgreenblue/24bit'
 require 'redgreenblue/48bit'
 require 'redgreenblue/hex'
 
+require 'redgreenblue/hsl'
+
 require 'redgreenblue/lazy'
 require 'redgreenblue/nice'
 
