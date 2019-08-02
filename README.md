@@ -30,6 +30,7 @@ color.blacken! 0.2
 ## Resources
 
 * [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) on Wikipedia
+* [_A Guided Tour of Color Space_](http://poynton.ca/PDFs/Guided_tour.pdf) (PDF), by [Charles Poynton](http://poynton.ca/) (1997)
 * _Color Ordered_, by Rolf Kuehni and Andreas Schwarz (2008), ISBN 978-0-19-518968-1
 * _Psychology_, by Henry Gleitman, James Gross, Daniel Reisberg (2010), ISBN 978-0-393-93250-8
 
