@@ -52,4 +52,13 @@ class Test_base < Test::Unit::TestCase
     end
   end
 
+  def test_sorted_hash
+    c = RGB.new
+    assert_equal [:red, :green, :blue], c.to_h.keys
+    c.green = 0
+    assert_equal [:red, :blue, :green], c.to_h.keys
+    c.red = 0.499999
+    assert_equal [:blue, :red, :green], c.to_h.keys
+  end
+
 end
