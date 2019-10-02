@@ -12,4 +12,6 @@ class RGB
     new(n,n,n)
   end
 
+  self.singleton_class.send(:alias_method, :gray, :grey)
+
 end
