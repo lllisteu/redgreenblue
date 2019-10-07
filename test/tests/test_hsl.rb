@@ -17,6 +17,11 @@ class Test_hsl < Test::Unit::TestCase
     end
   end
 
+  def test_saturation
+    assert_equal 0.0, RGB.grey.saturation
+    assert_equal 1.0, RGB.new(0,1,0).saturation
+  end
+
   def test_lightness
     [
     ['#FFFFFF', 1.0  ],
@@ -26,6 +31,10 @@ class Test_hsl < Test::Unit::TestCase
     ].each do |hx,l|
       assert_equal l, RGB.hex(hx).lightness.round(3)
     end
+  end
+
+  def test_hsl
+    assert_equal [nil, 0, 0.5], RGB.grey.hsl
   end
 
 end

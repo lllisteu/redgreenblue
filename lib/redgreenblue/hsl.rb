@@ -1,3 +1,5 @@
+# NOTE: Work in progress. API will likely change.
+
 class RGB
 
   # https://en.wikipedia.org/wiki/HSL_and_HSV#Hue_and_chroma
@@ -16,6 +18,16 @@ class RGB
     end
   end
 
+  # Colorfulness relative to brightness
+  # https://en.wikipedia.org/wiki/HSL_and_HSV#Saturation
+  def saturation
+    if chroma == 0.0
+      0
+    else
+      chroma / ( 1 - (2 * lightness - 1).abs )
+    end
+  end
+
   # Lightness as the average of the min and max of RGB values.
   # https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
   def lightness
@@ -27,6 +39,11 @@ class RGB
   # https://en.wikipedia.org/wiki/HSL_and_HSV#Hue_and_chroma
   def chroma
     values.max - values.min
+  end
+
+  # Hue, saturation, lightness
+  def hsl
+    [ hue, saturation, lightness ]
   end
 
 end
