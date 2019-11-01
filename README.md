@@ -35,6 +35,10 @@ color.blacken! 0.2
 * _Color Ordered_, by Rolf Kuehni and Andreas Schwarz (2008), ISBN 978-0-19-518968-1
 * _Psychology_, by Henry Gleitman, James Gross, Daniel Reisberg (2010), ISBN 978-0-393-93250-8
 
+## Credits
+
+Apart from the resources listed above, some discussions and answers on [Stack Overflow](https://stackoverflow.com) and [PerlMonks](https://www.perlmonks.org) were very helpful, as were some articles on [Wikipedia](https://en.wikipedia.org/). These are credited where applicable in the source code, often with a link.
+
 ## License
 
 See the included LICENSE file.
