@@ -8,4 +8,8 @@ class Test_nice < Test::Unit::TestCase
     assert_equal String, RGB.new.inspect.class
   end
 
+  def test_to_s
+    assert_equal String, RGB.new.to_s.class
+  end
+
 end
