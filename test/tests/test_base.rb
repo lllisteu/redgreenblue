@@ -61,4 +61,13 @@ class Test_base < Test::Unit::TestCase
     assert_equal [:blue, :red, :green], c.to_h.keys
   end
 
+  def test_equality
+    assert_true RGB.new == RGB.new
+    assert_true RGB.white == RGB.hex('fff')
+
+    assert_false RGB.red == RGB.green
+    assert_false RGB.new(0,0.0000001,0) == RGB.black
+    assert_false RGB.new(1,0.9999999,1) == RGB.white
+  end
+
 end

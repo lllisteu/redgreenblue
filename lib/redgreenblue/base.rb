@@ -28,6 +28,11 @@ class RGB
     self.red, self.green, self.blue = a.flatten
   end
 
+  # Returns true if this object and an other object represent exactly the same color. Otherwise returns false.
+  def ==(other)
+    ( self.class == other.class ) && ( self.values == other.values )
+  end
+
   # Returns a sorted hash of 3 key/value pairs
   # for red, green and blue,
   # sorted in order of decreasing value
