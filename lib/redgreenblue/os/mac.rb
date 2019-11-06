@@ -1,5 +1,6 @@
 class RGB
 
+  # Shows the Mac OS color picker to choose a color for the RGB object.
   def pick
     result = RGB.mac_choose(rrggbb)
     if result
@@ -7,10 +8,10 @@ class RGB
     end
   end
 
-# factory method
-
-  def self.pick
-    result = RGB.mac_choose(RGB.new.rrggbb)
+  # Shows the Mac OS color picker and creates an RGB object with the chosen color.
+  # If no default color is specified, the picker defaults to a middle grey.
+  def self.pick(default_color=RGB.new)
+    result = RGB.mac_choose(default_color.rrggbb)
     if result
       RGB.rrggbb result
     else
@@ -20,11 +21,14 @@ class RGB
 
   private
 
-# Use Applescript to call color picker on Mac.
-# - requires a 48-bit RGB triplet [rr, gg, bb] for default choice.
-#
-# - Returns nil when <cancel> is clicked or <esc> key hit.
-# - Otherwise returns 48-bit RGB triplet [rr, gg, bb].
+  # Uses Applescript to call the color picker on Mac OS.
+  # - requires a 48-bit RGB triplet [rr, gg, bb] for default choice.
+  #
+  # - Returns nil when <cancel> is clicked or <esc> key hit.
+  # - Otherwise returns 48-bit RGB triplet [rr, gg, bb].
+  #
+  # Applescript command documented here:
+  # Standard Additions -> User Interaction -> choose color
   def self.mac_choose(color)
 
     script = <<~ENDSCRIPT
