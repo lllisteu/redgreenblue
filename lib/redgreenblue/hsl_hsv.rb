@@ -42,7 +42,7 @@ class RGB
     lightness = ( min + max ) / 2.0
 
     saturation_hsl =
-      chroma == 0 ? 0.0 : chroma / ( 1 - (2 * lightness - 1).abs )
+      chroma == 0 ? 0.0 : ( chroma / ( 1 - (2 * lightness - 1).abs ) ).round(9)
 
     value = max
 
