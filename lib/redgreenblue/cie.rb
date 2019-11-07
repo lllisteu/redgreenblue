@@ -27,10 +27,10 @@ class RGB
   def xyz
     r, g, b = expanded_srgb_values
     [
-      [ 0.4124564, 0.3575761, 0.1804375 ],
-      [ 0.2126729, 0.7151522, 0.0721750 ],
-      [ 0.0193339, 0.1191920, 0.9503041 ]
-    ].map { |a| r * a[0] + g * a[1] + b * a[2] }
+      r * 0.4124564 + g * 0.3575761 + b * 0.1804375,
+      r * 0.2126729 + g * 0.7151522 + b * 0.0721750,
+      r * 0.0193339 + g * 0.1191920 + b * 0.9503041
+    ]
   end
 
   # Returns CIE 1931 xyY values.
@@ -51,10 +51,10 @@ class RGB
   # Which names to choose?
   alias to_xyz     xyz
   alias cie_xyz    xyz
-  alias to_cie_xyz xyz
+#   alias to_cie_xyz xyz
 
   alias to_xyy     xyy
   alias cie_xyy    xyy
-  alias to_cie_xyy xyy
+#   alias to_cie_xyy xyy
 
 end
