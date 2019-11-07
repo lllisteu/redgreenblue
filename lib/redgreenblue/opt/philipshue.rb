@@ -1,7 +1,6 @@
 class RGB
 
-  # Return the arguments required by the Philips Hue API
-  # to set a light to this color.
+  # Returns the arguments required by the Philips Hue API to set a light to this RGB object's hue, saturation and brightness (HSB).
   #
   # When formatted as JSON, this hash can be used
   # directly to set a light's state.
