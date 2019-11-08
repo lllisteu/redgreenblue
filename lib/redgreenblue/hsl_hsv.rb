@@ -1,13 +1,17 @@
 class RGB
 
   # Returns color as HSL:
-  # hue (0..360), saturation (0..1), lightness (0..1)
+  # hue (0..360), saturation (0..1), lightness (0..1).
+  # When saturation is 0, hue is nil.
   def hsl
     hsl_hsv_c[0]
   end
 
   # Returns color as HSV:
-  # hue (0..360), saturation (0..1), value (0..1)
+  # hue (0..360), saturation (0..1), value (0..1).
+  # When saturation is 0, hue is nil.
+  #
+  # #hsb is an alias for #hsv.
   def hsv
     hsl_hsv_c[1]
   end
@@ -47,7 +51,7 @@ class RGB
     value = max
 
     saturation_hsv =
-      value  == 0 ? 0.0 : chroma / value
+      value == 0 ? 0.0 : chroma / value
 
     [ [hue, saturation_hsl, lightness], [hue, saturation_hsv, value], chroma ]
   end

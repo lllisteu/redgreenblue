@@ -8,29 +8,79 @@ It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, o
 
 It also understands some more exotic formats, such as 16-bit RGB565 (used by some led-panels such as the Raspberry Pi Sense Hat) and 24-bit BGR (used in BMP files). It can create 1-pixel GIF's from any color, and on a Mac it can interact with the system color picker.
 
-## Synopsis
+## Quick start
+
+The core of redgreenblue is the __RGB class__. Each instance of the RGB class holds a color. Internally, these instances, RGB objects, store the amounts of red, green and blue which make up the color.
+
+Let's try:
 
 ```
-color = RGB.hex('0f8')
-=> RGB #00ff88 (red=0.00000 green=1.00000 blue=0.53333)
-color.g
-=> 255
-color.bb
-=> 34952
-color.red = 0.1
-=> 0.1
-color
-=> RGB #1aff88 (red=0.10000 green=1.00000 blue=0.53333)
-color.rgb
-=> [26, 255, 136]
-color.blacken! 0.2
-=> RGB #14cc6d (red=0.08000 green=0.80000 blue=0.42667)
+require 'redgreenblue'
+=> true
+pink = RGB.hex('ff99cc')
+=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
+```
+
+Now that we have a color stored in an RGB object, it can supply several pieces of information about itself:
+
+```
+pink.values
+=> [1.0, 0.6, 0.8]
+pink.red
+=> 1.0
+pink.rgb
+=> [255, 153, 204]
+pink.g
+=> 153
+pink.rrggbb
+=> [65535, 39321, 52428]
+pink.bb
+=> 52428
+pink.hsb
+=> [330.0, 0.4, 1.0]
+pink.hsl
+=> [330.0, 1.0, 0.8]
+pink.hex
+=> "ff99cc"
+pink.hex(true)
+=> "f9c"
+```
+
+In case you are wondering: HSB means hue, saturation and brightness. HSL means hue, saturation and lightness.
+
+There are many ways to create RGB objects:
+
+```
+pink = RGB.new(1, 0.6, 0.8)
+=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
+pink = RGB.rgb(255, 153, 204)
+=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
+pink = RGB.rrggbb(65535, 39321, 52428)
+=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
+pink = RGB.hex('f9c')
+=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
+```
+
+...and to alter them:
+
+```
+rose = RGB.red
+=> RGB #ff0000 (red=1.00000 green=0.00000 blue=0.00000)
+rose.g = 153
+=> 153
+rose.bb = 52428
+=> 52428
+rose
+=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
+pink == rose
+=> true
 ```
 
 ## Resources
 
 * [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) on Wikipedia
 * [HSB explained](https://geraldbakker.nl/psnumbers/hsb-explained.html) by Gerald Bakker
+* [Bruce Lindbloom](http://www.brucelindbloom.com/)
 * [_A Guided Tour of Color Space_](http://poynton.ca/PDFs/Guided_tour.pdf) (PDF), by [Charles Poynton](http://poynton.ca/) (1997)
 * _Color Ordered_, by Rolf Kuehni and Andreas Schwarz (2008), ISBN 978-0-19-518968-1
 * _Psychology_, by Henry Gleitman, James Gross, Daniel Reisberg (2010), ISBN 978-0-393-93250-8
