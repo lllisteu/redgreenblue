@@ -17,14 +17,17 @@ class RGB
     (blue  * 65535).round
   end
 
+  # Sets the red component using an integer in the range 0..65535 (a 16-bit value).
   def rr=(n)
     self.red   = n / 65535.0
   end
 
+  # Sets the green component using an integer in the range 0..65535 (a 16-bit value).
   def gg=(n)
     self.green = n / 65535.0
   end
 
+  # Sets the blue component using an integer in the range 0..65535 (a 16-bit value).
   def bb=(n)
     self.blue  = n / 65535.0
   end
@@ -36,12 +39,12 @@ class RGB
     [rr,gg,bb]
   end
 
+  # Sets the red, green, and blue components using three integers in the range 0..65535 (three 16-bit values).
   def rrggbb=(*rrggbb)
     self.rr, self.gg, self.bb = rrggbb.flatten
   end
 
-# factory method
-
+  # Creates a new object from red, green, and blue components as integers in the range 0..65535 (three 16-bit values).
   def self.rrggbb(*rrggbb)
     c = self.new
     c.rrggbb = rrggbb
