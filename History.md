@@ -1,6 +1,10 @@
 # History
 
-## Changes
+## 0.7.0 (11 November 2019)
+
+ * __General:__
+
+    * Improved documentation.
 
  * __Core RGB class:__
 
