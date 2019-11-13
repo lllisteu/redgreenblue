@@ -24,6 +24,33 @@ class Test_hex < Test::Unit::TestCase
     end
   end
 
+  @@hex_data = [
+
+    [ '#11aa55', '#1a5'   , [17, 170, 85] ],
+    [ '11aa55' , '1a5'    , [17, 170, 85] ],
+    [ '#11AA55', '#1A5'   , [17, 170, 85] ],
+    [ '11AA55' , '1A5'    , [17, 170, 85] ],
+
+    [ '#1a5'   , '#1a5'   , [17, 170, 85] ],
+    [ '1a5'    , '1a5'    , [17, 170, 85] ],
+    [ '#1A5'   , '#1A5'   , [17, 170, 85] ],
+    [ '1A5'    , '1A5'    , [17, 170, 85] ],
+
+    [ '#11Aa55', '#11Aa55', [17, 170, 85] ],
+    [ '#12aa55', '#12aa55', [18, 170, 85] ],
+
+    [ '', '', nil ],
+    [ ' ', ' ', nil ],
+    [ 'yellowishpink', 'yellowishpink', nil ],
+
+  ]
+
+  def test_parse
+    @@hex_data.each do |hd|
+      assert_equal hd[2], RGB.hex_to_rgb(hd[0])
+    end
+  end
+
   def test_shorthand
     assert_equal '#1a5', RGB.hex_shorthand('#11aa55')
     assert_equal '1a5',  RGB.hex_shorthand('11aa55')

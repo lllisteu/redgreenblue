@@ -1,5 +1,9 @@
 # History
 
+## Changes
+
+ * Added `::hex_to_rgb` method.
+
 ## 0.7.0 (11 November 2019)
 
  * __General:__

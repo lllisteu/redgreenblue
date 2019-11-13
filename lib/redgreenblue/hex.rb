@@ -27,6 +27,26 @@ class RGB
     h.sub( /^(#?)(\h)\2(\h)\3(\h)\4$/, '\1\2\3\4' )
   end
 
+  # Parses a 6- or 3-digit hexadecimal string.
+  # Returns three integers in the range 0..255, or nil if not successful.
+  #
+  # The string may include a '#' prefix.
+  def self.hex_to_rgb(hex_string)
+
+    # 6-digit hex
+    if hex_string =~ /^(#?)(\h\h)(\h\h)(\h\h)$/
+      [$2, $3, $4].map { |h| h.to_i(16) }
+
+    # 3-digit hex
+    elsif hex_string =~ /^(#?)(\h)(\h)(\h)$/
+      [$2, $3, $4].map { |h| (h*2).to_i(16) }
+
+    else
+      nil
+
+    end
+  end
+
   private
 
   def hexadecimal
