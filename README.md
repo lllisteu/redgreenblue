@@ -6,7 +6,19 @@ redgreenblue is a simple [Ruby](https://www.ruby-lang.org/) library for handling
 
 It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, or hexadecimal notation.
 
-It also understands some more exotic formats, such as 16-bit RGB565 (used by some led-panels such as the Raspberry Pi Sense Hat) and 24-bit BGR (used in BMP files). It can create 1-pixel GIF's from any color, and on a Mac it can interact with the system color picker.
+redgreenblue can output RGB colors as HSL, HSB, or HSV (hue, saturation, and lightness, brightness or value). It also understands some more exotic formats, such as 16-bit RGB565 (used by some led-panels such as the Raspberry Pi Sense Hat) and 24-bit BGR (used in BMP files).
+
+redgreenblue can create 1-pixel GIF's from any color, and on a Mac it can interact with the system color picker.
+
+## Installing
+
+redgreenblue is [available as a gem](https://rubygems.org/gems/redgreenblue). You can simply install it with:
+
+```
+gem install redgreenblue
+```
+
+redgreenblue has no dependencies outside the Ruby Standard Library. 
 
 ## Quick start
 
@@ -36,17 +48,17 @@ pink.rrggbb
 => [65535, 39321, 52428]
 pink.bb
 => 52428
-pink.hsb
-=> [330.0, 0.4, 1.0]
 pink.hsl
 => [330.0, 1.0, 0.8]
+pink.hsb
+=> [330.0, 0.4, 1.0]
+pink.hsv
+=> [330.0, 0.4, 1.0]
 pink.hex
 => "ff99cc"
 pink.hex(true)
 => "f9c"
 ```
-
-In case you are wondering: HSB means hue, saturation and brightness. HSL means hue, saturation and lightness.
 
 There are many ways to create RGB objects:
 
