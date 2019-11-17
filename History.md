@@ -2,7 +2,15 @@
 
 ## Changes
 
- * Added `::hex_to_rgb` method.
+ * __General:__
+
+    * Improved documentation.
+
+ * __Core RGB class:__
+
+    * `::hex` and `#hex=` methods now raise an `ArgumentError` when fed an invalid hexadecimal string.
+    
+    * Added `::hex_to_rgb` method.
 
 ## 0.7.0 (11 November 2019)
 
