@@ -13,6 +13,11 @@ class Test_lazy < Test::Unit::TestCase
     assert_equal [255,   0,   0], RGB.red.rgb
     assert_equal [  0, 255,   0], RGB.green.rgb
     assert_equal [  0,   0, 255], RGB.blue.rgb
+
+    assert_equal RGB.white, RGB.grey(1)
+    assert_equal RGB.black, RGB.grey(0)
+    assert_equal RGB.grey , RGB.grey(0.5)
+    assert_equal RGB.new  , RGB.grey
   end
 
 end
