@@ -51,4 +51,19 @@ class RGB
     c
   end
 
+  # Calls the given block for each 24-bit RGB color (from black to white), passing the color as an RGB object.
+  #
+  # Returns the number of iterations.
+  def self.each_24bit_color
+    range = 0..255
+    range.each do |r|
+      range.each do |g|
+        range.each do |b|
+          yield self.rgb(r,g,b)
+        end
+      end
+    end
+    range.size ** 3
+  end
+
 end

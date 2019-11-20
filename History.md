@@ -8,6 +8,8 @@
 
  * __Core RGB class:__
 
+    * Added `::each_24bit_color` iterator.
+
     * `::hex` and `#hex=` methods now raise an `ArgumentError` when fed an invalid hexadecimal string.
     
     * Added `::hex_to_rgb` method.
