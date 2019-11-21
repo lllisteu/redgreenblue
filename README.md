@@ -1,4 +1,4 @@
-[GitHub](https://github.com/lllisteu/redgreenblue) • [RubyGems](https://rubygems.org/gems/redgreenblue) • [History](History.md)
+[GitHub](https://github.com/lllisteu/redgreenblue) • [RubyGems](https://rubygems.org/gems/redgreenblue) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/RGB) • [History](History.md)
 
 # redgreenblue
 
@@ -14,11 +14,11 @@ redgreenblue can create 1-pixel GIF's from any color, and on a Mac it can intera
 
 redgreenblue is [available as a gem](https://rubygems.org/gems/redgreenblue). You can simply install it with:
 
-```
+```bash
 gem install redgreenblue
 ```
 
-redgreenblue has no dependencies outside the Ruby Standard Library. 
+redgreenblue has no dependencies outside the Ruby Standard Library, and works with Ruby 2.2 or newer.
 
 ## Quick start
 
