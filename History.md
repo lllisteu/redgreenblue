@@ -14,6 +14,12 @@
     
     * Added `::hex_to_rgb` method.
 
+ * __Optional components:__
+
+    * Added optional support for color terminals. You can enable this with `require 'redgreenblue/opt/terminal'`. This only works on terminals that support 24-bit colors, so-called "true color".
+        * `#inspect` displays a 24-bit color swatch.
+        * Added `#to_terminal_foreground_24bit` and `#to_terminal_background_24bit` methods.
+
 ## 0.7.0 (11 November 2019)
 
  * __General:__
