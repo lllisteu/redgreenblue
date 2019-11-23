@@ -31,8 +31,15 @@ class RGB
   # Standard Additions -> User Interaction -> choose color
   def self.mac_choose(color)
 
+    app = case ENV['TERM_PROGRAM']
+      when /iTerm\.app/
+        'iTerm'
+      else
+        'Terminal'
+      end
+
     script = <<~ENDSCRIPT
-      tell application "Terminal"
+      tell application "#{app}"
         try
           return choose color default color { #{color[0]}, #{color[1]}, #{color[2]} }
         on error

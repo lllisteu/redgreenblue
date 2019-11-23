@@ -20,6 +20,12 @@
         * `#inspect` displays a 24-bit color swatch.
         * Added `#to_terminal_foreground_24bit` and `#to_terminal_background_24bit` methods.
 
+ * __Platform specific:__
+
+    * Mac OS only:
+
+        * The color picker now works correctly when you are using [iTerm2](https://www.iterm2.com/) (`::pick` and `#pick` methods no longer activate Apple's Terminal)
+
 ## 0.7.0 (11 November 2019)
 
  * __General:__
