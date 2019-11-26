@@ -1,38 +1,44 @@
 class RGB
 
-  def mix!(color,p=0.5)
-    self.values = mix_values(color.values, p)
+  # Changes the object's color by mixing it with a portion of another RGB color.
+  def mix!(another,portion=0.5)
+    self.values = mix_values(another.values, portion)
     self
   end
 
-  def mix(color,p=0.5)
-    RGB.new mix_values(color.values, p)
+  # Creates a new RGB object by mixing this object's color with a portion of another RGB color.
+  def mix(another,portion=0.5)
+    RGB.new mix_values(another.values, portion)
   end
 
-  def whiten!(p)
-    mix!(RGB.white, p)
+  # Changes the object's color by mixing it with a portion of white.
+  def whiten!(portion)
+    mix!(RGB.white, portion)
   end
 
-  def whiten(p)
-    mix(RGB.white, p)
+  # Creates a new RGB object by mixing this object's color with a portion of white.
+  def whiten(portion)
+    mix(RGB.white, portion)
   end
 
-  def blacken!(p)
-    mix!(RGB.black, p)
+  # Changes the object's color by mixing it with a portion of black.
+  def blacken!(portion)
+    mix!(RGB.black, portion)
   end
 
-  def blacken(p)
-    mix(RGB.black, p)
+  # Creates a new RGB object by mixing this object's color with a portion of black.
+  def blacken(portion)
+    mix(RGB.black, portion)
   end
 
   private
 
-  def mix_values(v, p)
-    raise(ArgumentError, "Portion '#{p}' not in range (0..1)") unless (0..1).include? p
+  def mix_values(some_values, portion)
+    raise(ArgumentError, "Portion '#{portion}' not in range (0..1)") unless (0..1).include? portion
     [
-      ( red   * (1-p) ) + ( v[0] * p ),
-      ( green * (1-p) ) + ( v[1] * p ),
-      ( blue  * (1-p) ) + ( v[2] * p )
+      ( red   * (1 - portion) ) + ( some_values[0] * portion ),
+      ( green * (1 - portion) ) + ( some_values[1] * portion ),
+      ( blue  * (1 - portion) ) + ( some_values[2] * portion )
     ]
   end
 end
