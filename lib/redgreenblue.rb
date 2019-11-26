@@ -18,6 +18,7 @@ require 'redgreenblue/rgb565'
 require 'redgreenblue/bgr24bit'
 require 'redgreenblue/gif'
 
+require 'redgreenblue/mix'
 require 'redgreenblue/misc'
 require 'redgreenblue/random'
 
