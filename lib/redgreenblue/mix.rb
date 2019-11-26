@@ -12,22 +12,22 @@ class RGB
   end
 
   # Changes the object's color by mixing it with a portion of white.
-  def whiten!(portion)
+  def whiten!(portion=0.5)
     mix!(RGB.white, portion)
   end
 
   # Creates a new RGB object by mixing this object's color with a portion of white.
-  def whiten(portion)
+  def whiten(portion=0.5)
     mix(RGB.white, portion)
   end
 
   # Changes the object's color by mixing it with a portion of black.
-  def blacken!(portion)
+  def blacken!(portion=0.5)
     mix!(RGB.black, portion)
   end
 
   # Creates a new RGB object by mixing this object's color with a portion of black.
-  def blacken(portion)
+  def blacken(portion=0.5)
     mix(RGB.black, portion)
   end
 
