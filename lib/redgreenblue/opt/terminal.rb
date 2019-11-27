@@ -1,3 +1,8 @@
+# Optional support for 24-bit color terminals.
+
+# Automatically load core RGB class before loading options.
+require 'redgreenblue'
+
 class RGB
 
   # With help from:
