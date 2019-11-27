@@ -1,6 +1,5 @@
 require 'test/unit'
 
-require 'redgreenblue'
 require 'redgreenblue/opt/philipshue'
 
 class Test_opt_philipshue < Test::Unit::TestCase
