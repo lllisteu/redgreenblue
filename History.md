@@ -8,6 +8,10 @@
 
  * __Core RGB class:__
 
+    * Added `#css_hex` method and `#css` alias.
+
+    * `#whiten!`, `#whiten`, `#blacken!`, and `#blacken` can now be called without an argument. In that case they default to mixing with a 50% portion of white or black.
+
     * Added `::each_24bit_color` iterator.
 
     * `::hex` and `#hex=` methods now raise an `ArgumentError` when fed an invalid hexadecimal string.
@@ -16,7 +20,7 @@
 
  * __Optional components:__
 
-    * Added optional support for color terminals. You can enable this with `require 'redgreenblue/opt/terminal'`. This only works on terminals that support 24-bit colors, so-called "true color".
+    * Added optional support for [24-bit color terminals](https://gist.github.com/XVilka/8346728). You can enable this with `require 'redgreenblue/opt/terminal'`. This only works on terminals that support 24-bit colors, so-called "true color".
         * `#inspect` displays a 24-bit color swatch.
         * Added `#to_terminal_foreground_24bit` and `#to_terminal_background_24bit` methods.
 
@@ -24,7 +28,7 @@
 
     * Mac OS only:
 
-        * The color picker now works correctly when you are using [iTerm2](https://www.iterm2.com/) (`::pick` and `#pick` methods no longer activate Apple's Terminal)
+        * The color picker now works correctly when you are using [iTerm2](https://www.iterm2.com/) (`::pick` and `#pick` methods no longer activate Apple's Terminal).
 
 ## 0.7.0 (11 November 2019)
 
