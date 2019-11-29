@@ -26,7 +26,7 @@ class RGB
 # Class methods
 
 
-  # Creates a new object from a 6- or 3-digit hexadecimal string representing  red, green, and blue.
+  # Creates a new object from a 6- or 3-digit hexadecimal string representing red, green, and blue.
   #
   # The string may include a '#' prefix.
   def self.hex(hex_string)
