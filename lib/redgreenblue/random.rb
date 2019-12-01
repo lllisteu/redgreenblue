@@ -6,6 +6,11 @@ class RGB
     self
   end
 
+  # Creates a new RGB object with this object's red, green, and blue values shuffled.
+  def shuffle
+    RGB.new values.shuffle
+  end
+
   # Assigns random values to red, green, and blue.
   def randomize!
     self.values = Kernel::rand, Kernel::rand, Kernel::rand
