@@ -17,4 +17,12 @@ class Test_misc < Test::Unit::TestCase
     assert_equal color.hex   , color.invert!.invert!.hex
   end
 
+  def test_permutation
+    assert_equal 1, RGB.hex('aaa').permutation.size
+    assert_equal 3, RGB.hex('abb').permutation.size
+    assert_equal 6, RGB.hex('abc').permutation.size
+
+    assert_equal RGB.red.permutation, [ RGB.red, RGB.green, RGB.blue ]
+  end
+
 end
