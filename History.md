@@ -8,9 +8,13 @@
 
  * __Core RGB class:__
 
+    * Added `#permutation` method.
+
+    * Added `#shuffle` method.
+
     * Added `#css_hex` method and `#css` alias.
 
-    * `#whiten!`, `#whiten`, `#blacken!`, and `#blacken` can now be called without an argument. In that case they default to mixing with a 50% portion of white or black.
+    * `#whiten!`, `#whiten`, `#blacken!`, and `#blacken` now default to mixing with a 50% portion of white or black when called without an argument.
 
     * Added `::each_24bit_color` iterator.
 
@@ -42,7 +46,7 @@
 
     * Added `::red`, `::green`, and `::blue` factory methods.
 
-    * Added `#to_s` alias for `#inspect`.
+    * Added `#to_s` method.
 
     * Added `#hsv` method and `#hsb` alias.
 
