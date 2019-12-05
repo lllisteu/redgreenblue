@@ -26,7 +26,7 @@
 
     * Added optional support for [24-bit color terminals](https://gist.github.com/XVilka/8346728). You can enable this with `require 'redgreenblue/opt/terminal'`. This only works on terminals that support 24-bit colors, so-called "true color".
         * `#inspect` displays a 24-bit color swatch.
-        * Added `#to_terminal_foreground_24bit` and `#to_terminal_background_24bit` methods.
+        * Added `#terminal_foreground` and `#terminal_background` methods.
 
  * __Platform specific:__
 
