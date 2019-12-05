@@ -16,6 +16,8 @@
 
     * `#whiten!`, `#whiten`, `#blacken!`, and `#blacken` now default to mixing with a 50% portion of white or black when called without an argument.
 
+    * Added `#terminal_foreground` and `#terminal_background` methods.
+
     * Added `::each_24bit_color` iterator.
 
     * `::hex` and `#hex=` methods now raise an `ArgumentError` when fed an invalid hexadecimal string.
@@ -26,7 +28,6 @@
 
     * Added optional support for [24-bit color terminals](https://gist.github.com/XVilka/8346728). You can enable this with `require 'redgreenblue/opt/terminal'`. This only works on terminals that support 24-bit colors, so-called "true color".
         * `#inspect` displays a 24-bit color swatch.
-        * Added `#terminal_foreground` and `#terminal_background` methods.
 
  * __Platform specific:__
 
