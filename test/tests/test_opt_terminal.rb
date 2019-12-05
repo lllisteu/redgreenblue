@@ -1,6 +1,5 @@
 require 'test/unit'
 
-require 'redgreenblue'
 require 'redgreenblue/opt/terminal'
 
 class Test_opt_terminal < Test::Unit::TestCase
