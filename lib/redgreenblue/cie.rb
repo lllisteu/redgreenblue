@@ -24,7 +24,7 @@ class RGB
   # - https://en.wikipedia.org/wiki/CIE_1931_color_space
   # sRGB to XYZ matrix for D65 reference white by Bruce Lindbloom:
   # - http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
-  def xyz
+  def cie_xyz
     r, g, b = expanded_srgb_values
     [
       r * 0.4124564 + g * 0.3575761 + b * 0.1804375,
@@ -33,13 +33,15 @@ class RGB
     ]
   end
 
+  alias xyz cie_xyz
+
   # Returns CIE 1931 xyY values.
   #
   # Based on:
   # - https://en.wikipedia.org/wiki/CIE_1931_color_space
   # - http://www.brucelindbloom.com/index.html?Eqn_XYZ_to_xyY.html
   # - https://ninedegreesbelow.com/photography/xyz-rgb.html
-  def xyy
+  def cie_xyy
     x, y, z = xyz
     [
       x / ( x + y + z ),
@@ -48,13 +50,6 @@ class RGB
     ]
   end
 
-  # Which names to choose?
-  alias to_xyz     xyz
-  alias cie_xyz    xyz
-#   alias to_cie_xyz xyz
-
-  alias to_xyy     xyy
-  alias cie_xyy    xyy
-#   alias to_cie_xyy xyy
+  alias xyy cie_xyy
 
 end
