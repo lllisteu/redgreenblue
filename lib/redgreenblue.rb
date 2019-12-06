@@ -11,8 +11,8 @@ require 'redgreenblue/hex'
 
 require 'redgreenblue/hsl_hsv'
 
+require 'redgreenblue/inspect'
 require 'redgreenblue/lazy'
-require 'redgreenblue/nice'
 
 require 'redgreenblue/rgb565'
 require 'redgreenblue/bgr24bit'
