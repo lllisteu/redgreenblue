@@ -2,21 +2,6 @@
 
 class RGB
 
-  # Returns gamma-expanded (inverse-companded) RGB values for sRGB.
-  #
-  # Based on:
-  # - https://en.wikipedia.org/wiki/SRGB
-  # - http://www.brucelindbloom.com/Eqn_RGB_to_XYZ.html
-  def expanded_srgb_values
-    values.map { |v|
-      if v <= 0.04045
-        v / 12.92
-      else
-        ( ( v + 0.055 ) / 1.055 ) ** 2.4
-      end
-    }
-  end
-
   # Returns CIE 1931 XYZ values for the RGB object.
   #
   # Based on:
@@ -51,5 +36,22 @@ class RGB
   end
 
   alias xyy cie_xyy
+
+  private
+
+  # Returns gamma-expanded (inverse-companded) RGB values for sRGB.
+  #
+  # Based on:
+  # - https://en.wikipedia.org/wiki/SRGB
+  # - http://www.brucelindbloom.com/Eqn_RGB_to_XYZ.html
+  def expanded_srgb_values
+    values.map { |v|
+      if v <= 0.04045
+        v / 12.92
+      else
+        ( ( v + 0.055 ) / 1.055 ) ** 2.4
+      end
+    }
+  end
 
 end
