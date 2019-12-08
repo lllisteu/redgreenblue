@@ -37,6 +37,13 @@ class RGB
 
   alias xyy cie_xyy
 
+  # Returns CIE 1931 xy values for the RGB object.
+  def cie_xy
+    cie_xyy[0..1]
+  end
+
+  alias xy cie_xy
+
   private
 
   # Returns gamma-expanded (inverse-companded) RGB values for sRGB.
