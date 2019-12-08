@@ -17,7 +17,7 @@ class RGB
     }
   end
 
-  # Returns CIE 1931 XYZ values.
+  # Returns CIE 1931 XYZ values for the RGB object.
   #
   # Based on:
   # - http://www.brucelindbloom.com/index.html?Eqn_RGB_to_XYZ.html
@@ -30,12 +30,12 @@ class RGB
       r * 0.4124564 + g * 0.3575761 + b * 0.1804375,
       r * 0.2126729 + g * 0.7151522 + b * 0.0721750,
       r * 0.0193339 + g * 0.1191920 + b * 0.9503041
-    ]
+    ].map { |v| v.round(6) }
   end
 
   alias xyz cie_xyz
 
-  # Returns CIE 1931 xyY values.
+  # Returns CIE 1931 xyY values for the RGB object.
   #
   # Based on:
   # - https://en.wikipedia.org/wiki/CIE_1931_color_space
@@ -47,7 +47,7 @@ class RGB
       x / ( x + y + z ),
       y / ( x + y + z ),
       y
-    ]
+    ].map { |v| v.round(6) }
   end
 
   alias xyy cie_xyy
