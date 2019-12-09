@@ -8,6 +8,14 @@
 
  * __Core RGB class:__
 
+    * Added methods to convert sRGB to [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space) _XYZ_ and _xyY_:
+
+        * Added `#cie_xyz` method and `#xyz` alias.
+
+        * Added `#cie_xyy` method and `#xyy` alias.
+
+        * Added `#cie_xy` method and `#xy` alias.
+
     * Added `#permutation` method.
 
     * Added `#shuffle` method.
