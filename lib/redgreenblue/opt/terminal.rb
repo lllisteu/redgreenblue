@@ -1,14 +1,12 @@
-# Optional support for 24-bit color terminals.
+# Use 24-bit color inspect.
 
 # Automatically load core RGB class before loading options.
 require 'redgreenblue'
 
 class RGB
 
-  alias original_inspect inspect
-
   def inspect
-    terminal_background + "   \e[0m " + original_inspect
+    _inspect_simple
   end
 
 end
