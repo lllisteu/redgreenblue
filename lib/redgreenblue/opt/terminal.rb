@@ -3,10 +3,4 @@
 # Automatically load core RGB class before loading options.
 require 'redgreenblue'
 
-class RGB
-
-  def inspect
-    _inspect_simple
-  end
-
-end
+RGB.style = 'simple'
