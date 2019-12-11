@@ -70,4 +70,8 @@ class Test_base < Test::Unit::TestCase
     assert_false RGB.new(1,0.9999999,1) == RGB.white
   end
 
+  def test_space
+    assert_equal 'sRGB', RGB.new.color_space
+  end
+
 end

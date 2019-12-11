@@ -4,6 +4,13 @@ class RGB
     self.values = a.any? ? a : [ 0.5, 0.5, 0.5 ]
   end
 
+  # Returns the color space.
+  #
+  # Currently always 'sRGB'.
+  def color_space
+    @color_space ||= 'sRGB'
+  end
+
   # Returns the red component as a value between 0 and 1.
   def red
     @red
