@@ -8,13 +8,25 @@
 
  * __Core RGB class:__
 
-    * Added methods to convert sRGB to [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space) _XYZ_ and _xyY_:
+    * Added the ability to choose among three inspect styles:
+
+        * Added `::styles`, `::style`, and `::style=` methods.
+
+        * Added `'default'` inspect style.
+
+        * Added `'simple'` and `'swatch'` colorised inspect styles.
+
+        Note: colorised styles require a terminal that [supports 24-bit colors](https://gist.github.com/XVilka/8346728), so-called "true color".
+
+    * Added methods to calculate [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space) XYZ and xyY coordinates:
 
         * Added `#cie_xyz` method and `#xyz` alias.
 
         * Added `#cie_xyy` method and `#xyy` alias.
 
         * Added `#cie_xy` method and `#xy` alias.
+
+    * Added `#color_space` method.
 
     * Added `#permutation` method.
 
@@ -32,16 +44,11 @@
     
     * Added `::hex_to_rgb` method.
 
- * __Optional components:__
-
-    * Added optional support for [24-bit color terminals](https://gist.github.com/XVilka/8346728). You can enable this with `require 'redgreenblue/opt/terminal'`. This only works on terminals that support 24-bit colors, so-called "true color".
-        * `#inspect` displays a 24-bit color swatch.
-
  * __Platform specific:__
 
     * Mac OS only:
 
-        * The color picker now works correctly when you are using [iTerm2](https://www.iterm2.com/) (`::pick` and `#pick` methods no longer activate Apple's Terminal).
+        * The color picker now works correctly when you are using [iTerm2](https://www.iterm2.com/) (`::pick` and `#pick` methods no longer activate Terminal.app).
 
 ## 0.7.0 (11 November 2019)
 
