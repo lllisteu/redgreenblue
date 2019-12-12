@@ -29,7 +29,7 @@ class RGB
     @@style ||= 'default'
   end
 
-  # Returns a list of all possible inspect styles.
+  # Returns a list of all available inspect styles.
   def self.styles
     ( self.instance_methods + self.private_instance_methods ).grep( /^_inspect_(.*)/ ) { $1 }.sort
   end
