@@ -24,9 +24,14 @@ class RGB
     _inspect_default
   end
 
+  # Returns the base inspect style, dependent on the COLORTERM environment variable.
+  def self.base_style
+    ENV['COLORTERM'] == 'truecolor' ? 'simple' : 'default'
+  end
+
   # Returns the current inspect style.
   def self.style
-    @@style ||= 'default'
+    @@style ||= base_style
   end
 
   # Returns a list of all available inspect styles.
