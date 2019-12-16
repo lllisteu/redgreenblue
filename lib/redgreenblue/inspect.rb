@@ -6,6 +6,10 @@ class RGB
     "#{prefix} ##{hex} (red=%1.5f green=%1.5f blue=%1.5f)" % [red, green, blue]
   end
 
+  def _inspect_hex
+    "##{hex}"
+  end
+
   def _inspect_swatch
     terminal_background + "   \e[0m"
   end
