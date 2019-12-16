@@ -8,13 +8,15 @@
 
  * __Core RGB class:__
 
-    * Added the ability to choose among three inspect styles:
+    * Added the ability to choose among four inspect styles:
 
         * Added `::styles`, `::style`, and `::style=` methods.
 
-        * Added `'default'` inspect style.
+        * Added `'default'` and `'hex'` inspect styles.
 
         * Added `'simple'` and `'swatch'` colorised inspect styles.
+
+        * Depending on the `COLORTERM` environment variable, the initial style is `'simple'` (`COLORTERM=="truecolor"`), or `'default'`.
 
         Note: colorised styles require a terminal that [supports 24-bit colors](https://gist.github.com/XVilka/8346728), so-called "true color".
 
