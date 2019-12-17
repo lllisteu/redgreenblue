@@ -1,5 +1,3 @@
-# Note: these CIE methods are experimental and will be changed or removed.
-
 class RGB
 
   # Returns CIE 1931 XYZ values for the RGB object.
