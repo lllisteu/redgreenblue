@@ -18,4 +18,10 @@ class RGB
   def permutation
     values.permutation.to_a.uniq.map { |v| RGB.new v }
   end
+
+  # Returns an array of three RGB objects, for the red, green, and blue components of this object.
+  def components
+    [ RGB.new(red,0,0), RGB.new(0,green,0), RGB.new(0,0,blue) ]
+  end
+
 end

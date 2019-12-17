@@ -25,4 +25,9 @@ class Test_misc < Test::Unit::TestCase
     assert_equal RGB.red.permutation, [ RGB.red, RGB.green, RGB.blue ]
   end
 
+  def test_components
+    assert_equal 3, RGB.new.components.size
+    assert_equal ['ff0000', '00ff00', '0000ff'], RGB.white.components.map(&:hex)
+  end
+
 end

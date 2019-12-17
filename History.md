@@ -30,6 +30,8 @@
 
     * Added `#color_space` method.
 
+    * Added `#components` method.
+
     * Added `#permutation` method.
 
     * Added `#shuffle` method.
