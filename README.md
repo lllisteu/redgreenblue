@@ -113,11 +113,11 @@ See the included LICENSE file.
 
 -----
 
-<p style="text-align: center; font-family: Garamond, Serif; font-size: 1.2em">
+<p align=center>
 “The philosopher for whom rainbows can be explained away never saw them.”
 </p>
 
-<p style="text-align: center; font-size: 0.9em">
-Henry David Thoreau, _Journal_, 5 November 1857.
+<p align=center>
+Henry David Thoreau, <i>Journal</i>, 5 November 1857.
 </p>
 
