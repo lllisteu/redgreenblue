@@ -6,7 +6,9 @@ redgreenblue is a simple [Ruby](https://www.ruby-lang.org/) library for handling
 
 It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, or hexadecimal notation.
 
-redgreenblue can output RGB colors as HSL, HSB, or HSV (hue, saturation, and lightness, brightness or value). It also understands some more exotic formats, such as 16-bit RGB565 (used by some led-panels such as the Raspberry Pi Sense Hat) and 24-bit BGR (used in BMP files).
+redgreenblue can output RGB colors as HSL, HSB, or HSV (hue, saturation, and lightness, brightness, or value), or as [CIE](https://en.wikipedia.org/wiki/CIE_1931_color_space) XYZ or xyY coordinates. It also understands some more exotic formats, such as 16-bit RGB565 and 24-bit BGR.
+
+If your terminal supports "[true color](https://gist.github.com/XVilka/8346728)", redgreenblue's colorised inspect styles will display your colors in 24-bit splendour, right in the terminal.
 
 redgreenblue can create 1-pixel GIF's from any color, and on a Mac it can interact with the system color picker.
 
@@ -52,8 +54,8 @@ pink.hsl
 => [330.0, 1.0, 0.8]
 pink.hsb
 => [330.0, 0.4, 1.0]
-pink.hsv
-=> [330.0, 0.4, 1.0]
+pink.xyz
+=> [0.635314, 0.484064, 0.631122]
 pink.hex
 => "ff99cc"
 pink.hex(true)
@@ -108,3 +110,14 @@ See the included LICENSE file.
 ## Alternatives
 
 [Color](https://github.com/halostatue/color): a versatile Ruby color library.
+
+-----
+
+<p style="text-align: center; font-family: Garamond, Serif; font-size: 1.2em">
+“The philosopher for whom rainbows can be explained away never saw them.”
+</p>
+
+<p style="text-align: center; font-size: 0.9em">
+Henry David Thoreau, _Journal_, 5 November 1857.
+</p>
+
