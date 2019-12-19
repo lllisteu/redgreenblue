@@ -7,6 +7,4 @@ class RGB
     "##{hex true}"
   end
 
-  alias css css_hex
-
 end

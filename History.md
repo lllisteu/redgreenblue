@@ -36,7 +36,7 @@
 
     * Added `#shuffle` method.
 
-    * Added `#css_hex` method and `#css` alias.
+    * Added `#css_hex` method.
 
     * `#whiten!`, `#whiten`, `#blacken!`, and `#blacken` now default to mixing with a 50% portion of white or black when called without an argument.
 
