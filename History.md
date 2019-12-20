@@ -1,6 +1,6 @@
 # History
 
-## Changes
+## 0.8.0 (20 December 2019)
 
  * __General:__
 
@@ -16,7 +16,7 @@
 
         * Added `'simple'` and `'swatch'` colorised inspect styles.
 
-        * Depending on the `COLORTERM` environment variable, the initial style is `'simple'` (`COLORTERM=="truecolor"`), or `'default'`.
+        * Depending on the `COLORTERM` environment variable, the initial style is `'simple'` (`COLORTERM=='truecolor'`), or `'default'`.
 
         Note: colorised styles require a terminal that [supports 24-bit colors](https://gist.github.com/XVilka/8346728), so-called "true color".
 
