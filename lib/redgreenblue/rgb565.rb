@@ -15,7 +15,7 @@ class RGB
     self.b = ( ( v & 0x001f )       ) << 3
   end
 
-  # Returns the color in 16-bit RGB565 format as a string of 0's and 1's
+  # Returns the color in 16-bit RGB565 format as a string of 0's and 1's.
   def rgb565_binary
     rgb565.bytes.reverse.map { |b| "%08b" % b }.join
   end
