@@ -31,6 +31,14 @@ class RGB
     mix(RGB.black, portion)
   end
 
+  # Returns a set of colors between this color and another. That other color is included.
+  #
+  # The resulting colors are spaced evenly in the RGB color space using a straightforward calculation.
+  # You will likely experience these colors as not exactly evenly spaced.
+  def steps(another,step_count=1)
+    (1..step_count-1).map { |c| mix(another, c.to_f/step_count) }.push another.dup
+  end
+
   private
 
   def mix_values(some_values, portion)

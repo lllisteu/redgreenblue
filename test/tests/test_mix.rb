@@ -42,4 +42,8 @@ class Test_mix < Test::Unit::TestCase
     assert_equal [0.25, 0.25, 0.25], c.values
   end
 
+  def test_steps
+    assert_equal 11, RGB.green.steps(RGB.red,11).size
+    assert_equal RGB.grey, RGB.white.steps(RGB.black,2)[0]
+  end
 end
