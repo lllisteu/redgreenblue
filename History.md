@@ -1,5 +1,11 @@
 # History
 
+## Changes
+
+ * __Core RGB class:__
+
+    * Added `#steps` method.
+
 ## 0.8.0 (20 December 2019)
 
  * __General:__
