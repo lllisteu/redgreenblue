@@ -43,7 +43,10 @@ class Test_mix < Test::Unit::TestCase
   end
 
   def test_steps
-    assert_equal 11, RGB.green.steps(RGB.red,11).size
-    assert_equal RGB.grey, RGB.white.steps(RGB.black,2)[0]
+    assert_equal 1, RGB.new.steps(RGB.blue).size
+    assert_equal 7, RGB.green.steps(RGB.red,7).size
+    assert_equal 8, RGB.green.steps(RGB.red,7,true).size
+    assert_equal [RGB.grey, RGB.black], RGB.white.steps(RGB.black,2)
+    assert_equal [RGB.white, RGB.grey, RGB.black], RGB.white.steps(RGB.black,2,true)
   end
 end

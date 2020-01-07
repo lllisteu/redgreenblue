@@ -35,8 +35,13 @@ class RGB
   #
   # The resulting colors are spaced evenly in the RGB color space using a straightforward calculation.
   # You will likely experience these colors as not exactly evenly spaced.
-  def steps(another,step_count=1)
-    (1..step_count-1).map { |c| mix(another, c.to_f/step_count) }.push another.dup
+  def steps(another,step_count=1,include_begin=false)
+    # origin (self, optional)
+    ( include_begin ? [self.dup] : [] ) +
+    # ...plus intermediate colors
+    (1..step_count-1).map { |c| mix(another, c.to_f/step_count) } +
+    # ...plus destination color
+    [another.dup]
   end
 
   private
