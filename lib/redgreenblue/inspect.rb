@@ -14,6 +14,10 @@ class RGB
     terminal_background + "   \e[0m"
   end
 
+  def _inspect_short
+    _inspect_swatch + " ##{hex}"
+  end
+
   def _inspect_simple
     _inspect_default _inspect_swatch
   end

@@ -5,6 +5,8 @@
  * __Core RGB class:__
 
     * Added `#steps` method.
+    
+    * Added colorised `'short'` inspect style.
 
 ## 0.8.0 (20 December 2019)
 
