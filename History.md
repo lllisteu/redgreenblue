@@ -5,6 +5,8 @@
  * __Core RGB class:__
 
     * Added `#steps` method.
+
+    * Added `#to_i` method.
     
     * Added colorised `'short'` inspect style.
 
