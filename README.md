@@ -95,7 +95,7 @@ pink == rose
 ## Resources
 
 * [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) on Wikipedia
-* [HSB explained](https://geraldbakker.nl/psnumbers/hsb-explained.html) by Gerald Bakker
+* [_Photoshop by the Numbers: Color Coding_](https://geraldbakker.nl/psnumbers/color-coding/index.html) by Gerald Bakker
 * [Bruce Lindbloom](http://www.brucelindbloom.com/)
 * [_A Guided Tour of Color Space_](http://poynton.ca/PDFs/Guided_tour.pdf) (PDF), by [Charles Poynton](http://poynton.ca/) (1997)
 * _Color Ordered_, by Rolf Kuehni and Andreas Schwarz (2008), ISBN 978-0-19-518968-1
