@@ -15,8 +15,13 @@ class RGB
     self.b = ( ( v & 0x001f )       ) << 3
   end
 
+  # Deprecated: this method will be removed in a future version.
   # Returns the color in 16-bit RGB565 format as a string of 0's and 1's.
   def rgb565_binary
+    unless defined? @@warned_rgb565_binary_deprecation
+      warn "Warning: 'rgb565_binary' has been deprecated and will be removed in a future version of redgreenblue."
+      @@warned_rgb565_binary_deprecation = true
+    end
     rgb565.bytes.reverse.map { |b| "%08b" % b }.join
   end
 

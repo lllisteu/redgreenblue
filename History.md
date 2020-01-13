@@ -10,6 +10,8 @@
     
     * Added colorised `'short'` inspect style.
 
+    * Deprecated `#rgb565_binary` method. It will be removed in a future version.
+
 ## 0.8.0 (20 December 2019)
 
  * __General:__
