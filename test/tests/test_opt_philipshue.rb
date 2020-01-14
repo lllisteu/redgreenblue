@@ -4,7 +4,7 @@ require 'redgreenblue/opt/philipshue'
 
 class Test_opt_philipshue < Test::Unit::TestCase
 
-  def test_simple
+  def test_hsb
 
     assert_equal %w(on bri hue sat), RGB.new.to_philips_hue_api_hsb_arguments.keys
 
