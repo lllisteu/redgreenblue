@@ -35,4 +35,19 @@ class RGB
     new(0,0,1)
   end
 
+  # Creates a yellow RGB object.
+  def self.yellow
+    new(1,1,0)
+  end
+
+  # Creates a cyan RGB object.
+  def self.cyan
+    new(0,1,1)
+  end
+
+  # Creates a magenta RGB object.
+  def self.magenta
+    new(1,0,1)
+  end
+
 end
