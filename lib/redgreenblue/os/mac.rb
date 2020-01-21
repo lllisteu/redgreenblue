@@ -1,6 +1,7 @@
 class RGB
 
-  # Shows the Mac OS color picker to choose a color for the RGB object.
+  # On Mac OS, shows the color picker to choose a color for the RGB object.
+  # Not available on other platforms.
   def pick
     result = RGB.mac_choose(rrggbb)
     if result
@@ -8,7 +9,9 @@ class RGB
     end
   end
 
-  # Shows the Mac OS color picker and creates an RGB object with the chosen color.
+  # On Mac OS, shows the color picker and creates an RGB object with the chosen color.
+  # Not available on other platforms.
+  #
   # If no default color is specified, the picker defaults to a middle grey.
   def self.pick(default_color=RGB.new)
     result = RGB.mac_choose(default_color.rrggbb)

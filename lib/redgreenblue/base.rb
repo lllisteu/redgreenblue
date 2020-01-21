@@ -66,7 +66,7 @@ class RGB
     ( self.class == other.class ) && ( self.values == other.values )
   end
 
-  # Returns a sorted hash of 3 key/value pairs for red, green and blue,
+  # Returns a sorted hash of 3 key/value pairs for red, green, and blue,
   # sorted in order of decreasing value.
   def to_h
     ([:red, :green, :blue].zip values).sort_by {
