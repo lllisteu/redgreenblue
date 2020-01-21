@@ -8,6 +8,8 @@
 
     * Added `#to_i` method.
     
+    * Added `::yellow`, `::cyan`, and `::magenta` factory methods.
+    
     * Added colorised `'short'` inspect style.
 
     * Deprecated `#rgb565_binary` method. It will be removed in a future version.
