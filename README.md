@@ -108,7 +108,7 @@ Apart from the resources listed above, some discussions and answers on [Stack Ov
 
 ## License
 
-See the included LICENSE file.
+See the included [LICENSE.txt](LICENSE.txt) file.
 
 ## Alternatives
 
