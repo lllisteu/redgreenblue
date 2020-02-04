@@ -4,7 +4,7 @@ require 'redgreenblue'
 
 class Test_int < Test::Unit::TestCase
 
-  def test_simple
+  def test_to_i
     assert_equal        0, RGB.black.to_i
     assert_equal 16777215, RGB.white.to_i
 
