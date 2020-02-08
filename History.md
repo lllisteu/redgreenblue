@@ -7,6 +7,8 @@
     * Added `#steps` method.
 
     * Added `#to_i` method.
+
+    * Added `::at` method.
     
     * Added `::yellow`, `::cyan`, and `::magenta` factory methods.
     
