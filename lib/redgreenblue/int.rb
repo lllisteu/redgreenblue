@@ -7,8 +7,13 @@ class RGB
 
   # Creates a new RGB object from a 24-bit integer in the range 0..16777215.
   def self.at(number)
-    if (0..16777215) === number.to_i
-      RGB.hex( '%06x' % number.to_i )
+    n = number.to_i
+    if (0..16777215) === n
+      rgb(
+        ( n & 0xff0000 ) >> 16,
+        ( n & 0x00ff00 ) >>  8,
+        ( n & 0x0000ff )
+      )
     else
       raise ArgumentError, "Argument '#{number}' not in range 0..16777215"
     end
