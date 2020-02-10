@@ -24,10 +24,14 @@ class RGB
 
   public
 
+  # Returns a programmer-friendly representation of the object.
+  #
+  # You can choose among several inspect styles. See the styles, style, and style= class methods.
   def inspect
     send "_inspect_#{self.class.style}"
   end
 
+  # Returns a string representation of the object.
   def to_s
     _inspect_default
   end
@@ -48,6 +52,8 @@ class RGB
   end
 
   # Selects an inspect style.
+  #
+  # Only the first few characters of your preferred style are required.
   def self.style=(s)
     @@style = styles.grep( /^#{s.to_s.downcase}/ ).first || style
   end

@@ -2,13 +2,17 @@
 
 ## Changes
 
+ * __General:__
+
+    * Tweaked documentation.
+
  * __Core RGB class:__
 
     * Added `#steps` method.
 
     * Added `#to_i` method.
 
-    * Added `::at` method.
+    * Added `::at` factory method.
     
     * Added `::yellow`, `::cyan`, and `::magenta` factory methods.
     
