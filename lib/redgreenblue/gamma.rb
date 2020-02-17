@@ -21,7 +21,7 @@ class RGB
   end
 
   # Sets the object's RGB values using three linear RGB values, each between 0 and 1.
-  # Linear values will be converted (gamma-companded) to the object's gamma.
+  # Linear values will be converted to the object's gamma (gamma-companded).
   #
   # Based on:
   # - https://en.wikipedia.org/wiki/SRGB
