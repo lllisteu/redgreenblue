@@ -8,7 +8,7 @@ class RGB
   # sRGB to XYZ matrix for D65 reference white by Bruce Lindbloom:
   # - http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
   def cie_xyz
-    r, g, b = expanded_srgb_values
+    r, g, b = linear_values
     [
       r * 0.4124564 + g * 0.3575761 + b * 0.1804375,
       r * 0.2126729 + g * 0.7151522 + b * 0.0721750,
@@ -41,22 +41,5 @@ class RGB
   end
 
   alias xy cie_xy
-
-  private
-
-  # Returns gamma-expanded (inverse-companded) RGB values for sRGB.
-  #
-  # Based on:
-  # - https://en.wikipedia.org/wiki/SRGB
-  # - http://www.brucelindbloom.com/Eqn_RGB_to_XYZ.html
-  def expanded_srgb_values
-    values.map { |v|
-      if v <= 0.04045
-        v / 12.92
-      else
-        ( ( v + 0.055 ) / 1.055 ) ** 2.4
-      end
-    }
-  end
 
 end
