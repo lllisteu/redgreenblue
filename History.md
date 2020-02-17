@@ -8,6 +8,8 @@
 
  * __Core RGB class:__
 
+    * Added `#linear_values` and `#linear_values=` methods.
+
     * Added `#steps` method.
 
     * Added `#to_i` method.
@@ -17,6 +19,8 @@
     * Added `::yellow`, `::cyan`, and `::magenta` factory methods.
     
     * Added colorised `'short'` inspect style.
+
+    * Added `::version` method.
 
     * Deprecated `#rgb565_binary` method. It will be removed in a future version.
 
