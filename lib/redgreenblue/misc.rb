@@ -24,4 +24,10 @@ class RGB
     [ RGB.new(red,0,0), RGB.new(0,green,0), RGB.new(0,0,blue) ]
   end
 
+  # Creates a new RGB object from three RGB objects representing the red, green, and blue components.
+  def self.assemble(*a)
+    v = a.flatten
+    RGB.new(v[0].red, v[1].green, v[2].blue)
+  end
+
 end

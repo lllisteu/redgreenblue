@@ -30,4 +30,9 @@ class Test_misc < Test::Unit::TestCase
     assert_equal ['ff0000', '00ff00', '0000ff'], RGB.white.components.map(&:hex)
   end
 
+  def test_assemble
+    assert_equal RGB.white, RGB.assemble(RGB.red, RGB.green, RGB.blue)
+    assert_equal RGB.white, RGB.assemble(RGB.yellow, RGB.cyan, RGB.magenta)
+  end
+
 end
