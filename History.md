@@ -13,10 +13,10 @@
     * Added `#steps` method.
 
     * Added `#to_i` method.
-
-    * Added `::assemble` factory method.
     
     * Added `::at` factory method.
+
+    * Added `::assemble` factory method.
     
     * Added `::yellow`, `::cyan`, and `::magenta` factory methods.
     
