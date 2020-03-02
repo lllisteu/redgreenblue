@@ -15,4 +15,8 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>=2.2.0'
 
+  s.metadata = {
+    "changelog_uri" => "https://github.com/lllisteu/redgreenblue/blob/master/History.md"
+  }
+
 end
