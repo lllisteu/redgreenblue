@@ -4,7 +4,7 @@ require 'redgreenblue'
 
 class Test_hsl_hsv < Test::Unit::TestCase
 
-  def test_hsl
+  def test_to_hsl
     assert_equal [  nil, 0.0, 1.0], RGB.hex('#FFFFFF').hsl
     assert_equal [  nil, 0.0, 0.0], RGB.hex('#000000').hsl
     assert_equal [  0.0, 1.0, 0.5], RGB.hex('#FF0000').hsl
