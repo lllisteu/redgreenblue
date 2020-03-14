@@ -12,6 +12,18 @@ class Test_hsl_hsv < Test::Unit::TestCase
     assert_equal [240.0, 1.0, 0.5], RGB.hex('#0000FF').hsl
   end
 
+  def test_from_hsl
+    assert_equal RGB.red,     RGB.hsl(  0,1,0.5)
+    assert_equal RGB.yellow,  RGB.hsl( 60,1,0.5)
+    assert_equal RGB.green,   RGB.hsl(120,1,0.5)
+    assert_equal RGB.cyan,    RGB.hsl(180,1,0.5)
+    assert_equal RGB.blue,    RGB.hsl(240,1,0.5)
+    assert_equal RGB.magenta, RGB.hsl(300,1,0.5)
+
+    assert_equal RGB.white,   RGB.hsl(nil,1,1)
+    assert_equal RGB.white,   RGB.hsl(6,1,1)
+  end
+
   def test_hsv
     assert_equal [nil, 0, 0.5], RGB.grey.hsv
     assert_equal [nil, 0, 0  ], RGB.black.hsv

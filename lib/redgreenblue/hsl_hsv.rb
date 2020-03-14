@@ -7,6 +7,16 @@ class RGB
     hsl_hsv_c[0]
   end
 
+  # Sets red, green, and blue using HSL values: hue (0..360), saturation (0..1), and lightness (0..1).
+  def hsl=(*a)
+    self.values = RGB.hsl_to_values(*a)
+  end
+
+  # Creates a new RGB object from HSL values: hue (0..360), saturation (0..1), and lightness (0..1).
+  def self.hsl(*a)
+    new hsl_to_values(*a)
+  end
+
   # Returns color as HSV:
   # hue (0..360), saturation (0..1), value (0..1).
   # When saturation is 0, hue is nil.
@@ -17,6 +27,28 @@ class RGB
   end
 
   alias hsb hsv
+
+  # Calculate RGB values from HSL.
+  # Given hue (0..360), saturation (0..1), and lightness (0..1),
+  # returns red, green, and blue as three values between 0 and 1.
+  def self.hsl_to_values(*a)
+    hue, saturation_hsl, lightness = a.flatten
+
+    if ( saturation_hsl == 0 ) or ( ! hue )
+      return Array.new(3) { lightness }
+    end
+
+    hue = hue.modulo 360
+    chroma = ( 1 - ( 2 * lightness - 1 ).abs ) * saturation_hsl
+    values = [
+      chroma,
+      ( 1 - ( ( hue / 60.0 ).modulo(2) - 1 ).abs ) * chroma,
+      0
+    ].map { |v| ( v + lightness - chroma / 2.0 ).round(9) }
+
+    # order values according to hue sextant
+    [ [0,1,2], [1,0,2], [2,0,1], [2,1,0], [1,2,0], [0,2,1] ][hue.div 60].map { |i| values[i]}
+  end
 
   private
 
