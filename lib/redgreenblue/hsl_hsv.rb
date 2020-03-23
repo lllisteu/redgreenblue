@@ -11,13 +11,16 @@ class RGB
       new hsl_to_values(*a)
     end
 
+    # Calculates RGB values from HSL.
+    # Given hue (0..360), saturation (0..1), and lightness (0..1),
+    # returns red, green, and blue as three values between 0 and 1.
     def hsl_to_values(*a)
       hsm_to_values(:hsl, a)
     end
 
     private
 
-    # Calculate RGB values from HSL or HSV.
+    # Calculates RGB values from HSL or HSV.
     # Given hue (0..360), saturation (0..1), and magnitude (0..1),
     # returns red, green, and blue as three values between 0 and 1.
     def hsm_to_values(type, *a)
