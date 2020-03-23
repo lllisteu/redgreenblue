@@ -11,24 +11,32 @@ class RGB
       new hsl_to_values(*a)
     end
 
-    # Calculate RGB values from HSL.
-    # Given hue (0..360), saturation (0..1), and lightness (0..1),
-    # returns red, green, and blue as three values between 0 and 1.
     def hsl_to_values(*a)
-      hue, saturation_hsl, lightness = a.flatten
+      hsm_to_values(:hsl, a)
+    end
 
-      if ( saturation_hsl == 0 ) or ( ! hue )
-        return Array.new(3) { lightness }
+    private
+
+    # Calculate RGB values from HSL or HSV.
+    # Given hue (0..360), saturation (0..1), and magnitude (0..1),
+    # returns red, green, and blue as three values between 0 and 1.
+    def hsm_to_values(type, *a)
+      raise NotImplementedError unless type == :hsl
+
+      hue, saturation, magnitude = a.flatten
+
+      if ( saturation == 0 ) or ( ! hue )
+        return Array.new(3) { magnitude }
       end
 
       hue = hue.modulo 360
-      chroma = ( 1 - ( 2 * lightness - 1 ).abs ) * saturation_hsl
+      chroma = ( 1 - ( 2 * magnitude - 1 ).abs ) * saturation
 
       values = [
         chroma,
         ( 1 - ( ( hue / 60.0 ).modulo(2) - 1 ).abs ) * chroma,
         0
-      ].map { |v| ( v + lightness - chroma / 2.0 ).round(9) }
+      ].map { |v| ( v + magnitude - chroma / 2.0 ).round(9) }
 
       # order values according to hue sextant
       [ [0,1,2], [1,0,2], [2,0,1], [2,1,0], [1,2,0], [0,2,1] ][hue.div 60].map { |i| values[i]}
