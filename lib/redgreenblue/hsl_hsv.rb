@@ -18,13 +18,27 @@ class RGB
       hsm_to_values(:hsl, a)
     end
 
+    # Creates a new RGB object from HSV values: hue (0..360), saturation (0..1), and value (0..1).
+    def hsv(*a)
+      new hsv_to_values(*a)
+    end
+
+    # Calculates RGB values from HSV.
+    # Given hue (0..360), saturation (0..1), and value (0..1),
+    # returns red, green, and blue as three values between 0 and 1.
+    def hsv_to_values(*a)
+      hsm_to_values(:hsv, a)
+    end
+
+    alias hsb hsv
+
     private
 
     # Calculates RGB values from HSL or HSV.
-    # Given hue (0..360), saturation (0..1), and magnitude (0..1),
-    # returns red, green, and blue as three values between 0 and 1.
+    # With help from:
+    # - https://en.wikipedia.org/wiki/HSL_and_HSV
     def hsm_to_values(type, *a)
-      raise NotImplementedError unless type == :hsl
+      raise NotImplementedError unless [:hsl, :hsv].include? type
 
       hue, saturation, magnitude = a.flatten
 
@@ -33,13 +47,26 @@ class RGB
       end
 
       hue = hue.modulo 360
-      chroma = ( 1 - ( 2 * magnitude - 1 ).abs ) * saturation
+
+      chroma = case type
+        when :hsl
+          ( 1 - ( 2 * magnitude - 1 ).abs ) * saturation
+        when :hsv
+          magnitude * saturation
+      end
 
       values = [
         chroma,
         ( 1 - ( ( hue / 60.0 ).modulo(2) - 1 ).abs ) * chroma,
         0
-      ].map { |v| ( v + magnitude - chroma / 2.0 ).round(9) }
+      ]
+
+      values = case type
+        when :hsl
+          values.map { |v| ( v + magnitude - chroma / 2.0 ).round(9) }
+        when :hsv
+          values.map { |v| ( v + magnitude - chroma       ).round(9) }
+      end
 
       # order values according to hue sextant
       [ [0,1,2], [1,0,2], [2,0,1], [2,1,0], [1,2,0], [0,2,1] ][hue.div 60].map { |i| values[i]}
@@ -72,7 +99,16 @@ class RGB
     hsl_hsv_c[1]
   end
 
+  # Sets red, green, and blue using HSV values: hue (0..360), saturation (0..1), and value (0..1).
+  #
+  # #hsb= is an alias for #hsv=.
+  def hsv=(*a)
+    self.values = RGB.hsv_to_values(*a)
+  end
+
   alias hsb hsv
+
+  alias hsb= hsv=
 
   private
 
