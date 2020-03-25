@@ -1,5 +1,25 @@
 # History
 
+## Changes
+
+ * __Core RGB class:__
+
+    * Added the ability to create and alter RGB colors using HSL:
+
+        * Added `::hsl` factory method.
+
+        * Added `#hsl=` method.
+
+        * Added `::hsl_to_values` helper method.
+
+    * Added the ability to create and alter RGB colors using HSV and HSB:
+
+        * Added `::hsv` factory method and `::hsb` alias.
+
+        * Added `#hsv=` method and `#hsb=` alias.
+
+        * Added `::hsv_to_values` helper method.
+
 ## 0.9.0 (2 March 2020)
 
  * __General:__
