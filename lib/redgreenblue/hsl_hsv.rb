@@ -125,14 +125,15 @@ class RGB
       if chroma == 0
         nil
       else
-        case sorted_hash.keys.first
-        when :red
-          60 * ( ( ( green - blue  ) / chroma ).modulo 6 )
-        when :green
-          60 * ( (   blue  - red   ) / chroma + 2 )
-        when :blue
-          60 * ( (   red   - green ) / chroma + 4 )
-        end
+        ( case sorted_hash.keys.first
+          when :red
+            60 * ( ( ( green - blue  ) / chroma ).modulo 6 )
+          when :green
+            60 * ( (   blue  - red   ) / chroma + 2 )
+          when :blue
+            60 * ( (   red   - green ) / chroma + 4 )
+          end
+        ).round(9)
       end
 
     lightness = ( min + max ) / 2.0

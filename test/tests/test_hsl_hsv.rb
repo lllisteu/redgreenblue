@@ -74,6 +74,7 @@ class Test_hsl_hsv < Test::Unit::TestCase
 
   def test_bugs
     assert_equal [330.0, 1.0, 0.8], RGB.hex('f9c').hsl
+    assert_equal [ 42.0, 0.8, 0.5], RGB.hsl(42, 0.8, 0.5).hsl
   end
 
 end
