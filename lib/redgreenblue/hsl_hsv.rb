@@ -106,9 +106,15 @@ class RGB
     self.values = RGB.hsv_to_values(*a)
   end
 
+  def hsv_rotate(degrees)
+    RGB.hsv( hsv.zip([degrees,0,0]).map { |a| a[0] + a[1] } )
+  end
+
   alias hsb hsv
 
   alias hsb= hsv=
+
+  alias hsb_rotate hsv_rotate
 
   private
 
