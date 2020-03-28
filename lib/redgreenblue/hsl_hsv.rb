@@ -1,3 +1,5 @@
+require 'redgreenblue/math'
+
 class RGB
 
   ########################################################################
@@ -106,8 +108,11 @@ class RGB
     self.values = RGB.hsv_to_values(*a)
   end
 
+  # Creates a new RGB object by rotating this object's HSV-hue a number of degrees.
+  #
+  # #hsb_rotate is an alias for #hsv_rotate.
   def hsv_rotate(degrees)
-    RGB.hsv( hsv.zip([degrees,0,0]).map { |a| a[0] + a[1] } )
+    RGB.hsv zip_add(hsv, [degrees, 0, 0])
   end
 
   alias hsb hsv
