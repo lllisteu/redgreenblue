@@ -92,6 +92,11 @@ class RGB
     self.values = RGB.hsl_to_values(*a)
   end
 
+  # Creates a new RGB object by rotating this object's HSL-hue a number of degrees.
+  def hsl_rotate(degrees)
+    RGB.hsl zip_add(hsl, [degrees, 0, 0])
+  end
+
   # Returns color as HSV:
   # hue (0..360), saturation (0..1), value (0..1).
   # When saturation is 0, hue is nil.

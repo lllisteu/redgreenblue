@@ -33,6 +33,12 @@ class Test_hsl_hsv < Test::Unit::TestCase
     assert_equal RGB.new(1, 0, 1), RGB.hsl(300, 1, 0.5)
   end
 
+  def test_hsl_rotate
+    assert_equal RGB.new(1,1,0), RGB.new(1,0,0).hsl_rotate(60)
+    assert_equal [121, 164, 255], RGB.rgb(255, 212, 121).hsl_rotate(180).rgb
+    assert_equal [nil, 0, 0.5], RGB.new(0.5, 0.5, 0.5).hsl_rotate(60).hsl
+  end
+
   def test_to_hsv
     assert_equal [nil, 0.0, 0.0], RGB.new(0, 0, 0).hsv
     assert_equal [nil, 0.0, 0.5], RGB.new(0.5, 0.5, 0.5).hsv
