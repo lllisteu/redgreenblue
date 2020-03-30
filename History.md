@@ -1,6 +1,6 @@
 # History
 
-## Changes
+## Unreleased
 
  * __Core RGB class:__
 
@@ -10,6 +10,8 @@
 
         * Added `#hsl=` method.
 
+        * Added `#hsl_rotate!` and `#hsl_rotate` methods.
+
         * Added `::hsl_to_values` helper method.
 
     * Added the ability to create and alter RGB colors using HSV and HSB:
@@ -18,7 +20,11 @@
 
         * Added `#hsv=` method and `#hsb=` alias.
 
+        * Added `hsv_rotate!` and `hsv_rotate` methods, `hsb_rotate!` and `hsb_rotate` aliases.
+
         * Added `::hsv_to_values` helper method.
+
+    * Fixed precision of hue calculation. This applies to #hsl, #hsv, and #hsb methods.
 
 ## 0.9.0 (2 March 2020)
 
