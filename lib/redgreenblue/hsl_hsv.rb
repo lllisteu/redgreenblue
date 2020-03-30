@@ -92,6 +92,12 @@ class RGB
     self.values = RGB.hsl_to_values(*a)
   end
 
+  # Sets red, green, and blue by rotating the object's HSL-hue a number of degrees.
+  def hsl_rotate!(degrees)
+    self.hsl = zip_add(hsl, [degrees, 0, 0])
+    self
+  end
+
   # Creates a new RGB object by rotating this object's HSL-hue a number of degrees.
   def hsl_rotate(degrees)
     RGB.hsl zip_add(hsl, [degrees, 0, 0])
@@ -113,6 +119,12 @@ class RGB
     self.values = RGB.hsv_to_values(*a)
   end
 
+  # Sets red, green, and blue by rotating the object's HSV-hue a number of degrees.
+  def hsv_rotate!(degrees)
+    self.hsv = zip_add(hsv, [degrees, 0, 0])
+    self
+  end
+
   # Creates a new RGB object by rotating this object's HSV-hue a number of degrees.
   #
   # #hsb_rotate is an alias for #hsv_rotate.
@@ -123,6 +135,8 @@ class RGB
   alias hsb hsv
 
   alias hsb= hsv=
+
+  alias hsb_rotate! hsv_rotate!
 
   alias hsb_rotate hsv_rotate
 

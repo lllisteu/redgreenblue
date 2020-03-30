@@ -37,6 +37,10 @@ class Test_hsl_hsv < Test::Unit::TestCase
     assert_equal RGB.new(1,1,0), RGB.new(1,0,0).hsl_rotate(60)
     assert_equal [121, 164, 255], RGB.rgb(255, 212, 121).hsl_rotate(180).rgb
     assert_equal [nil, 0, 0.5], RGB.new(0.5, 0.5, 0.5).hsl_rotate(60).hsl
+
+    c = RGB.new(1, 0, 0)
+    c.hsl_rotate!(420)
+    assert_equal [1, 1, 0], c.values
   end
 
   def test_to_hsv
@@ -78,6 +82,10 @@ class Test_hsl_hsv < Test::Unit::TestCase
     assert_equal RGB.new(1,1,0), RGB.new(1,0,0).hsv_rotate(60)
     assert_equal [121, 164, 255], RGB.rgb(255, 212, 121).hsv_rotate(180).rgb
     assert_equal [nil, 0, 0.5], RGB.new(0.5, 0.5, 0.5).hsv_rotate(60).hsv
+
+    c = RGB.new(1, 1, 0)
+    c.hsv_rotate!(-120)
+    assert_equal [1, 0, 1], c.values
   end
 
   def test_hsb
