@@ -24,7 +24,7 @@
 
         * Added `::hsv_to_values` helper method.
 
-    * Fixed precision of hue calculation. This applies to #hsl, #hsv, and #hsb methods.
+    * Fixed precision of hue returned by `#hsl`, `#hsv`, and `#hsb` methods.
 
 ## 0.9.0 (2 March 2020)
 
