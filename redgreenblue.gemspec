@@ -16,7 +16,9 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>=2.2.0'
 
   s.metadata = {
-    "changelog_uri" => "https://github.com/lllisteu/redgreenblue/blob/master/History.md"
+    'homepage_uri'      => 'https://github.com/lllisteu/redgreenblue',
+    'changelog_uri'     => 'https://github.com/lllisteu/redgreenblue/blob/master/History.md',
+    'documentation_uri' => 'https://www.rubydoc.info/gems/redgreenblue/RGB',
   }
 
 end
