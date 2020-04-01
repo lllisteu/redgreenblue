@@ -98,9 +98,13 @@ class RGB
     self
   end
 
-  # Creates a new RGB object by rotating this object's HSL-hue a number of degrees.
-  def hsl_rotate(degrees)
-    RGB.hsl zip_add(hsl, [degrees, 0, 0])
+  # Creates one or more new RGB objects by rotating this object's HSL-hue a number of degrees.
+  def hsl_rotate(a_degrees, *b_degrees)
+    if a_degrees.class != Array and b_degrees.none?
+      RGB.hsl zip_add(hsl, [a_degrees, 0, 0])
+    else
+      ( [a_degrees] + b_degrees ).flatten.map { |degrees| RGB.hsl zip_add(hsl, [degrees, 0, 0]) }
+    end
   end
 
   # Returns color as HSV:
@@ -125,11 +129,15 @@ class RGB
     self
   end
 
-  # Creates a new RGB object by rotating this object's HSV-hue a number of degrees.
+  # Creates one or more new RGB objects by rotating this object's HSV-hue a number of degrees.
   #
   # #hsb_rotate is an alias for #hsv_rotate.
-  def hsv_rotate(degrees)
-    RGB.hsv zip_add(hsv, [degrees, 0, 0])
+  def hsv_rotate(a_degrees, *b_degrees)
+    if a_degrees.class != Array and b_degrees.none?
+      RGB.hsv zip_add(hsv, [a_degrees, 0, 0])
+    else
+      ( [a_degrees] + b_degrees ).flatten.map { |degrees| RGB.hsv zip_add(hsv, [degrees, 0, 0]) }
+    end
   end
 
   alias hsb hsv
