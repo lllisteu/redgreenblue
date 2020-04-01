@@ -26,6 +26,8 @@
 
     * Fixed precision of hue returned by `#hsl`, `#hsv`, and `#hsb` methods.
 
+    * Removed `#rgb565_binary` method (deprecated in 0.9.0).
+
 ## 0.9.0 (2 March 2020)
 
  * __General:__
