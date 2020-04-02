@@ -10,8 +10,11 @@ require 'redgreenblue/48bit'
 require 'redgreenblue/hex'
 require 'redgreenblue/int'
 
+require 'redgreenblue/hsl'
+require 'redgreenblue/hsv'
+require 'redgreenblue/hsb'
+
 require 'redgreenblue/gamma'
-require 'redgreenblue/hsl_hsv'
 require 'redgreenblue/cie'
 
 require 'redgreenblue/inspect'
