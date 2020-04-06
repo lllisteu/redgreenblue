@@ -14,6 +14,8 @@
 
         * Added `::hsl_to_values` helper method.
 
+    * Added `#hsl_hue`, `#hsl_saturation`, and `#hsl_lightness` methods.
+
     * Added the ability to create and alter RGB colors using HSV and HSB:
 
         * Added `::hsv` factory method and `::hsb` alias.

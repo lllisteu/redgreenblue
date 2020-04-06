@@ -34,6 +34,21 @@ class RGB
     hsl_hsv_c[0]
   end
 
+  # Returns the object's HSL-hue (0..360).
+  def hsl_hue
+    hsl[0]
+  end
+
+  # Returns the object's HSL-saturation (0..1).
+  def hsl_saturation
+    hsl[1]
+  end
+
+  # Returns the object's HSL-lightness (0..1).
+  def hsl_lightness
+    hsl[2]
+  end
+
   # Sets red, green, and blue using HSL values: hue (0..360), saturation (0..1), and lightness (0..1).
   def hsl=(*a)
     self.values = RGB.hsl_to_values(*a)

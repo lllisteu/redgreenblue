@@ -4,7 +4,7 @@ require 'redgreenblue'
 
 class Test_hsl < Test::Unit::TestCase
 
-  def test_to_hsl
+  def test_get_hsl
     assert_equal [  nil, 0.0, 0.0], RGB.new(0, 0, 0).hsl
     assert_equal [  nil, 0.0, 0.5], RGB.new(0.5, 0.5, 0.5).hsl
     assert_equal [  nil, 0.0, 1.0], RGB.new(1, 1, 1).hsl
@@ -15,6 +15,18 @@ class Test_hsl < Test::Unit::TestCase
     assert_equal [180.0, 1.0, 0.5], RGB.new(0, 1, 1).hsl
     assert_equal [240.0, 1.0, 0.5], RGB.new(0, 0, 1).hsl
     assert_equal [300.0, 1.0, 0.5], RGB.new(1, 0, 1).hsl
+  end
+
+  def test_get_hue
+    assert_equal 300, RGB.new(1, 0, 1).hsl_hue
+  end
+
+  def test_get_saturation
+    assert_equal 1, RGB.new(0, 0, 1).hsl_saturation
+  end
+
+  def test_get_lightness
+    assert_equal 1, RGB.new(1, 1, 1).hsl_lightness
   end
 
   def test_from_hsl
