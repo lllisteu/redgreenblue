@@ -36,6 +36,21 @@ class RGB
     hsl_hsv_c[1]
   end
 
+  # Returns the object's HSV-hue (0..360).
+  def hsv_hue
+    hsv[0]
+  end
+
+  # Returns the object's HSV-saturation (0..1).
+  def hsv_saturation
+    hsv[1]
+  end
+
+  # Returns the object's HSV-value (0..1).
+  def hsv_value
+    hsv[2]
+  end
+
   # Sets red, green, and blue using HSV values: hue (0..360), saturation (0..1), and value (0..1).
   #
   # #hsb= is an alias for #hsv=.
