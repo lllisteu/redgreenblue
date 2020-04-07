@@ -4,25 +4,39 @@
 
  * __Core RGB class:__
 
-    * Added the ability to create and alter RGB colors using HSL:
+    * Added `#hsl_hue` method.
+
+    * Added `#hsl_saturation` method.
+
+    * Added `#hsl_lightness` method.
+
+    * You can now create and alter RGB colors using HSL:
 
         * Added `::hsl` factory method.
 
         * Added `#hsl=` method.
 
-        * Added `#hsl_rotate!` and `#hsl_rotate` methods.
+        * Added `#hsl_rotate!` method.
+
+        * Added `#hsl_rotate` method.
 
         * Added `::hsl_to_values` helper method.
 
-    * Added `#hsl_hue`, `#hsl_saturation`, and `#hsl_lightness` methods.
+    * Added `#hsv_hue` method and `#hsb_hue` alias.
 
-    * Added the ability to create and alter RGB colors using HSV and HSB:
+    * Added `#hsv_saturation` method and `#hsb_saturation` alias.
+
+    * Added `#hsv_value` method and `#hsb_brightness` alias.
+
+    * You can now create and alter RGB colors using HSV and HSB:
 
         * Added `::hsv` factory method and `::hsb` alias.
 
         * Added `#hsv=` method and `#hsb=` alias.
 
-        * Added `hsv_rotate!` and `hsv_rotate` methods, `hsb_rotate!` and `hsb_rotate` aliases.
+        * Added `hsv_rotate!` method and  `hsb_rotate!` alias.
+
+        * Added `hsv_rotate` method and `hsb_rotate` alias.
 
         * Added `::hsv_to_values` helper method.
 
