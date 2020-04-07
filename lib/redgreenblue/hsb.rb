@@ -16,12 +16,18 @@ class RGB
   # Instance methods                                                     #
   ########################################################################
 
-  alias hsb hsv
+  alias hsb            hsv
 
-  alias hsb= hsv=
+  alias hsb_hue        hsv_hue
 
-  alias hsb_rotate! hsv_rotate!
+  alias hsb_saturation hsv_saturation
 
-  alias hsb_rotate hsv_rotate
+  alias hsb_brightness hsv_value
+
+  alias hsb=           hsv=
+
+  alias hsb_rotate!    hsv_rotate!
+
+  alias hsb_rotate     hsv_rotate
 
 end
