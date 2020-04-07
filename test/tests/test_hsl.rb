@@ -18,15 +18,15 @@ class Test_hsl < Test::Unit::TestCase
   end
 
   def test_get_hue
-    assert_equal 300, RGB.new(1, 0, 1).hsl_hue
+    assert_equal 150, RGB.new(0.4, 1, 0.7).hsl_hue
   end
 
   def test_get_saturation
-    assert_equal 1, RGB.new(0, 0, 1).hsl_saturation
+    assert_equal 1.0, RGB.new(0.4, 1, 0.7).hsl_saturation
   end
 
   def test_get_lightness
-    assert_equal 1, RGB.new(1, 1, 1).hsl_lightness
+    assert_equal 0.7, RGB.new(0.4, 1, 0.7).hsl_lightness
   end
 
   def test_from_hsl
