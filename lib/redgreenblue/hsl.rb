@@ -54,6 +54,30 @@ class RGB
     self.values = RGB.hsl_to_values(*a)
   end
 
+  # Sets HSL-hue to a number of degrees (0..360) or nil.
+  #
+  # Adjusts red, green, and blue, leaving saturation and lightness unchanged.
+  # When hue is nil, saturation will be 0.
+  def hsl_hue=(degrees)
+    self.hsl = hsl.fill(degrees,0,1)
+  end
+
+  # Sets HSL-saturation to a value between 0 and 1.
+  #
+  # Adjusts red, green, and blue, leaving hue and lightness unchanged.
+  # When saturation is 0, hue will be nil.
+  def hsl_saturation=(value)
+    self.hsl = hsl.fill(value  ,1,1)
+  end
+
+  # Sets HSL-lightness to a value between 0 and 1.
+  #
+  # Adjusts red, green, and blue, leaving hue and saturation unchanged.
+  # When lightness is 0 or 1, hue will be nil, and saturation will be 0.
+  def hsl_lightness=(value)
+    self.hsl = hsl.fill(value  ,2,1)
+  end
+
   # Sets red, green, and blue by rotating the object's HSL-hue a number of degrees.
   def hsl_rotate!(degrees)
     self.hsl = zip_add(hsl, [degrees, 0, 0])

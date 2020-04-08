@@ -16,6 +16,12 @@
 
         * Added `#hsl=` method.
 
+        * Added `#hsl_hue=` method.
+
+        * Added `#hsl_saturation=` method.
+
+        * Added `#hsl_lightness=` method.
+
         * Added `#hsl_rotate!` method.
 
         * Added `#hsl_rotate` method.

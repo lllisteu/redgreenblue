@@ -45,6 +45,33 @@ class Test_hsl < Test::Unit::TestCase
     assert_equal RGB.new(1, 0, 1), RGB.hsl(300, 1, 0.5)
   end
 
+  def test_set_hue
+    c = RGB.new(1, 0, 0)
+    c.hsl_hue = 180
+    assert_equal RGB.new(0, 1, 1), c
+
+    c.hsl_hue = nil
+    assert_equal 0, c.hsl_saturation
+  end
+
+  def test_set_saturation
+    c = RGB.new(1, 0, 0)
+    c.hsl_saturation = 0.75
+    assert_equal RGB.new(0.875, 0.125, 0.125), c
+
+    c.hsl_saturation = 0
+    assert_nil c.hsl_hue
+  end
+
+  def test_set_lightness
+    c = RGB.new(1, 0, 0)
+    c.hsl_lightness = 0.75
+    assert_equal RGB.new(1, 0.5, 0.5), c
+
+    c.hsl_lightness = 1
+    assert_equal RGB.new(1, 1, 1), c
+  end
+
   def test_hsl_rotate
     assert_equal RGB.new(1,1,0), RGB.new(1,0,0).hsl_rotate(60)
     assert_equal [121, 164, 255], RGB.rgb(255, 212, 121).hsl_rotate(180).rgb
