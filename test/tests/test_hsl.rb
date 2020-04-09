@@ -18,15 +18,15 @@ class Test_hsl < Test::Unit::TestCase
   end
 
   def test_get_hue
-    assert_equal 150, RGB.new(0.4, 1, 0.7).hsl_hue
+    assert_equal 150, RGB.new(0.4, 1, 0.7).hsl_h
   end
 
   def test_get_saturation
-    assert_equal 1.0, RGB.new(0.4, 1, 0.7).hsl_saturation
+    assert_equal 1.0, RGB.new(0.4, 1, 0.7).hsl_s
   end
 
   def test_get_lightness
-    assert_equal 0.7, RGB.new(0.4, 1, 0.7).hsl_lightness
+    assert_equal 0.7, RGB.new(0.4, 1, 0.7).hsl_l
   end
 
   def test_from_hsl
@@ -47,28 +47,28 @@ class Test_hsl < Test::Unit::TestCase
 
   def test_set_hue
     c = RGB.new(1, 0, 0)
-    c.hsl_hue = 180
+    c.hsl_h = 180
     assert_equal RGB.new(0, 1, 1), c
 
-    c.hsl_hue = nil
-    assert_equal 0, c.hsl_saturation
+    c.hsl_h = nil
+    assert_equal 0, c.hsl_s
   end
 
   def test_set_saturation
     c = RGB.new(1, 0, 0)
-    c.hsl_saturation = 0.75
+    c.hsl_s = 0.75
     assert_equal RGB.new(0.875, 0.125, 0.125), c
 
-    c.hsl_saturation = 0
-    assert_nil c.hsl_hue
+    c.hsl_s = 0
+    assert_nil c.hsl_h
   end
 
   def test_set_lightness
     c = RGB.new(1, 0, 0)
-    c.hsl_lightness = 0.75
+    c.hsl_l = 0.75
     assert_equal RGB.new(1, 0.5, 0.5), c
 
-    c.hsl_lightness = 1
+    c.hsl_l = 1
     assert_equal RGB.new(1, 1, 1), c
   end
 

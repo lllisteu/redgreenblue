@@ -4,11 +4,7 @@
 
  * __Core RGB class:__
 
-    * Added `#hsl_hue` method.
-
-    * Added `#hsl_saturation` method.
-
-    * Added `#hsl_lightness` method.
+    * Added `#hsl_h`, `#hsl_s`, and `#hsl_l` methods.
 
     * You can now create and alter RGB colors using HSL:
 
@@ -16,11 +12,7 @@
 
         * Added `#hsl=` method.
 
-        * Added `#hsl_hue=` method.
-
-        * Added `#hsl_saturation=` method.
-
-        * Added `#hsl_lightness=` method.
+        * Added `#hsl_h=`, `#hsl_s=`, and `#hsl_l=` methods.
 
         * Added `#hsl_rotate!` method.
 
@@ -28,11 +20,7 @@
 
         * Added `::hsl_to_values` helper method.
 
-    * Added `#hsv_hue` method and `#hsb_hue` alias.
-
-    * Added `#hsv_saturation` method and `#hsb_saturation` alias.
-
-    * Added `#hsv_value` method and `#hsb_brightness` alias.
+    * Added `#hsv_h`, `#hsv_s`, and `#hsv_v` methods, and `#hsb_h`, `#hsb_s`, and `#hsb_b` aliases.
 
     * You can now create and alter RGB colors using HSV and HSB:
 

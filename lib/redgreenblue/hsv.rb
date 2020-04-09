@@ -37,17 +37,17 @@ class RGB
   end
 
   # Returns the object's HSV-hue (0..360).
-  def hsv_hue
+  def hsv_h
     hsv[0]
   end
 
   # Returns the object's HSV-saturation (0..1).
-  def hsv_saturation
+  def hsv_s
     hsv[1]
   end
 
   # Returns the object's HSV-value (0..1).
-  def hsv_value
+  def hsv_v
     hsv[2]
   end
 

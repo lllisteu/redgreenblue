@@ -23,15 +23,15 @@ class Test_hsv < Test::Unit::TestCase
   end
 
   def test_get_hue
-    assert_equal  30, RGB.new(1, 0.7, 0.4).hsv_hue
+    assert_equal  30, RGB.new(1, 0.7, 0.4).hsv_h
   end
 
   def test_get_saturation
-    assert_equal 0.6, RGB.new(1, 0.7, 0.4).hsv_saturation
+    assert_equal 0.6, RGB.new(1, 0.7, 0.4).hsv_s
   end
 
   def test_get_value
-    assert_equal   1, RGB.new(1, 0.7, 0.4).hsv_value
+    assert_equal   1, RGB.new(1, 0.7, 0.4).hsv_v
   end
 
   def test_from_hsv

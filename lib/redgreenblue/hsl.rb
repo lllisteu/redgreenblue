@@ -35,17 +35,17 @@ class RGB
   end
 
   # Returns the object's HSL-hue (0..360).
-  def hsl_hue
+  def hsl_h
     hsl[0]
   end
 
   # Returns the object's HSL-saturation (0..1).
-  def hsl_saturation
+  def hsl_s
     hsl[1]
   end
 
   # Returns the object's HSL-lightness (0..1).
-  def hsl_lightness
+  def hsl_l
     hsl[2]
   end
 
@@ -58,7 +58,7 @@ class RGB
   #
   # Adjusts red, green, and blue, leaving saturation and lightness unchanged.
   # When hue is nil, saturation will be 0.
-  def hsl_hue=(degrees)
+  def hsl_h=(degrees)
     self.hsl = hsl.fill(degrees,0,1)
   end
 
@@ -66,7 +66,7 @@ class RGB
   #
   # Adjusts red, green, and blue, leaving hue and lightness unchanged.
   # When saturation is 0, hue will be nil.
-  def hsl_saturation=(value)
+  def hsl_s=(value)
     self.hsl = hsl.fill(value  ,1,1)
   end
 
@@ -74,7 +74,7 @@ class RGB
   #
   # Adjusts red, green, and blue, leaving hue and saturation unchanged.
   # When lightness is 0 or 1, hue will be nil, and saturation will be 0.
-  def hsl_lightness=(value)
+  def hsl_l=(value)
     self.hsl = hsl.fill(value  ,2,1)
   end
 
