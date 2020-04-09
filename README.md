@@ -102,6 +102,7 @@ pink == rose
 * _Color for the Sciences_, by Jan Koenderink (2010), ISBN 978-0-262-01428-1
 * _Color Ordered_, by Rolf Kuehni and Andreas Schwarz (2008), ISBN 978-0-19-518968-1
 * _Psychology_, by Henry Gleitman, James Gross, Daniel Reisberg (2010), ISBN 978-0-393-93250-8
+* _Interaction of Color_, by Josef Albers (1963), ISBN 978-0-300-17935-4
 
 ## Credits
 
