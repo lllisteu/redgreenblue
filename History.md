@@ -20,13 +20,17 @@
 
         * Added `::hsl_to_values` helper method.
 
-    * Added `#hsv_h`, `#hsv_s`, and `#hsv_v` methods, and `#hsb_h`, `#hsb_s`, and `#hsb_b` aliases.
+    * Added `#hsv_h`, `#hsv_s`, and `#hsv_v` methods,
+        and `#hsb_h`, `#hsb_s`, and `#hsb_b` aliases.
 
     * You can now create and alter RGB colors using HSV and HSB:
 
         * Added `::hsv` factory method and `::hsb` alias.
 
         * Added `#hsv=` method and `#hsb=` alias.
+
+        * Added `#hsv_h=`, `#hsv_s=`, and `#hsv_v=` methods, 
+            and `#hsb_h=`, `#hsb_s=`, and `#hsb_b=` aliases.
 
         * Added `hsv_rotate!` method and  `hsb_rotate!` alias.
 

@@ -26,6 +26,12 @@ class RGB
 
   alias hsb=        hsv=
 
+  alias hsb_h=      hsv_h=
+
+  alias hsb_s=      hsv_s=
+
+  alias hsb_b=      hsv_v=
+
   alias hsb_rotate! hsv_rotate!
 
   alias hsb_rotate  hsv_rotate

@@ -58,6 +58,30 @@ class RGB
     self.values = RGB.hsv_to_values(*a)
   end
 
+  # Sets HSV-hue to a number of degrees (0..360) or nil.
+  #
+  # Adjusts red, green, and blue, leaving HSV-saturation and -value unchanged.
+  # When hue is nil, saturation will be 0.
+  def hsv_h=(degrees)
+    self.hsv = hsv.fill(degrees,0,1)
+  end
+
+  # Sets HSV-saturation to a number between 0 and 1.
+  #
+  # Adjusts red, green, and blue, leaving HSV-hue and -value unchanged.
+  # When saturation is 0, hue will be nil.
+  def hsv_s=(value)
+    self.hsv = hsv.fill(value  ,1,1)
+  end
+
+  # Sets HSV-value to a number between 0 and 1.
+  #
+  # Adjusts red, green, and blue, leaving HSV-hue and -saturation unchanged.
+  # When value is 0, hue will be nil, and saturation will be 0.
+  def hsv_v=(value)
+    self.hsv = hsv.fill(value  ,2,1)
+  end
+
   # Sets red, green, and blue by rotating the object's HSV-hue a number of degrees.
   def hsv_rotate!(degrees)
     self.hsv = zip_add(hsv, [degrees, 0, 0])

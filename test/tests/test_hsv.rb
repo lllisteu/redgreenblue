@@ -51,6 +51,33 @@ class Test_hsv < Test::Unit::TestCase
     assert_equal RGB.new(1  , 0  , 1  ), RGB.hsv(300, 1, 1  )
   end
 
+  def test_set_hue
+    c = RGB.new(1, 0, 0)
+    c.hsv_h = 180
+    assert_equal RGB.new(0, 1, 1), c
+
+    c.hsv_h = nil
+    assert_equal 0, c.hsv_s
+  end
+
+  def test_set_saturation
+    c = RGB.new(1, 0, 0)
+    c.hsv_s = 0.75
+    assert_equal RGB.new(1, 0.25, 0.25), c
+
+    c.hsv_s = 0
+    assert_nil c.hsv_h
+  end
+
+  def test_set_value
+    c = RGB.new(1, 0, 0)
+    c.hsv_v = 0.75
+    assert_equal RGB.new(0.75, 0, 0), c
+
+    c.hsv_v = 0
+    assert_equal RGB.new(0, 0, 0), c
+  end
+
   def test_hsv_rotate
     assert_equal RGB.new(1,1,0), RGB.new(1,0,0).hsv_rotate(60)
     assert_equal [121, 164, 255], RGB.rgb(255, 212, 121).hsv_rotate(180).rgb
