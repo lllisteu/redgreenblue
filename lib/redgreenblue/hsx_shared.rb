@@ -75,7 +75,7 @@ class RGB
           when :blue
             60 * ( (   red   - green ) / chroma + 4 )
           end
-        ).round(9)
+        ).round(6)
       end
 
     lightness = ( min + max ) / 2.0
