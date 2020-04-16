@@ -10,6 +10,8 @@ class RGB
   class << self
 
     # Creates a new RGB object from HSV values: hue (0..360), saturation (0..1), and value (0..1).
+    #
+    # ::hsb is an alias for ::hsv.
     def hsv(*a)
       new hsv_to_values(*a)
     end
@@ -37,16 +39,22 @@ class RGB
   end
 
   # Returns the object's HSV-hue (0..360).
+  #
+  # #hsb_h is an alias for #hsv_h.
   def hsv_h
     hsv[0]
   end
 
   # Returns the object's HSV-saturation (0..1).
+  #
+  # #hsb_s is an alias for #hsv_s.
   def hsv_s
     hsv[1]
   end
 
   # Returns the object's HSV-value (0..1).
+  #
+  # #hsb_b is an alias for #hsv_v.
   def hsv_v
     hsv[2]
   end
@@ -62,6 +70,8 @@ class RGB
   #
   # Adjusts red, green, and blue, leaving HSV-saturation and -value unchanged.
   # When hue is nil, saturation will be 0.
+  #
+  # #hsb_h= is an alias for #hsv_h=.
   def hsv_h=(degrees)
     self.hsv = hsv.fill(degrees,0,1)
   end
@@ -70,6 +80,8 @@ class RGB
   #
   # Adjusts red, green, and blue, leaving HSV-hue and -value unchanged.
   # When saturation is 0, hue will be nil.
+  #
+  # #hsb_s= is an alias for #hsv_s=.
   def hsv_s=(value)
     self.hsv = hsv.fill(value  ,1,1)
   end
@@ -78,11 +90,15 @@ class RGB
   #
   # Adjusts red, green, and blue, leaving HSV-hue and -saturation unchanged.
   # When value is 0, hue will be nil, and saturation will be 0.
+  #
+  # #hsb_b= is an alias for #hsv_v=.
   def hsv_v=(value)
     self.hsv = hsv.fill(value  ,2,1)
   end
 
   # Sets red, green, and blue by rotating the object's HSV-hue a number of degrees.
+  #
+  # #hsb_rotate! is an alias for #hsv_rotate!.
   def hsv_rotate!(degrees)
     self.hsv = zip_add(hsv, [degrees, 0, 0])
     self
