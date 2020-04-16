@@ -4,11 +4,11 @@
 
 redgreenblue is a simple [Ruby](https://www.ruby-lang.org/) library for handling [RGB colors](https://en.wikipedia.org/wiki/RGB_color_model).
 
-It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, or hexadecimal notation.
+It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, or hexadecimal notation, as well as [HSL, HSB, or HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (hue, saturation, and lightness, brightness, or value).
 
 <img width="600" height="258" alt="IRB screenshot" src='docs/images/irb_screenshot.png'>
 
-redgreenblue can output RGB colors as HSL, HSB, or HSV (hue, saturation, and lightness, brightness, or value), or as [CIE](https://en.wikipedia.org/wiki/CIE_1931_color_space) XYZ or xyY coordinates. It also understands some more exotic formats, such as 16-bit RGB565 and 24-bit BGR.
+ redgreenblue also understands some more exotic formats, such as 16-bit RGB565 and 24-bit BGR, and it can output RGB colors as [CIE](https://en.wikipedia.org/wiki/CIE_1931_color_space) XYZ or xyY coordinates.
 
 If your terminal supports "[true color](https://gist.github.com/XVilka/8346728)", redgreenblue's colorised inspect styles will display your colors in 24-bit splendour, right in the terminal.
 

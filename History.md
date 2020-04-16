@@ -44,6 +44,8 @@
 
 ## 0.9.0 (2 March 2020)
 
+[GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.9.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.9.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.9.0/RGB)
+
  * __General:__
 
     * Tweaked documentation.
@@ -69,6 +71,8 @@
     * Deprecated `#rgb565_binary` method. It will be removed in a future version.
 
 ## 0.8.0 (20 December 2019)
+
+[GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.8.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.8.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.8.0/RGB)
 
  * __General:__
 
@@ -124,6 +128,8 @@
 
 ## 0.7.0 (11 November 2019)
 
+[GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.7.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.7.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.7.0/RGB)
+
  * __General:__
 
     * Improved documentation.
@@ -162,6 +168,8 @@
         * `::pick` now optionally takes a default color for the color picker.
 
 ## 0.6.0 (24 July 2019)
+
+[GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.6.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.6.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.6.0/RGB)
 
  * First release as a Gem.
 
