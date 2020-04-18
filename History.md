@@ -1,5 +1,11 @@
 # History
 
+## Unreleased
+
+ * __Core RGB class:__
+
+    * Added `#snap!` and `#snap` methods.
+    
 ## 0.10.0 (16 April 2020)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.10.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.10.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.10.0/RGB)

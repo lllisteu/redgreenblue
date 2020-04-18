@@ -51,4 +51,14 @@ class Test_24bit < Test::Unit::TestCase
     end
   end
 
+  def test_snap
+    c = RGB.new
+    assert_equal [128.0/255, 128.0/255, 128.0/255], c.snap.values
+    assert_equal [127.5/255, 127.5/255, 127.5/255], c.values
+    c.snap!
+    assert_equal [128.0/255, 128.0/255, 128.0/255], c.values
+
+    assert_equal [1.0, 128.0/255, 0.0], RGB.new(254.5/255, 1.0/2, 0.4/255).snap.values
+  end
+
 end

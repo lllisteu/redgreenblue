@@ -51,6 +51,17 @@ class RGB
     c
   end
 
+  # Sets the red, green, and blue values to those of the nearest 24-bit color.
+  def snap!
+    self.rgb = rgb
+    self
+  end
+
+  # Creates a new RGB object containing the nearest 24-bit color.
+  def snap
+    RGB.rgb rgb
+  end
+
   # Calls the given block for each 24-bit RGB color (from black to white), passing the color as an RGB object.
   #
   # Returns the number of iterations.
