@@ -4,6 +4,8 @@
 
  * __Core RGB class:__
 
+    * Added `#gpl` method.
+    
     * Added `#snap!` and `#snap` methods.
     
 ## 0.10.0 (16 April 2020)

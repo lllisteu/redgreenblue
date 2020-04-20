@@ -25,6 +25,7 @@ require 'redgreenblue/bgr24bit'
 require 'redgreenblue/gif'
 require 'redgreenblue/terminal'
 require 'redgreenblue/web'
+require 'redgreenblue/gpl'
 
 require 'redgreenblue/mix'
 require 'redgreenblue/misc'
