@@ -14,6 +14,8 @@ require 'redgreenblue/hsl'
 require 'redgreenblue/hsv'
 require 'redgreenblue/hsb'
 
+require 'redgreenblue/ostwald'
+
 require 'redgreenblue/gamma'
 require 'redgreenblue/cie'
 

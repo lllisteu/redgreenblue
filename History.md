@@ -4,6 +4,8 @@
 
  * __Core RGB class:__
 
+    * Added `#ostwald_color` method.
+    
     * Added `#gpl` method.
     
     * Added `#snap!` and `#snap` methods.
