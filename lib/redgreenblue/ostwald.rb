@@ -6,7 +6,8 @@ class RGB
   # The resulting color contains no white or black,
   # i.e. it has at least one RGB component set to 0, and at least one set to maximum.
   #
-  # This is identical (barring very small rounding errors) to setting HSL-saturation to 1, and -lightness to 0.5
+  # This is identical (barring very small rounding errors)
+  # to setting HSL-saturation to 1, and -lightness to 0.5
   #
   # Based on:
   # - Color for the Sciences, pp. 575–591
@@ -20,6 +21,21 @@ class RGB
     else
       RGB.new( values.map { |v| ( ( v - white_portion ) / color_portion ).round(6) } )
     end
+  end
+
+  # Returns the portions of Ostwald full-color, white, and black, which constitute this color.
+  #
+  # The sum of these three numbers equals 1.
+  #
+  # Based on:
+  # - Color for the Sciences, pp. 575–591
+  # - https://lirias.kuleuven.be/retrieve/306124 (PDF)
+  def ostwald_cwk
+    [
+      color_portion = values.max - values.min,
+      white_portion = values.min,
+      1 - color_portion - white_portion
+    ]
   end
 
 end
