@@ -17,6 +17,14 @@ class Test_misc < Test::Unit::TestCase
     assert_equal color.hex   , color.invert!.invert!.hex
   end
 
+  def test_achromatic
+    assert_true RGB.white.achromatic?
+    assert_true RGB.grey.achromatic?
+    assert_true RGB.black.achromatic?
+
+    assert_false RGB.red.achromatic?
+  end
+
   def test_permutation
     assert_equal 1, RGB.hex('aaa').permutation.size
     assert_equal 3, RGB.hex('abb').permutation.size

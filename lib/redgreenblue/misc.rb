@@ -11,6 +11,12 @@ class RGB
     dup.invert!
   end
 
+  # Returns true when this is an achromatic color: red, green, and blue have equal values.
+  # Otherwise false.
+  def achromatic?
+    values.min == values.max
+  end
+
   # Returns an array of RGB objects for all possible ways in which the red, green, and blue values of this object can be exchanged.
   #
   # Example: RGB.red.permutation returns [ RGB.red, RGB.green, RGB.blue ].
