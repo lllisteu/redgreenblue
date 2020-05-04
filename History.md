@@ -5,11 +5,15 @@
  * __Core RGB class:__
 
     * Added `#ostwald_color` method.
+
+    * Added `#ostwald_cwk` method.
+
+    * Added `#achromatic?` method.
     
     * Added `#gpl` method.
-    
+
     * Added `#snap!` and `#snap` methods.
-    
+
 ## 0.10.0 (16 April 2020)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.10.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.10.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.10.0/RGB)
@@ -41,7 +45,7 @@
 
         * Added `#hsv=` method and `#hsb=` alias.
 
-        * Added `#hsv_h=`, `#hsv_s=`, and `#hsv_v=` methods, 
+        * Added `#hsv_h=`, `#hsv_s=`, and `#hsv_v=` methods,
             and `#hsb_h=`, `#hsb_s=`, and `#hsb_b=` aliases.
 
         * Added `hsv_rotate!` method and  `hsb_rotate!` alias.
@@ -69,13 +73,13 @@
     * Added `#steps` method.
 
     * Added `#to_i` method.
-    
+
     * Added `::at` factory method.
 
     * Added `::assemble` factory method.
-    
+
     * Added `::yellow`, `::cyan`, and `::magenta` factory methods.
-    
+
     * Added colorised `'short'` inspect style.
 
     * Added `::version` method.
@@ -129,7 +133,7 @@
     * Added `::each_24bit_color` iterator.
 
     * `::hex` and `#hex=` methods now raise an `ArgumentError` when fed an invalid hexadecimal string.
-    
+
     * Added `::hex_to_rgb` method.
 
  * __Platform specific:__
