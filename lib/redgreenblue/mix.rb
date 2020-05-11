@@ -16,9 +16,13 @@ class RGB
     mix!(RGB.white, portion)
   end
 
-  # Creates a new RGB object by mixing this object's color with a portion of white.
-  def whiten(portion=0.5)
-    mix(RGB.white, portion)
+  # Creates one or more new RGB objects by mixing this object's color with a portion of white.
+  def whiten(portion=0.5, *portions)
+    if (portion.class != Array) and portions.none?
+      mix(RGB.white, portion)
+    else
+      ( [portion].flatten + portions ).map { |p| mix(RGB.white, p) }
+    end
   end
 
   # Changes the object's color by mixing it with a portion of black.
@@ -26,9 +30,13 @@ class RGB
     mix!(RGB.black, portion)
   end
 
-  # Creates a new RGB object by mixing this object's color with a portion of black.
-  def blacken(portion=0.5)
-    mix(RGB.black, portion)
+  # Creates one or more new RGB objects by mixing this object's color with a portion of black.
+  def blacken(portion=0.5, *portions)
+    if (portion.class != Array) and portions.none?
+      mix(RGB.black, portion)
+    else
+      ( [portion].flatten + portions ).map { |p| mix(RGB.black, p) }
+    end
   end
 
   # Returns a set of colors between this color and another. That other color is included.
