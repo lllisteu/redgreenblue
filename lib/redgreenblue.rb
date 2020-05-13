@@ -1,36 +1,26 @@
 class RGB
 end
 
-require 'redgreenblue/version'
+%w(
 
-require 'redgreenblue/base'
+  version
 
-require 'redgreenblue/24bit'
-require 'redgreenblue/48bit'
-require 'redgreenblue/hex'
-require 'redgreenblue/int'
+  base
 
-require 'redgreenblue/hsl'
-require 'redgreenblue/hsv'
-require 'redgreenblue/hsb'
+  24bit 48bit hex int
 
-require 'redgreenblue/ostwald'
+  hsl hsv hsb
 
-require 'redgreenblue/gamma'
-require 'redgreenblue/cie'
+  ostwald
 
-require 'redgreenblue/inspect'
-require 'redgreenblue/lazy'
+  gamma cie
 
-require 'redgreenblue/rgb565'
-require 'redgreenblue/bgr24bit'
-require 'redgreenblue/gif'
-require 'redgreenblue/terminal'
-require 'redgreenblue/web'
-require 'redgreenblue/gpl'
+  inspect lazy
 
-require 'redgreenblue/mix'
-require 'redgreenblue/misc'
-require 'redgreenblue/random'
+  rgb565 bgr24bit gif terminal web gpl
 
-require 'redgreenblue/os'
+  mix misc random
+
+  os
+
+).each { |m| require "redgreenblue/#{m}" }
