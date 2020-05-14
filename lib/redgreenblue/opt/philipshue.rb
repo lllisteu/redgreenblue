@@ -9,10 +9,11 @@ require 'redgreenblue'
 
 class RGB
 
-  # Returns the arguments required by the Philips Hue API to set a light to this RGB object's hue, saturation and brightness (HSB).
-  #
-  # When formatted as JSON, this hash can be used directly to set a light's state.
+  # Returns a hash with the arguments required by the Philips Hue API
+  # to set a light to this RGB object's hue, saturation and brightness (HSB).
   # Only available when optional support for Philips Hue lights is loaded (require 'redgreenblue/opt/philipshue').
+  #
+  # Formatted as JSON, this hash can be sent to a bridge to set a light's state.
   def to_philips_hue_api_hsb_arguments(black_off=true)
     my_hsb = hsb
 
