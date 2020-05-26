@@ -27,6 +27,8 @@ class RGB
   #
   # The sum of these three numbers equals 1.
   #
+  # #cwk is an alias for #ostwald_cwk.
+  #
   # Based on:
   # - Color for the Sciences, pp. 575–591
   # - https://lirias.kuleuven.be/retrieve/306124 (PDF)
@@ -37,5 +39,7 @@ class RGB
       1 - color_portion - white_portion
     ]
   end
+
+  alias cwk ostwald_cwk
 
 end

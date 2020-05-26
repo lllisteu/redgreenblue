@@ -6,7 +6,7 @@
 
     * Added `#ostwald_color` method.
 
-    * Added `#ostwald_cwk` method.
+    * Added `#ostwald_cwk` method and `#cwk` alias.
 
     * Added `#achromatic?` method.
     

@@ -4,7 +4,7 @@ require 'redgreenblue'
 
 class Test_ostwald < Test::Unit::TestCase
 
-  def test_color
+  def test_get_color
     assert_equal RGB.red, RGB.red.whiten.ostwald_color
     assert_equal RGB.red, RGB.red.blacken.ostwald_color
     assert_equal RGB.new(1, 0, 0.5), RGB.new(1, 0.6, 0.8).ostwald_color
@@ -20,6 +20,8 @@ class Test_ostwald < Test::Unit::TestCase
     assert_equal [0, 1  , 0  ], RGB.white.ostwald_cwk
     assert_equal [0, 0.5, 0.5], RGB.grey.ostwald_cwk
     assert_equal [0, 0  , 1  ], RGB.black.ostwald_cwk
+
+    assert_equal RGB.cyan.cwk , RGB.cyan.ostwald_cwk
   end
 
   # From: Color for the Sciences, pp. 575–576
