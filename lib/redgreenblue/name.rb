@@ -2,7 +2,7 @@ class RGB
 
   # Returns the name.
   def name
-    @name ||= nil
+    defined?(@name) ? @name : nil
   end
 
   # Sets the name (a string or nil).
