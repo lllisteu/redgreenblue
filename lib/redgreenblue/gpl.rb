@@ -22,12 +22,9 @@ class RGB
   # Instance methods                                                     #
   ########################################################################
 
-  # Returns the color in the format used in .gpl files (Gimp color palettes), including its name (if present).
-  #
-  # You can optionally supply a name as argument.
-  def gpl(gpl_name=name)
-    ( "%3d %3d %3d" % rgb ) +
-    ( gpl_name ? "\t#{gpl_name}" : '' )
+  # Returns the color in the format used in .gpl files (Gimp color palettes). A name for the color is optional.
+  def gpl(name=nil)
+    ( "%3d %3d %3d" % rgb ) + ( name ? "\t#{name}" : '' )
   end
 
 end

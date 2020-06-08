@@ -15,7 +15,7 @@ end
 
   gamma cie
 
-  inspect lazy name
+  inspect lazy
 
   rgb565 bgr24bit gif terminal web gpl
 
