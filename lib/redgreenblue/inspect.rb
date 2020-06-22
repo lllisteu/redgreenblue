@@ -38,7 +38,15 @@ class RGB
 
   # Returns the base inspect style, dependent on the COLORTERM environment variable.
   def self.base_style
-    ENV['COLORTERM'] == 'truecolor' ? 'simple' : 'default'
+    if styles.include? ENV['REDGREENBLUE_STYLE']
+      ENV['REDGREENBLUE_STYLE']
+    else
+      if ENV['COLORTERM'] == 'truecolor'
+        'simple'
+      else
+        'default'
+      end
+    end
   end
 
   # Returns the current inspect style.
