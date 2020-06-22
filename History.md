@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+ * __General:__
+
+    * Polished documentation.
+
  * __Core RGB class:__
 
     * Added `#ostwald_color` method.
@@ -9,7 +13,7 @@
     * Added `#ostwald_cwk` method and `#cwk` alias.
 
     * Added `#achromatic?` method.
-    
+
     * Added `#gpl` method.
 
     * Added `#snap!` and `#snap` methods.
