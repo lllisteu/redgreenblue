@@ -1,6 +1,8 @@
 # History
 
-## Unreleased
+## 0.11.0 (23 June 2020)
+
+[GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.11.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.11.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.11.0/RGB)
 
  * __General:__
 
