@@ -20,6 +20,8 @@
 
     * `#whiten` and `#blacken` now accept more than one argument, e.g. `RGB.red.whiten(0.2, 0.5, 0.8)` will return three RGB objects.
 
+    * If a `REDGREENBLUE_STYLE` environment variable is set, redgreenblue will use it to set the inspect style.
+
 ## 0.10.0 (16 April 2020)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.10.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.10.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.10.0/RGB)
