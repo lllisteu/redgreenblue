@@ -103,6 +103,7 @@ pink == rose
 * _Color Ordered_, by Rolf Kuehni and Andreas Schwarz (2008), ISBN 978-0-19-518968-1
 * _Psychology_, by Henry Gleitman, James Gross, Daniel Reisberg (2010), ISBN 978-0-393-93250-8
 * _Interaction of Color_, by Josef Albers (1963), ISBN 978-0-300-17935-4
+* _配色事典 – A Dictionary of Color Combinations_, by Sanzo Wada (2010), ISBN 978-4-86152-247-5
 
 ## Credits
 
