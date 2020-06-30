@@ -8,7 +8,7 @@ class RGB
   #
   # Currently always 'sRGB'.
   def color_space
-    @color_space ||= 'sRGB'
+    'sRGB'
   end
 
   # Returns the red component as a value between 0 and 1.

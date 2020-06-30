@@ -1,5 +1,11 @@
 # History
 
+## Unreleased
+
+ * __Core RGB class:__
+
+    * Fixed a bug where calling `#color_space`, `#linear_values`, or CIE- methods on a frozen RGB object might raise an exception.
+
 ## 0.11.0 (23 June 2020)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.11.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.11.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.11.0/RGB)
