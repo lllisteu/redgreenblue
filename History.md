@@ -4,6 +4,8 @@
 
  * __Core RGB class:__
 
+    * Improved `#cie_xyz` and `#cie_xyy` methods to produce results with a precision of 8 decimal places (formerly 6).
+
     * Fixed a bug where calling `#color_space`, `#linear_values`, or CIE- methods on a frozen RGB object might raise an exception.
 
 ## 0.11.0 (23 June 2020)
