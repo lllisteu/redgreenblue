@@ -13,7 +13,9 @@ end
 
   ostwald
 
-  gamma cie
+  gamma
+
+  cie cie_1976
 
   inspect lazy
 
