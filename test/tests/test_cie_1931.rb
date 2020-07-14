@@ -2,7 +2,7 @@ require 'test/unit'
 
 require 'redgreenblue'
 
-class Test_cie < Test::Unit::TestCase
+class Test_cie_1931 < Test::Unit::TestCase
 
   # Test XYZ values from:
   # - http://www.brucelindbloom.com/ColorCalculator.html

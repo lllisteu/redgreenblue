@@ -15,7 +15,7 @@ end
 
   gamma
 
-  cie cie_1976
+  cie_1931 cie_1976
 
   inspect lazy
 
