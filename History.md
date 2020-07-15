@@ -6,9 +6,13 @@
 
     * Added `#cie_lab` method and `#lab` alias.
 
+    * Added `#cie_luv` method and `#luv` alias.
+
+    * Added `#delta_e_cie_1976` method and `#d76` alias.
+
     * Improved `#cie_xyz` and `#cie_xyy` methods to produce results with a precision of 8 decimal places (formerly 6).
 
-    * Fixed a bug where calling `#color_space`, `#linear_values`, or any of the `#cie_` methods on a frozen RGB object might raise an exception.
+    * Fixed a bug where calling `#color_space`, `#linear_values`, or any of the `#cie` methods on a frozen RGB object might raise an exception.
 
 ## 0.11.0 (23 June 2020)
 
