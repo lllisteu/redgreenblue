@@ -14,6 +14,20 @@ class RGB
 
   alias luv cie_luv
 
+  # Returns the object's color distance from another RGB object, according to the CIE 1976 delta E formula.
+  #
+  # Based on:
+  # - http://www.brucelindbloom.com/Eqn_DeltaE_CIE76.html
+  # - https://en.wikipedia.org/wiki/Color_difference
+  def delta_e_cie_1976(another)
+    l , a , b  =         cie_lab(round: false)
+    l2, a2, b2 = another.cie_lab(round: false)
+
+    Math.sqrt( (l - l2) ** 2 + (a - a2) ** 2 + (b - b2) ** 2 ).round(8)
+  end
+
+  alias d76 delta_e_cie_1976
+
   private
 
   # Returns either CIE 1976 L*a*b* (CIELAB) or CIE 1976 L*u*v* (CIELUV) values for the RGB object.

@@ -34,9 +34,20 @@ class Test_cie_1976 < Test::Unit::TestCase
     assert_equal [ 100          ,   0          ,    0           ], RGB.new( 1  , 1  , 1   ).cie_luv
   end
 
+  def test_delta_e_cie_1976
+    assert_equal 0, RGB.black.delta_e_cie_1976(RGB.black)
+    assert_equal 0, RGB.green.delta_e_cie_1976(RGB.green)
+
+    # Test values calculated with:
+    # - http://www.brucelindbloom.com/ColorDifferenceCalc.html
+    assert_equal 176.3140_3488, RGB.new(1,0,0).delta_e_cie_1976(RGB.new(0,0,1))
+  end
+
   def test_aliases
     assert_equal RGB.white.cie_lab, RGB.white.lab
     assert_equal RGB.white.cie_luv, RGB.white.luv
+
+    assert_equal RGB.white.delta_e_cie_1976(RGB.black), RGB.white.d76(RGB.black)
   end
 
 end
