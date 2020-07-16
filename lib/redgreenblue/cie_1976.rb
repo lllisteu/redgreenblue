@@ -14,6 +14,20 @@ class RGB
 
   alias luv cie_luv
 
+  # Returns CIE 1976 LCHab values for the RGB object, derived from L*a*b* (CIELAB).
+  #
+  # When C is 0, H is nil.
+  def cie_lch_ab
+    cie_lch_ab_uv(type: :lab)
+  end
+
+  # Returns CIE 1976 LCHuv values for the RGB object, derived from L*u*v* (CIELUV).
+  #
+  # When C is 0, H is nil.
+  def cie_lch_uv
+    cie_lch_ab_uv(type: :luv)
+  end
+
   # Returns the object's color distance from another RGB object, according to the CIE 1976 delta E formula.
   #
   # Based on:
@@ -66,6 +80,26 @@ class RGB
         200 * (f[1] - f[2])
       ]
     end.map { |v| v.nan? ? 0.0 : ( round ? v.round(8) : v ) }
+  end
+
+  # Returns either CIE 1976 LCHab or CIE 1976 LCHuv values for the RGB object.
+  #
+  # Based on:
+  # - http://www.brucelindbloom.com/Eqn_Lab_to_LCH.html
+  # - http://www.brucelindbloom.com/Eqn_Luv_to_LCH.html
+  # - https://en.wikipedia.org/wiki/CIELAB_color_space
+  def cie_lch_ab_uv(type: :lab)
+    if type == :luv
+      l, v1, v2 = cie_luv(round: false)
+    else
+      l, v1, v2 = cie_lab(round: false)
+    end
+
+    [
+      l.round(8),
+      c = ( ( v1 ** 2 + v2 ** 2) ** ( 1.0 / 2 ) ).round(8),
+      c == 0 ? nil : ( Math.atan2(v2, v1) * 180.0 / Math::PI ).modulo(360).round(8)
+    ]
   end
 
 end

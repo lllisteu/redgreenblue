@@ -34,6 +34,36 @@ class Test_cie_1976 < Test::Unit::TestCase
     assert_equal [ 100          ,   0          ,    0           ], RGB.new( 1  , 1  , 1   ).cie_luv
   end
 
+  # Test CIE 1976 LCHab values calculated with:
+  # - http://www.brucelindbloom.com/ColorCalculator.html
+  def test_lch_ab
+    assert_equal [  53.2407_8887, 104.5517_8896,  39.9989_9624 ], RGB.new( 1  , 0  , 0   ).cie_lch_ab
+    assert_equal [  97.1392_6343,  96.9053_5984, 102.8512_3438 ], RGB.new( 1  , 1  , 0   ).cie_lch_ab
+    assert_equal [  87.7347_2019, 119.7758_6521, 136.0159_5610 ], RGB.new( 0  , 1  , 0   ).cie_lch_ab
+    assert_equal [  91.1132_1748,  50.1208_6286, 196.3761_6035 ], RGB.new( 0  , 1  , 1   ).cie_lch_ab
+    assert_equal [  32.2970_0944, 133.8076_1432, 306.2849_3694 ], RGB.new( 0  , 0  , 1   ).cie_lch_ab
+    assert_equal [  60.3242_0719, 115.5407_0109, 328.2349_6876 ], RGB.new( 1  , 0  , 1   ).cie_lch_ab
+
+    assert_equal [   0          ,   0          , nil           ], RGB.new( 0  , 0  , 0   ).cie_lch_ab
+    assert_equal [  53.3889_6474,   0          , nil           ], RGB.new( 0.5, 0.5, 0.5 ).cie_lch_ab
+    assert_equal [ 100          ,   0          , nil           ], RGB.new( 1  , 1  , 1   ).cie_lch_ab
+  end
+
+  # Test CIE 1976 LCHuv values calculated with:
+  # - http://www.brucelindbloom.com/ColorCalculator.html
+  def test_lch_uv
+    assert_equal [  53.2407_8887, 179.0414_2709,  12.1739_7852 ], RGB.new( 1  , 0  , 0   ).cie_lch_uv
+    assert_equal [  97.1392_6343, 107.0642_7307,  85.8727_3352 ], RGB.new( 1  , 1  , 0   ).cie_lch_uv
+    assert_equal [  87.7347_2019, 135.7804_3343, 127.7235_5233 ], RGB.new( 0  , 1  , 0   ).cie_lch_uv
+    assert_equal [  91.1132_1748,  72.0987_1529, 192.1739_7852 ], RGB.new( 0  , 1  , 1   ).cie_lch_uv
+    assert_equal [  32.2970_0944, 130.6812_4733, 265.8727_3352 ], RGB.new( 0  , 0  , 1   ).cie_lch_uv
+    assert_equal [  60.3242_0719, 137.4047_8582, 307.7235_5233 ], RGB.new( 1  , 0  , 1   ).cie_lch_uv
+
+    assert_equal [   0          ,   0          , nil           ], RGB.new( 0  , 0  , 0   ).cie_lch_uv
+    assert_equal [  53.3889_6474,   0          , nil           ], RGB.new( 0.5, 0.5, 0.5 ).cie_lch_uv
+    assert_equal [ 100          ,   0          , nil           ], RGB.new( 1  , 1  , 1   ).cie_lch_uv
+  end
+
   def test_delta_e_cie_1976
     assert_equal 0, RGB.black.delta_e_cie_1976(RGB.black)
     assert_equal 0, RGB.green.delta_e_cie_1976(RGB.green)
