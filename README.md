@@ -107,7 +107,9 @@ pink == rose
 
 ## Credits
 
-Apart from the resources listed above, some discussions and answers on [Stack Overflow](https://stackoverflow.com) and [PerlMonks](https://www.perlmonks.org) were very helpful, as were some articles on [Wikipedia](https://en.wikipedia.org/). These are credited where applicable in the source code, often with a link.
+Apart from the resources listed above, some discussions and answers on [Stack Overflow](https://stackoverflow.com) and [PerlMonks](https://www.perlmonks.org) were very helpful, as were some articles on [Wikipedia](https://en.wikipedia.org/). Many helpful sources of information are credited where applicable in the source code, often with a link.
+
+Gamma- and CIE-processing in redgreenblue leans heavily on work by [Bruce Lindbloom](http://www.brucelindbloom.com/).
 
 ## License
 
