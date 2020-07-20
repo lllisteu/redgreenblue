@@ -3,11 +3,11 @@ class RGB
   private
 
   def _inspect_default(prefix='RGB')
-    "#{prefix} ##{hex} (red=%1.5f green=%1.5f blue=%1.5f)" % [red, green, blue]
+    "#{prefix} #{_inspect_hex} (red=%1.5f green=%1.5f blue=%1.5f)" % [red, green, blue]
   end
 
   def _inspect_hex
-    "##{hex}"
+    (self == snap ? '#' : '~') + hex
   end
 
   def _inspect_swatch
@@ -15,7 +15,7 @@ class RGB
   end
 
   def _inspect_short
-    _inspect_swatch + " ##{hex}"
+    "#{_inspect_swatch} #{_inspect_hex}"
   end
 
   def _inspect_simple

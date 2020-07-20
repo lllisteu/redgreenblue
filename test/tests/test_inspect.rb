@@ -18,4 +18,12 @@ class Test_inspect < Test::Unit::TestCase
     RGB.style = old_style
   end
 
+  def test_hex_approximate
+    old_style = RGB.style
+    RGB.style = 'hex'
+    assert_equal '#000000', RGB.new(0    ,0,0).inspect
+    assert_equal '~000000', RGB.new(0.001,0,0).inspect
+    RGB.style = old_style
+  end
+
 end
