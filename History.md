@@ -1,3 +1,5 @@
+[← README](README.md)
+
 # History
 
 ## Unreleased
@@ -8,7 +10,13 @@
 
     * Added `#cie_luv` method and `#luv` alias.
 
+    * Added `#cie_lch_ab` method.
+
+    * Added `#cie_lch_uv` method.
+
     * Added `#delta_e_cie_1976` method and `#d76` alias.
+
+    * `#inspect` now prefixes hexadecimal notation with `~` (tilde) when the exact color can not be represented within 24-bits, and hexadecimal notation represents the nearest 24-bit color instead.
 
     * Improved `#cie_xyz` and `#cie_xyy` methods to produce results with a precision of 8 decimal places (formerly 6).
 
