@@ -26,7 +26,7 @@ redgreenblue has no dependencies outside the Ruby Standard Library, and works wi
 
 ## Quick start
 
-The core of redgreenblue is the __RGB class__. Each instance of the RGB class holds a color. Internally, these instances, RGB objects, store the amounts of red, green and blue which make up the color.
+The core of redgreenblue is the __RGB class__. Each instance of the RGB class holds a color. Internally, these instances, RGB objects, store the amounts of red, green, and blue which make up the color.
 
 Let's try:
 
@@ -109,7 +109,7 @@ pink == rose
 
 Apart from the resources listed above, some discussions and answers on [Stack Overflow](https://stackoverflow.com) and [PerlMonks](https://www.perlmonks.org) were very helpful, as were some articles on [Wikipedia](https://en.wikipedia.org/). Many helpful sources of information are credited where applicable in the source code, often with a link.
 
-Gamma- and CIE-processing in redgreenblue leans heavily on work by [Bruce Lindbloom](http://www.brucelindbloom.com/).
+Gamma- and CIE-processing in redgreenblue lean heavily on work by [Bruce Lindbloom](http://www.brucelindbloom.com/).
 
 ## License
 
