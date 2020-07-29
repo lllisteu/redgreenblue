@@ -8,9 +8,9 @@
 
     * Added `#cie_lab` method and `#lab` alias.
 
-    * Added `#cie_luv` method and `#luv` alias.
-
     * Added `#cie_lch_ab` method.
+
+    * Added `#cie_luv` method and `#luv` alias.
 
     * Added `#cie_lch_uv` method.
 
