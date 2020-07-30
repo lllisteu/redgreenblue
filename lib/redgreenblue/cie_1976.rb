@@ -7,19 +7,19 @@ class RGB
 
   alias lab cie_lab
 
-  # Returns CIE 1976 L*u*v* (CIELUV) values for the RGB object.
-  def cie_luv(round: true)
-    cie_lab_luv(round: round, type: :luv)
-  end
-
-  alias luv cie_luv
-
   # Returns CIE 1976 LCHab values for the RGB object, derived from L*a*b* (CIELAB).
   #
   # When C is 0, H is nil.
   def cie_lch_ab
     cie_lch_ab_uv(type: :lab)
   end
+
+  # Returns CIE 1976 L*u*v* (CIELUV) values for the RGB object.
+  def cie_luv(round: true)
+    cie_lab_luv(round: round, type: :luv)
+  end
+
+  alias luv cie_luv
 
   # Returns CIE 1976 LCHuv values for the RGB object, derived from L*u*v* (CIELUV).
   #
