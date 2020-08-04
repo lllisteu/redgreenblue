@@ -17,6 +17,8 @@ end
 
   cie_1931 cie_1976
 
+  name
+
   inspect lazy
 
   rgb565 bgr24bit gif terminal web gpl
