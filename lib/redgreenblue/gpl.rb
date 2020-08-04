@@ -6,6 +6,16 @@ class RGB
 
   class << self
 
+    def gpl(line)
+      if line.match( /^\s*(?<r>\d{1,3})\s+(?<g>\d{1,3})\s+(?<b>\d{1,3})(\s+(?<name>.*))?/ )
+        color = RGB.rgb $~[:r].to_i, $~[:g].to_i, $~[:b].to_i
+        color.name = $~[:name] if $~[:name]
+        color
+      else
+        nil
+      end
+    end
+
     private
 
     # Reverse-engineered from:
