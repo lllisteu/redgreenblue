@@ -3,7 +3,7 @@ class RGB
   private
 
   def _inspect_default(prefix='RGB')
-    "#{prefix} #{_inspect_hex} (red=%1.5f green=%1.5f blue=%1.5f)" % [red, green, blue]
+    "#{prefix} #{_inspect_hex} (red=%1.5f green=%1.5f blue=%1.5f) %s" % [red, green, blue, name]
   end
 
   def _inspect_hex
