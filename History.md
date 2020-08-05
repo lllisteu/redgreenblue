@@ -6,15 +6,21 @@
 
  * __Core RGB class:__
 
-    * Added `#cie_lab` method and `#lab` alias.
+    * Added `#view` method and `#v` alias.
 
-    * Added `#cie_lch_ab` method.
+        * Added `view` inspect style.
 
-    * Added `#cie_luv` method and `#luv` alias.
+    * CIE 1976 processing:
 
-    * Added `#cie_lch_uv` method.
+        * Added `#cie_lab` method and `#lab` alias.
 
-    * Added `#delta_e_cie_1976` method and `#d76` alias.
+        * Added `#cie_lch_ab` method.
+
+        * Added `#cie_luv` method and `#luv` alias.
+
+        * Added `#cie_lch_uv` method.
+
+        * Added `#delta_e_cie_1976` method and `#d76` alias.
 
     * `#inspect` now prefixes hexadecimal notation with `~` (tilde) when the exact color can not be represented within 24-bits, and hexadecimal notation represents the nearest 24-bit color instead.
 
