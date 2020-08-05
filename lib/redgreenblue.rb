@@ -17,7 +17,7 @@ end
 
   cie_1931 cie_1976
 
-  inspect lazy
+  inspect view lazy
 
   rgb565 bgr24bit gif terminal web gpl
 
