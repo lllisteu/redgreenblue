@@ -6,13 +6,24 @@ class RGB
 
   class << self
 
-    def gpl(line)
-      if line.match( /^\s*(?<r>\d{1,3})\s+(?<g>\d{1,3})\s+(?<b>\d{1,3})(\s+(?<name>.*))?/ )
-        color = RGB.rgb $~[:r].to_i, $~[:g].to_i, $~[:b].to_i
-        color.name = $~[:name] if $~[:name]
-        color
+    # Parses a gpl (Gimp color palette) source string and returns an array of RGB objects.
+    #
+    # Options:
+    # - compact: If set to false, returns nil for each line that can not be parsed to an RGB color. Defaults to true.
+    def parse_gpl(source, compact: true)
+      if source.respond_to? :each_line
+        list = source.each_line.map do |line|
+          if line.match( /^\s*(?<r>\d{1,3})\s+(?<g>\d{1,3})\s+(?<b>\d{1,3})(\s+(?<name>.*))?/ )
+            color = RGB.rgb $~[:r].to_i, $~[:g].to_i, $~[:b].to_i
+            color.name = $~[:name] if $~[:name]
+            color
+          else
+            nil
+          end
+        end
+        compact ? list.compact : list
       else
-        nil
+        raise ArgumentError, 'Not a valid source'
       end
     end
 
