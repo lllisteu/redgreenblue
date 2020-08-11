@@ -4,6 +4,32 @@ require 'redgreenblue'
 
 class Test_gpl < Test::Unit::TestCase
 
+  def _gpl_string
+    <<~TS
+      Gimp Palette
+      Name: CSS basic color keywords
+      Columns: 12
+      # 0 255 128
+
+      \tpink
+
+      0 0 0
+        0   0   0
+      255 255 255
+      255\t255\t255
+
+      255 153 204
+      255 153 204\t
+      255 153 204\tpink
+      255 153 204 pink
+      243 152 0\tオレンジ色
+      138 153 119\tBlassgrün
+
+      # numeric name
+        0 170   0\t2
+    TS
+  end
+
   def test_to_gpl
     assert_equal '  0   0   0', RGB.rgb(0, 0, 0).gpl
     assert_equal "138 153 119\tBlassgrün", RGB.rgb(138, 153, 119).gpl('Blassgrün')
@@ -22,32 +48,7 @@ class Test_gpl < Test::Unit::TestCase
     assert_equal "255 153 204\tpink", c.gpl('pink')
   end
 
-  def test_from_gpl
-
-    test_string = <<~TS
-    Gimp Palette
-    Name: CSS basic color keywords
-    Columns: 12
-    # 0 255 128
-
-    \tpink
-
-    0 0 0
-      0   0   0
-    255 255 255
-    255\t255\t255
-
-    255 153 204
-    255 153 204\t
-    255 153 204\tpink
-    255 153 204 pink
-    243 152 0\tオレンジ色
-    138 153 119\tBlassgrün
-
-    # numeric name
-      0 170   0\t2
-    TS
-
+  def test_parse_gpl_values
     assert_equal [
       RGB.black,
       RGB.black,
@@ -60,8 +61,10 @@ class Test_gpl < Test::Unit::TestCase
       RGB.rgb(243, 152, 0),
       RGB.rgb(138, 153, 119),
       RGB.rgb(0, 170, 0)
-    ], RGB.parse_gpl(test_string)
+    ], RGB.parse_gpl(_gpl_string)
+  end
 
+  def test_parse_gpl_names
     assert_equal [
       nil,
       nil,
@@ -74,7 +77,7 @@ class Test_gpl < Test::Unit::TestCase
       'オレンジ色',
       'Blassgrün',
       '2'
-    ], RGB.parse_gpl(test_string).map(&:name)
+    ], RGB.parse_gpl(_gpl_string).map(&:name)
   end
 
 end
