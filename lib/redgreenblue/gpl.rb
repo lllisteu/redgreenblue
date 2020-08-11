@@ -10,7 +10,7 @@ class RGB
     #
     # Options:
     # - compact: If set to false, returns nil for each line that can not be parsed to an RGB color. Defaults to true.
-    def parse_gpl(source, compact: true)
+    def parse_gpl(source, compact: true, freeze: false)
       if source.respond_to? :each_line
         list = source.each_line.map do |line|
           if line.match( /^\s*(?<r>\d{1,3})\s+(?<g>\d{1,3})\s+(?<b>\d{1,3})(\s+(?<name>.*))?/ )
@@ -21,7 +21,17 @@ class RGB
             nil
           end
         end
-        compact ? list.compact : list
+
+        if compact
+          list.compact!
+        end
+
+        if freeze
+          list.freeze
+          list.each &:freeze
+        end
+
+        list
       else
         raise ArgumentError, 'Not a valid source'
       end

@@ -86,4 +86,15 @@ class Test_gpl < Test::Unit::TestCase
     assert_equal 21, RGB.parse_gpl(_gpl_string, compact: false).size
   end
 
+  def test_parse_gpl_freeze
+    assert_false RGB.parse_gpl(_gpl_string).frozen?
+    assert_false RGB.parse_gpl(_gpl_string).first.frozen?
+
+    assert_false RGB.parse_gpl(_gpl_string, freeze: false).frozen?
+    assert_false RGB.parse_gpl(_gpl_string, freeze: false).first.frozen?
+
+    assert_true  RGB.parse_gpl(_gpl_string, freeze: true ).frozen?
+    assert_true  RGB.parse_gpl(_gpl_string, freeze: true ).first.frozen?
+  end
+
 end
