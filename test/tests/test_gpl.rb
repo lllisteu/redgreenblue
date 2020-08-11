@@ -80,4 +80,10 @@ class Test_gpl < Test::Unit::TestCase
     ], RGB.parse_gpl(_gpl_string).map(&:name)
   end
 
+  def test_parse_gpl_compact
+    assert_equal 11, RGB.parse_gpl(_gpl_string).size
+    assert_equal 11, RGB.parse_gpl(_gpl_string, compact: true ).size
+    assert_equal 21, RGB.parse_gpl(_gpl_string, compact: false).size
+  end
+
 end
