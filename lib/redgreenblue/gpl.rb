@@ -6,10 +6,11 @@ class RGB
 
   class << self
 
-    # Parses a gpl (Gimp color palette) source string and returns an array of RGB objects.
+    # Parses a gpl (Gimp color palette) source and returns an array of RGB objects.
     #
     # Options:
-    # - compact: If set to false, returns nil for each line that can not be parsed to an RGB color. Defaults to true.
+    # - compact: Defaults to true. If set to false, returns nil for each line that can not be parsed to an RGB color.
+    # - freeze: Defaults to false. If set to true, returns a frozen array of frozen objects.
     def parse_gpl(source, compact: true, freeze: false)
       if source.respond_to? :each_line
         list = source.each_line.map do |line|
