@@ -9,9 +9,17 @@ class RGB
     # Parses a gpl (Gimp color palette) source and returns an array of RGB objects.
     #
     # Options:
+    # - file: Path to a .gpl file to be read.
     # - compact: Defaults to true. If set to false, returns nil for each line that can not be parsed to an RGB color.
     # - freeze: Defaults to false. If set to true, returns a frozen array of frozen objects.
-    def parse_gpl(source, compact: true, freeze: false)
+    def parse_gpl(source=nil, file: nil, compact: true, freeze: false)
+
+      if ! source
+        if file
+          source = File.open file
+        end
+      end
+
       if source.respond_to? :each_line
         list = source.each_line.map do |line|
           if line.match( /^\s*(?<r>\d{1,3})\s+(?<g>\d{1,3})\s+(?<b>\d{1,3})(\s+(?<name>.*))?/ )
