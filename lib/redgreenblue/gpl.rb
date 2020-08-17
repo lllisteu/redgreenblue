@@ -6,6 +6,20 @@ class RGB
 
   class << self
 
+    # Creates a new RGB object from a line of gpl (Gimp color palette) input. Returns nil if not successful.
+    #
+    # @example
+    #  RGB.gpl "255 153 204 pink"
+    def gpl(line)
+      if line.chomp.match( /^\s*(?<r>\d{1,3})\s+(?<g>\d{1,3})\s+(?<b>\d{1,3})(\s+(?<name>.*))?/ )
+        color = RGB.rgb $~[:r].to_i, $~[:g].to_i, $~[:b].to_i
+        color.name = $~[:name] if $~[:name]
+        color
+      else
+        nil
+      end
+    end
+
     # Parses a gpl (Gimp color palette) source and returns an array of RGB objects.
     #
     # Options:
@@ -21,15 +35,7 @@ class RGB
       end
 
       if source.respond_to? :each_line
-        list = source.each_line.map do |line|
-          if line.match( /^\s*(?<r>\d{1,3})\s+(?<g>\d{1,3})\s+(?<b>\d{1,3})(\s+(?<name>.*))?/ )
-            color = RGB.rgb $~[:r].to_i, $~[:g].to_i, $~[:b].to_i
-            color.name = $~[:name] if $~[:name]
-            color
-          else
-            nil
-          end
-        end
+        list = source.each_line.map { |line| RGB.gpl(line) }
 
         if compact
           list.compact!

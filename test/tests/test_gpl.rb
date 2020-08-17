@@ -48,6 +48,38 @@ class Test_gpl < Test::Unit::TestCase
     assert_equal "255 153 204\tpink", c.gpl('pink')
   end
 
+  def test_from_gpl
+    assert_nil RGB.gpl "Gimp Palette"
+    assert_nil RGB.gpl "Name: CSS basic color keywords"
+    assert_nil RGB.gpl "Columns: 12"
+    assert_nil RGB.gpl "# 0 255 128"
+    assert_nil RGB.gpl ''
+    assert_nil RGB.gpl "\tpink"
+    assert_nil RGB.gpl "\n"
+    assert_nil RGB.gpl "\r"
+
+    assert_equal RGB.hex('f9c'), RGB.gpl("255 153 204")
+    assert_equal RGB.hex('f9c'), RGB.gpl("255 153 204\n")
+    assert_equal RGB.hex('f9c'), RGB.gpl("255 153 204\t")
+    assert_equal RGB.hex('f9c'), RGB.gpl("255 153 204\t\n")
+    assert_equal RGB.hex('f9c'), RGB.gpl("255 153 204\tpink")
+    assert_equal RGB.hex('f9c'), RGB.gpl("255 153 204\tpink\n")
+    assert_equal RGB.hex('f9c'), RGB.gpl("255\t153\t204\tpink\r\n")
+
+    assert_equal RGB.rgb(138, 153, 119), RGB.gpl("138 153 119\tBlassgrün")
+    assert_equal RGB.rgb(  0, 170,   0), RGB.gpl("  0 170   0\t2")
+
+    assert_nil RGB.gpl("255 153 204").name
+    assert_nil RGB.gpl("255 153 204\n").name
+    assert_nil RGB.gpl("255 153 204\t").name
+    assert_nil RGB.gpl("255 153 204\t\n").name
+
+    assert_equal 'pink', RGB.gpl("255 153 204\tpink").name
+    assert_equal 'pink', RGB.gpl("255 153 204\tpink\n").name
+    assert_equal 'pink', RGB.gpl("255\t153\t204\tpink\r\n").name
+    assert_equal 'オレンジ色', RGB.gpl("243 152 0\tオレンジ色").name
+  end
+
   def test_parse_gpl_values
     assert_equal [
       RGB.black,
