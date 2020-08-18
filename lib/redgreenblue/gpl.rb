@@ -24,13 +24,25 @@ class RGB
     #
     # Options:
     # - file: Path to a .gpl file to be read.
+    # - url: URL for a .gpl source to be read.
     # - compact: Defaults to true. If set to false, returns nil for each line that can not be parsed to an RGB color.
     # - freeze: Defaults to false. If set to true, returns a frozen array of frozen objects.
-    def parse_gpl(source=nil, file: nil, compact: true, freeze: false)
+    #
+    # @example String
+    #  RGB.parse_gpl "255 0 0\tred\n255 153 204\tpink\n"
+    # @example File
+    #  RGB.parse_gpl file: '/path/to/palette.gpl'
+    #  RGB.parse_gpl file: '/path/to/palette.gpl', compact: false
+    # @example URL
+    #  RGB.parse_gpl url: 'https://lospec.com/palette-list/yuko-tomita-time.gpl'
+    def parse_gpl(source=nil, file: nil, url: nil, compact: true, freeze: false)
 
       if ! source
         if file
           source = File.open file
+        elsif url
+          require 'open-uri'
+          source = URI.open url
         end
       end
 
