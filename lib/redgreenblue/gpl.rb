@@ -20,22 +20,22 @@ class RGB
       end
     end
 
-    # Parses a gpl (Gimp color palette) source and returns an array of RGB objects.
+    # Loads a gpl (Gimp color palette) source and returns an array of RGB objects.
     #
     # Options:
-    # - file: Path to a .gpl file to be read.
-    # - url: URL for a .gpl source to be read.
+    # - file: Path to a .gpl file to be loaded.
+    # - url: URL for a .gpl source to be loaded.
     # - compact: Defaults to true. If set to false, returns nil for each line that can not be parsed to an RGB color.
     # - freeze: Defaults to false. If set to true, returns a frozen array of frozen objects.
     #
     # @example String
-    #  RGB.parse_gpl "255 0 0\tred\n255 153 204\tpink\n"
+    #  RGB.load_gpl "255 0 0\tred\n255 153 204\tpink\n"
     # @example File
-    #  RGB.parse_gpl file: '/path/to/palette.gpl'
-    #  RGB.parse_gpl file: '/path/to/palette.gpl', compact: false
+    #  RGB.load_gpl file: '/path/to/palette.gpl'
+    #  RGB.load_gpl file: '/path/to/palette.gpl', compact: false
     # @example URL
-    #  RGB.parse_gpl url: 'https://lospec.com/palette-list/yuko-tomita-time.gpl'
-    def parse_gpl(source=nil, file: nil, url: nil, compact: true, freeze: false)
+    #  RGB.load_gpl url: 'https://lospec.com/palette-list/yuko-tomita-time.gpl'
+    def load_gpl(source=nil, file: nil, url: nil, compact: true, freeze: false)
 
       if ! source
         if file

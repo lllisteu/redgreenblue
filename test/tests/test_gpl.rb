@@ -80,7 +80,7 @@ class Test_gpl < Test::Unit::TestCase
     assert_equal 'オレンジ色', RGB.gpl("243 152 0\tオレンジ色").name
   end
 
-  def test_parse_gpl_values
+  def test_load_gpl_values
     assert_equal [
       RGB.black,
       RGB.black,
@@ -93,10 +93,10 @@ class Test_gpl < Test::Unit::TestCase
       RGB.rgb(243, 152, 0),
       RGB.rgb(138, 153, 119),
       RGB.rgb(0, 170, 0)
-    ], RGB.parse_gpl(_gpl_string)
+    ], RGB.load_gpl(_gpl_string)
   end
 
-  def test_parse_gpl_names
+  def test_load_gpl_names
     assert_equal [
       nil,
       nil,
@@ -109,24 +109,24 @@ class Test_gpl < Test::Unit::TestCase
       'オレンジ色',
       'Blassgrün',
       '2'
-    ], RGB.parse_gpl(_gpl_string).map(&:name)
+    ], RGB.load_gpl(_gpl_string).map(&:name)
   end
 
-  def test_parse_gpl_compact
-    assert_equal 11, RGB.parse_gpl(_gpl_string).size
-    assert_equal 11, RGB.parse_gpl(_gpl_string, compact: true ).size
-    assert_equal 21, RGB.parse_gpl(_gpl_string, compact: false).size
+  def test_load_gpl_compact
+    assert_equal 11, RGB.load_gpl(_gpl_string).size
+    assert_equal 11, RGB.load_gpl(_gpl_string, compact: true ).size
+    assert_equal 21, RGB.load_gpl(_gpl_string, compact: false).size
   end
 
-  def test_parse_gpl_freeze
-    assert_false RGB.parse_gpl(_gpl_string).frozen?
-    assert_false RGB.parse_gpl(_gpl_string).first.frozen?
+  def test_load_gpl_freeze
+    assert_false RGB.load_gpl(_gpl_string).frozen?
+    assert_false RGB.load_gpl(_gpl_string).first.frozen?
 
-    assert_false RGB.parse_gpl(_gpl_string, freeze: false).frozen?
-    assert_false RGB.parse_gpl(_gpl_string, freeze: false).first.frozen?
+    assert_false RGB.load_gpl(_gpl_string, freeze: false).frozen?
+    assert_false RGB.load_gpl(_gpl_string, freeze: false).first.frozen?
 
-    assert_true  RGB.parse_gpl(_gpl_string, freeze: true ).frozen?
-    assert_true  RGB.parse_gpl(_gpl_string, freeze: true ).first.frozen?
+    assert_true  RGB.load_gpl(_gpl_string, freeze: true ).frozen?
+    assert_true  RGB.load_gpl(_gpl_string, freeze: true ).first.frozen?
   end
 
 end
