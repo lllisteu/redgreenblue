@@ -9,7 +9,7 @@ class RGB
     # Creates a new RGB object from a line of gpl (Gimp color palette) input. Returns nil if not successful.
     #
     # @example
-    #  RGB.gpl "255 153 204 pink"
+    #  RGB.gpl "255 153 204\tpink"
     def gpl(line)
       if line.chomp.match( /^\s*(?<r>\d{1,3})\s+(?<g>\d{1,3})\s+(?<b>\d{1,3})(\s+(?<name>.*))?/ )
         color = RGB.rgb $~[:r].to_i, $~[:g].to_i, $~[:b].to_i
