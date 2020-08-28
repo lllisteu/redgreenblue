@@ -6,7 +6,7 @@
 
  * __Core RGB class:__
 
-    * Added `#view` method, `#v` alias, and `view` inspect style.
+    * Added `#view` method, `#v` alias, and `'view'` inspect style.
 
     * CIE 1976 processing:
 
@@ -24,7 +24,7 @@
 
         * Added `#name` and `#name=` methods.
 
-        * `default` and `simple` inspect styles include name.
+        * `'default'` and `'simple'` inspect styles include name.
 
         * `#gpl` method picks up name attribute.
 
