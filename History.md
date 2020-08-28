@@ -6,9 +6,7 @@
 
  * __Core RGB class:__
 
-    * Added `#view` method and `#v` alias.
-
-        * Added `view` inspect style.
+    * Added `#view` method, `#v` alias, and `view` inspect style.
 
     * CIE 1976 processing:
 
@@ -21,6 +19,24 @@
         * Added `#cie_lch_uv` method.
 
         * Added `#delta_e_cie_1976` method and `#d76` alias.
+
+    * RGB colors can now have a `name` attribute:
+
+        * Added `#name` and `#name=` methods.
+
+        * `default` and `simple` inspect styles include name.
+
+        * `#gpl` method picks up name attribute.
+
+    * Added 148 named CSS colors, accessible by color or by name:
+
+        * Added `::css` method.
+
+    * Added capability to create color objects from GIMP [.gpl palettes](https://docs.gimp.org/2.10/en/gimp-concepts-palettes.html):
+
+        * Added `::gpl` method.
+
+        * Added `::load_gpl` method.
 
     * `#inspect` now prefixes hexadecimal notation with `~` (tilde) when the exact color can not be represented within 24-bits, and hexadecimal notation represents the nearest 24-bit color instead.
 

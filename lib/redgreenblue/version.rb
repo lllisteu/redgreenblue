@@ -1,7 +1,7 @@
 class RGB
 
   # redgreenblue version.
-  VERSION = '0.11.5'
+  VERSION = '0.11.6'
 
   # Returns RGB::VERSION.
   def self.version
