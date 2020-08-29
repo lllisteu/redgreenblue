@@ -30,7 +30,7 @@ class RGB
     # @example Select by RGB color
     #  RGB.css RGB.hex('0ff')
     def css(selector=nil)
-      @@css ||= load_gpl file: ( File.dirname(__FILE__) + '/palettes/css.gpl' ), freeze: true
+      @@css ||= load_gpl file: ( File.join File.dirname(__FILE__), 'palettes', 'css.gpl' ), freeze: true
       case selector
         when NilClass
           @@css
