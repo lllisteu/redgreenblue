@@ -24,6 +24,8 @@
 
         * Added `#name` and `#name=` methods.
 
+        * Added colorised `'name'` inspect style.
+
         * `'default'` and `'simple'` inspect styles include name.
 
         * `#gpl` method picks up name attribute.

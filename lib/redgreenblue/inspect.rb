@@ -22,6 +22,10 @@ class RGB
     _inspect_default _inspect_swatch
   end
 
+  def _inspect_name
+    _inspect_swatch + ( name ? ' ' + name : '' )
+  end
+
   public
 
   # Returns a programmer-friendly representation of the object.
