@@ -30,11 +30,11 @@
 
         * `#gpl` method picks up name attribute.
 
-    * Added 148 named CSS colors, accessible by color or by name:
+    * Added 148 named [CSS colors](https://drafts.csswg.org/css-color/#named-colors), accessible by color or by name:
 
         * Added `::css` method.
 
-    * Added capability to create color objects from GIMP [.gpl palettes](https://docs.gimp.org/2.10/en/gimp-concepts-palettes.html):
+    * Added ability to create color objects from GIMP [.gpl palettes](https://docs.gimp.org/2.10/en/gimp-concepts-palettes.html):
 
         * Added `::gpl` method.
 
