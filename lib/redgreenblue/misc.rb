@@ -36,4 +36,17 @@ class RGB
     RGB.new(v[0].red, v[1].green, v[2].blue)
   end
 
+  # Returns the euclidean distance between this color and another color.
+  #
+  # When you imagine a color as a point in a 3-dimensional space,
+  # the dimensions being red, green, and blue,
+  # this is the distance between two colors.
+  def distance(another)
+    (
+      ( (another.red   - red  ) ** 2) +
+      ( (another.green - green) ** 2) +
+      ( (another.blue  - blue ) ** 2)
+    ) ** (1/2.0)
+  end
+
 end

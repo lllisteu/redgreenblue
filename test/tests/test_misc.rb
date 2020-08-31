@@ -43,4 +43,10 @@ class Test_misc < Test::Unit::TestCase
     assert_equal RGB.white, RGB.assemble(RGB.yellow, RGB.cyan, RGB.magenta)
   end
 
+  def test_distance
+    assert_equal 0.0, RGB.white.distance(RGB.white)
+    assert_equal 1.0, RGB.black.distance(RGB.red)
+    assert_equal 1.73205081, RGB.black.distance(RGB.white).round(8)
+  end
+
 end

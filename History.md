@@ -20,6 +20,8 @@
 
         * Added `#delta_e_cie_1976` method and `#d76` alias.
 
+    * Added `#distance` method.
+
     * RGB colors can now have a `name` attribute:
 
         * Added `#name` and `#name=` methods.
