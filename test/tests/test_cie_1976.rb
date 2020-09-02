@@ -77,7 +77,7 @@ class Test_cie_1976 < Test::Unit::TestCase
     assert_equal RGB.white.cie_lab, RGB.white.lab
     assert_equal RGB.white.cie_luv, RGB.white.luv
 
-    assert_equal RGB.white.delta_e_cie_1976(RGB.black), RGB.white.d76(RGB.black)
+    assert_equal RGB.white.delta_e_cie_1976(RGB.black), RGB.white.de76(RGB.black)
   end
 
 end

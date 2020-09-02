@@ -40,7 +40,7 @@ class RGB
     Math.sqrt( (l - l2) ** 2 + (a - a2) ** 2 + (b - b2) ** 2 ).round(8)
   end
 
-  alias d76 delta_e_cie_1976
+  alias de76 delta_e_cie_1976
 
   private
 

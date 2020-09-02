@@ -18,7 +18,7 @@
 
         * Added `#cie_lch_uv` method.
 
-        * Added `#delta_e_cie_1976` method and `#d76` alias.
+        * Added `#delta_e_cie_1976` method and `#de76` alias.
 
     * Added `#distance` method.
 
