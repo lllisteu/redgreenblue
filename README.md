@@ -4,15 +4,15 @@
 
 redgreenblue is a simple [Ruby](https://www.ruby-lang.org/) library for handling [RGB colors](https://en.wikipedia.org/wiki/RGB_color_model).
 
-It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, or hexadecimal notation, as well as [HSL, HSB, or HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (hue, saturation, and lightness, brightness, or value).
+It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, or hexadecimal notation, as well as [HSL, HSB, or HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (hue, saturation, and lightness, brightness, or value), and has 148 named CSS colors built-in.
 
 <img width="600" height="258" alt="IRB screenshot" src='docs/images/irb_screenshot.png'>
 
- redgreenblue also understands some more exotic formats, such as 16-bit RGB565 and 24-bit BGR, and it can output RGB colors as [CIE](https://en.wikipedia.org/wiki/CIE_1931_color_space) XYZ or xyY coordinates.
+ redgreenblue can output RGB colors as [CIE](https://en.wikipedia.org/wiki/CIE_1931_color_space) XYZ or xyY coordinates, L\*a\*b\*, L\*u\*v\*, and their cylindrical representations LCHab and LCHuv.
 
 If your terminal supports "[true color](https://gist.github.com/XVilka/8346728)", redgreenblue's colorised inspect styles will display your colors in 24-bit splendour, right in the terminal.
 
-redgreenblue can create 1-pixel GIF's from any color, and on a Mac it can interact with the system color picker.
+redgreenblue can create 1-pixel GIF's from any color and also understands some more exotic formats, such as 16-bit RGB565 and 24-bit BGR. On a Mac it can interact with the system color picker.
 
 ## Installing
 
