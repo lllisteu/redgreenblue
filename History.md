@@ -2,7 +2,9 @@
 
 # History
 
-## Unreleased
+## 0.12.0 (8 September 2020)
+
+[GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.12.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.12.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.12.0/RGB)
 
  * __Core RGB class:__
 
