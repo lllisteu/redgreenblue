@@ -98,6 +98,7 @@ pink == rose
 * [_Photoshop by the Numbers: Color Coding_](https://geraldbakker.nl/psnumbers/color-coding/index.html), by Gerald Bakker
 * _Das ABC der Farbe_, by Markus Wäger (2017), ISBN 978-3-8362-4501-2
 * [Bruce Lindbloom](http://www.brucelindbloom.com/)
+* [_CIE 15: Technical Report: Colorimetry, 3rd edition_](https://archive.org/details/gov.law.cie.15.2004) (2004)
 * [_A Guided Tour of Color Space_](http://poynton.ca/PDFs/Guided_tour.pdf) (PDF), by [Charles Poynton](http://poynton.ca/) (1997)
 * _Color for the Sciences_, by Jan Koenderink (2010), ISBN 978-0-262-01428-1
 * _Color Ordered_, by Rolf Kuehni and Andreas Schwarz (2008), ISBN 978-0-19-518968-1
