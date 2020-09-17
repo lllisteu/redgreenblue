@@ -24,4 +24,12 @@ class Test_lazy < Test::Unit::TestCase
     assert_equal RGB.new  , RGB.grey
   end
 
+  def test_space
+    assert_equal 8, RGB.corners.size
+    assert_true RGB.corners.all? RGB
+
+    assert_equal RGB.new, RGB.centre
+    assert_equal RGB.new, RGB.center
+  end
+
 end

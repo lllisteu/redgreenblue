@@ -56,6 +56,18 @@ class RGB
       new(1,0,1)
     end
 
+    # Returns the 8 corners of the RGB cube.
+    def corners
+      [ black, red, yellow, green, cyan, blue, magenta, white ]
+    end
+
+    # Returns the centre of the RGB cube.
+    def centre
+      grey
+    end
+
+    alias center centre
+
   end
 
 end
