@@ -61,7 +61,7 @@ class RGB
 
     f = [ x / xr, y / yr, z / zr ].map { |v|
       if v > ( 216.0 / 24389 )
-        v ** ( 1.0 / 3 ) # cube root
+        Math.cbrt v
       else
         ( 24389.0 / 27 * v + 16 ) / 116.0
       end
@@ -97,7 +97,7 @@ class RGB
 
     [
       l.round(8),
-      c = ( ( v1 ** 2 + v2 ** 2) ** ( 1.0 / 2 ) ).round(8),
+      c = Math.hypot(v1, v2).round(8),
       c == 0 ? nil : ( Math.atan2(v2, v1) * 180.0 / Math::PI ).modulo(360).round(8)
     ]
   end
