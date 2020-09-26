@@ -21,7 +21,7 @@ end
 
   inspect view lazy
 
-  rgb565 bgr24bit gif terminal web gpl
+  rgb565 bgr24bit gif terminal web gpl mac
 
   mix misc random
 
