@@ -3,7 +3,7 @@ class RGB
   # On Mac OS, shows the color picker to choose a color for the RGB object.
   # Not available on other platforms.
   def pick
-    result = RGB.mac_choose(rrggbb)
+    result = RGB.mac_choose(self)
     if result
       self.rrggbb = result
     end
@@ -14,7 +14,7 @@ class RGB
   #
   # If no default color is specified, the picker defaults to a middle grey.
   def self.pick(default_color=RGB.new)
-    result = RGB.mac_choose(default_color.rrggbb)
+    result = RGB.mac_choose(default_color)
     if result
       RGB.rrggbb result
     else
@@ -32,7 +32,7 @@ class RGB
   #
   # Applescript command documented here:
   # Standard Additions -> User Interaction -> choose color
-  def self.mac_choose(color)
+  def self.mac_choose(default_color)
 
     app = case ENV['TERM_PROGRAM']
       when /iTerm\.app/
@@ -44,7 +44,7 @@ class RGB
     script = <<~ENDSCRIPT
       tell application "#{app}"
         try
-          return choose color default color { #{color[0]}, #{color[1]}, #{color[2]} }
+          return choose color default color #{default_color.applescript}
         on error
           return ""
         end try
