@@ -4,11 +4,17 @@
 
 ## Unreleased
 
+ * __General:__
+
+    * Minor code optimisations.
+
  * __Core RGB class:__
 
     * Added `::corners` method.
 
     * Added `::centre` method and `::center` alias.
+
+    * Added `#applescript` method.
 
 ## 0.12.0 (8 September 2020)
 
