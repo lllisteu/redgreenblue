@@ -28,7 +28,7 @@ class RGB
     cie_lch_ab_uv(type: :luv)
   end
 
-  # Returns the object's color distance from another RGB object, according to the CIE 1976 delta E formula.
+  # Returns the difference between this color and another color, according to the CIE 1976 delta E formula.
   #
   # Based on:
   # - http://www.brucelindbloom.com/Eqn_DeltaE_CIE76.html
