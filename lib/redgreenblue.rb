@@ -23,7 +23,7 @@ end
 
   rgb565 bgr24bit gif terminal web gpl mac
 
-  mix misc random
+  match mix misc random
 
   os
 
