@@ -10,6 +10,12 @@
 
  * __Core RGB class:__
 
+    * Color matching methods:
+
+        * Added `#match_de76` method.
+
+        * Added `#match_distance` method.
+
     * Added `::corners` method.
 
     * Added `::centre` method and `::center` alias.
