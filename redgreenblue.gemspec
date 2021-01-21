@@ -10,8 +10,9 @@ Gem::Specification.new do |s|
   s.authors  = [ 'lllist.eu' ]
   s.license  = 'MIT'
 
-  all_files  = `git ls-files -z`.split("\x0")
-  s.files    = all_files.grep(%r{^lib/})
+  all_files     = `git ls-files -z`.split("\x0")
+  s.files       = all_files.grep(%r{^(bin|lib)/})
+  s.executables = all_files.grep(%r{^bin/.+}) { |f| File.basename(f) }
 
   s.required_ruby_version = '>=2.2.0'
 
