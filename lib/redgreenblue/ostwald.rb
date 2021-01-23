@@ -32,12 +32,12 @@ class RGB
   # Based on:
   # - Color for the Sciences, pp. 575–591
   # - https://lirias.kuleuven.be/retrieve/306124 (PDF)
-  def ostwald_cwk
+  def ostwald_cwk(round: true)
     [
       color_portion = values.max - values.min,
       white_portion = values.min,
       1 - color_portion - white_portion
-    ]
+    ].map { |v| round ? v.round(8) : v }
   end
 
   alias cwk ostwald_cwk

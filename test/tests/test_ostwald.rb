@@ -30,4 +30,9 @@ class Test_ostwald < Test::Unit::TestCase
     assert_equal RGB.new(1, 0.6, 0), c.ostwald_color
     assert_equal [0.5, 0.3, 0.2], c.ostwald_cwk
   end
+
+  def test_rounding_error
+    assert_equal [0.8, 0.2, 0.0], RGB.new(1, 0.8, 0.2).ostwald_cwk
+  end
+
 end
