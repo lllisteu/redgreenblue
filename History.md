@@ -2,6 +2,12 @@
 
 # History
 
+## Unreleased
+
+ * __Core RGB class:__
+
+    * The `#ostwald_cwk` method now rounds results to a precision of 8 decimal places. This fixes rare inaccuracies.
+
 ## 0.13.0 (9 November 2020)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.13.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.13.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.13.0/RGB)
