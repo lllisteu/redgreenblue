@@ -6,6 +6,12 @@
 
  * __Core RGB class:__
 
+    * Support for Web Content Accessibility Guidelines 2.0:
+
+        * Added `#wcag20_luminance` method.
+
+        * Added `#wcag20_contrast_ratio` method.
+
     * The `#ostwald_cwk` method now rounds results to a precision of 8 decimal places. This fixes rare inaccuracies.
 
 ## 0.13.0 (9 November 2020)
