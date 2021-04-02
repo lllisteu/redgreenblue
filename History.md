@@ -6,11 +6,13 @@
 
  * __Core RGB class:__
 
-    * Support for Web Content Accessibility Guidelines 2.0:
+    * Support for working with [Web Content Accessibility Guidelines 2.0](https://www.w3.org/TR/WCAG20/):
 
         * Added `#wcag20_luminance` method.
 
         * Added `#wcag20_contrast_ratio` method.
+
+    * Added `#css_names` method.
 
     * The `#ostwald_cwk` method now rounds results to a precision of 8 decimal places. This fixes rare inaccuracies.
 

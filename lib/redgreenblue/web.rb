@@ -62,6 +62,13 @@ class RGB
     "##{hex true}"
   end
 
+  # Returns the names of CSS named colors identical to this color.
+  # @example
+  #  RGB.hex('f0f').css_names
+  def css_names
+    RGB.css(self).map &:name
+  end
+
   # Returns the color's relative luminance, as defined by the Web Content Accessibility Guidelines (WCAG) 2.0.
   #
   # This is different from the Y component of CIE 1931 XYZ.
