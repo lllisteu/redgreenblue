@@ -10,6 +10,11 @@ class Test_web < Test::Unit::TestCase
     assert_equal '#f9c'   , RGB.new(1, 0.6, 0.8).css_hex
   end
 
+  def test_css_names
+    assert_true RGB.white.css_names.any?
+    assert_equal 2, RGB.hex('f0f').css_names.size
+  end
+
   def test_css_palette
     assert_true  RGB.css.size > 147
     assert_true  RGB.css.all? { |c| c.class == RGB }
