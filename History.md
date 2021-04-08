@@ -8,6 +8,8 @@
 
     * Added `#css_names` method.
 
+    * Added `#hwb` method.
+
     * Support for working with [Web Content Accessibility Guidelines 2.0](https://www.w3.org/TR/WCAG20/):
 
         * Added `#wcag20_luminance` method.
