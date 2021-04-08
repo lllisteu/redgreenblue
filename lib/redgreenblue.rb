@@ -11,7 +11,7 @@ end
 
   hsl hsv hsb
 
-  ostwald
+  ostwald hwb
 
   gamma
 
