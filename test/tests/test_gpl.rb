@@ -129,4 +129,11 @@ class Test_gpl < Test::Unit::TestCase
     assert_true  RGB.load_gpl(_gpl_string, freeze: true ).first.frozen?
   end
 
+  def test_gpl_header
+    assert_equal "GIMP Palette\n", RGB.gpl_header
+    assert_equal "GIMP Palette\nName: Eyjafjallajökull\n", RGB.gpl_header('Eyjafjallajökull')
+    assert_equal "GIMP Palette\nColumns: 7\n", RGB.gpl_header(columns: 7)
+    assert_equal "GIMP Palette\nName: 京都\nColumns: 94\n", RGB.gpl_header('京都', columns: 94)
+  end
+
 end

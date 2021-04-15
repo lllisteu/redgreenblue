@@ -64,13 +64,16 @@ class RGB
       end
     end
 
-    private
-
+    # Returns a header for a .gpl file (Gimp color palette). Includes an optional name and number of columns.
+    #
+    # @example
+    #  RGB.gpl_header('Spring')
+    #
     # Reverse-engineered from:
     # - https://github.com/GNOME/gimp/blob/5d79fba8238a27b8691556489898d33b3fa0dda0/app/core/gimppalette-load.c
-    def gpl_header(name, columns=nil)
+    def gpl_header(name=nil, columns: nil)
       "GIMP Palette\n" +
-      "Name: #{name}\n" +
+      ( name    ? "Name: #{name}\n"       : '' ) +
       ( columns ? "Columns: #{columns}\n" : '' )
     end
 
