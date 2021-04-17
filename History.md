@@ -16,6 +16,8 @@
 
         * Added `#wcag20_contrast_ratio` method.
 
+    * Added `::gpl_header` method.
+
     * The `#ostwald_cwk` method now rounds results to a precision of 8 decimal places. This fixes rare inaccuracies.
 
 ## 0.13.0 (9 November 2020)
