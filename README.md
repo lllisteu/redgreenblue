@@ -84,9 +84,7 @@ rose = RGB.red
 => RGB #ff0000 (red=1.00000 green=0.00000 blue=0.00000)
 rose.whiten!(0.6)
 => RGB #ff9999 (red=1.00000 green=0.60000 blue=0.60000)
-rose.bb = 52428
-=> 52428
-rose
+rose.hsl_rotate!(-30)
 => RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
 pink == rose
 => true

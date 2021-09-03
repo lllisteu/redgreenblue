@@ -2,6 +2,12 @@
 
 # History
 
+## Unreleased
+
+ * __Core RGB class:__
+
+    * `#view` accepts an RGB object as an optional argument, for visual comparison of colors.
+
 ## 0.14.0 (3 May 2021)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.14.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.14.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.14.0/RGB)
