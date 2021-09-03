@@ -37,6 +37,19 @@ pink = RGB.hex('ff99cc')
 => RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
 ```
 
+There are many ways to create RGB objects (or simply _colors_).
+
+Here are six examples that will create the exact same color:
+
+```
+pink = RGB.new(1, 0.6, 0.8)
+pink = RGB.rgb(255, 153, 204)
+pink = RGB.rrggbb(65535, 39321, 52428)
+pink = RGB.hex('f9c')
+pink = RGB.hsl(330, 1, 0.8)
+pink = RGB.hsv(330, 0.4, 1)
+```
+
 Now that we have a color stored in an RGB object, it can supply several pieces of information about itself:
 
 ```
@@ -64,26 +77,13 @@ pink.hex(true)
 => "f9c"
 ```
 
-There are many ways to create RGB objects:
-
-```
-pink = RGB.new(1, 0.6, 0.8)
-=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
-pink = RGB.rgb(255, 153, 204)
-=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
-pink = RGB.rrggbb(65535, 39321, 52428)
-=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
-pink = RGB.hex('f9c')
-=> RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
-```
-
-...and to alter them:
+Altering colors is easy:
 
 ```
 rose = RGB.red
 => RGB #ff0000 (red=1.00000 green=0.00000 blue=0.00000)
-rose.g = 153
-=> 153
+rose.whiten!(0.6)
+=> RGB #ff9999 (red=1.00000 green=0.60000 blue=0.60000)
 rose.bb = 52428
 => 52428
 rose
