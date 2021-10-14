@@ -15,7 +15,7 @@ end
 
   gamma
 
-  cie_1931 cie_1976
+  cie_1931 cie_1976 cie_1994
 
   name
 
