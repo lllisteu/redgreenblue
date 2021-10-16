@@ -39,6 +39,18 @@ class Test_cie_1994 < Test::Unit::TestCase
 
   end
 
+  def test_shortcuts
+
+    # graphics arts
+    assert_equal RGB.blue.delta_e_cie_1994(RGB.red), RGB.blue.de94g(RGB.red)
+    assert_equal 61.242075.round(3), RGB.blue.de94g(RGB.red).round(3)
+
+    # textiles
+    assert_equal RGB.blue.delta_e_cie_1994(RGB.red, k1: 0.048, k2: 0.014, kl: 2), RGB.blue.de94t(RGB.red)
+    assert_equal 61.104673.round(3), RGB.blue.de94t(RGB.red).round(3)
+
+  end
+
   def test_aliases
     assert_equal RGB.white.delta_e_cie_1994(RGB.black), RGB.white.de94(RGB.black)
   end

@@ -3,7 +3,7 @@ class RGB
   # Returns the difference between this (reference) color and another color, according to the CIE 1994 delta E formula.
   #
   # By default uses parameters for use in graphic arts, and reference conditions.
-  # Parameters can be individually overriden for different applications (k1, k2) and for variations in conditions (kl, kc, kh).
+  # Parameters (k1, k2, kl, kc, kh) can be individually overriden for different applications and for variations in conditions.
   #
   # Based on:
   # - http://www.brucelindbloom.com/Eqn_DeltaE_CIE94.html
@@ -37,5 +37,19 @@ class RGB
   end
 
   alias de94 delta_e_cie_1994
+
+  # Returns the difference between this (reference) color and another color, according to the CIE 1994 delta E formula.
+  #
+  # For use in graphic arts, under reference conditions.
+  def de94g(another)
+    delta_e_cie_1994(another)
+  end
+
+  # Returns the difference between this (reference) color and another color, according to the CIE 1994 delta E formula.
+  #
+  # For use with textiles, under reference conditions.
+  def de94t(another)
+    delta_e_cie_1994(another, k1: 0.048, k2: 0.014, kl: 2)
+  end
 
 end
