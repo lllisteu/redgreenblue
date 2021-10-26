@@ -12,4 +12,8 @@ class Test_match < Test::Unit::TestCase
     assert_equal RGB.hex('dda0dd'), RGB.hex('f9c').match_de76(RGB.css).first.first
   end
 
+  def test_match_de94
+    assert_equal RGB.white, RGB.hex('f9c').match_de94(RGB.corners).first.first
+  end
+
 end

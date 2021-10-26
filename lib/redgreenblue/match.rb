@@ -18,4 +18,14 @@ class RGB
     others.map { |c| [ c, de76(c) ] }.sort_by { |a| a[1] }
   end
 
+  # Matches this (reference) color to a set of colors using the CIE 1994 delta E formula.
+  #
+  # Returns the given set of colors with their difference from this color, sorted by difference (nearest color first).
+  #
+  # By default uses parameters for use in graphic arts, and reference conditions.
+  # Parameters (k1, k2, kl, kc, kh) can be individually overriden for different applications and for variations in conditions.
+  def match_de94(others, k1: 0.045, k2: 0.015, kl: 1, kc: 1, kh: 1)
+    others.map { |c| [ c, de94(c, k1: k1, k2: k2, kl: kl, kc: kc, kh: kh) ] }.sort_by { |a| a[1] }
+  end
+
 end
