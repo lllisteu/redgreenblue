@@ -22,6 +22,8 @@ class RGB
   # @example Use
   #  RGB.magenta.to_philips_hue_api_hsb_arguments
   #  => {"on"=>true, "bri"=>254, "hue"=>54613, "sat"=>254}
+  #  RGB.black.to_philips_hue_api_hsb_arguments
+  #  => {"on"=>false}
   # @return [Hash] API arguments
   def to_philips_hue_api_hsb_arguments(black_off=true)
     my_hsb = hsb
