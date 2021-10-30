@@ -28,4 +28,22 @@ class RGB
     others.map { |c| [ c, de94(c, k1: k1, k2: k2, kl: kl, kc: kc, kh: kh) ] }.sort_by { |a| a[1] }
   end
 
+  # Matches this (reference) color to a set of colors using the CIE 1994 delta E formula.
+  #
+  # For use in graphic arts, under reference conditions.
+  #
+  # Returns the given set of colors with their difference from this color, sorted by difference (nearest color first).
+  def match_de94g(others)
+    others.map { |c| [ c, de94g(c) ] }.sort_by { |a| a[1] }
+  end
+
+  # Matches this (reference) color to a set of colors using the CIE 1994 delta E formula.
+  #
+  # For use with textiles, under reference conditions.
+  #
+  # Returns the given set of colors with their difference from this color, sorted by difference (nearest color first).
+  def match_de94t(others)
+    others.map { |c| [ c, de94t(c) ] }.sort_by { |a| a[1] }
+  end
+
 end
