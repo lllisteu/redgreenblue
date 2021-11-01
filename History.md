@@ -10,8 +10,6 @@
 
  * __Core RGB class:__
 
-    * `#view` accepts an RGB object as an optional argument, for visual comparison of colors.
-
     * CIE 1994 processing:
 
         * Added `#delta_e_cie_1994` method and `#de94` alias.
@@ -23,6 +21,10 @@
         * Added `#match_de94` method.
 
         * Added `#match_de94g` and `#match_de94t` shortcut methods.
+
+    * `#view` accepts an RGB object as an optional argument, for visual comparison of colors.
+
+    * Added `#web_safe?` method.
 
 ## 0.14.0 (3 May 2021)
 
