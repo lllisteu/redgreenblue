@@ -106,4 +106,9 @@ class RGB
     round ? contrast_ratio.round(8) : contrast_ratio
   end
 
+  # Returns true if this is one of the 216 so-called "web safe" colors, otherwise false.
+  def web_safe?
+    values.map { |v| [0.0, 0.2, 0.4, 0.6, 0.8, 1.0].include? v }.uniq  == [true]
+  end
+
 end

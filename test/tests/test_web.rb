@@ -44,4 +44,10 @@ class Test_web < Test::Unit::TestCase
     assert_equal a.wcag20_contrast_ratio(b), b.wcag20_contrast_ratio(a)
   end
 
+  def test_web_safe
+    assert_true  RGB.red.web_safe?
+    assert_true  RGB.new(0.20, 0.0, 0.8).web_safe?
+    assert_false RGB.new(0.21, 0.0, 0.8).web_safe?
+  end
+
 end
