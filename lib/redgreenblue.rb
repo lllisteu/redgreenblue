@@ -1,4 +1,4 @@
-class RGB
+module RGB
 end
 
 %w(
