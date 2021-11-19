@@ -17,7 +17,7 @@ class Test_web < Test::Unit::TestCase
 
   def test_css_palette
     assert_true  RGB.css.size > 147
-    assert_true  RGB.css.all? { |c| c.class == RGB }
+    assert_true  RGB.css.all? RGB::Color
     assert_equal RGB.css, RGB.css( /./ )
     assert_equal RGB.css.first, RGB.css( RGB.css(0).name )
     assert_true  RGB.css( RGB.css.first ).size > 0

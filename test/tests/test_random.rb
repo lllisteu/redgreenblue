@@ -9,17 +9,17 @@ class Test_random < Test::Unit::TestCase
       assert_equal [0,128,255], RGB.rgb(128,255,0).shuffle!.rgb.sort
     end
 
-    assert_equal RGB, RGB.new.shuffle.class
+    assert_equal RGB::Color, RGB.new.shuffle.class
     assert_equal [0,128,255], RGB.rgb(128,255,0).shuffle.rgb.sort
 
   end
 
   def test_randomize
-    assert_equal RGB, RGB.rgb(128,255,0).randomize!.class
+    assert_equal RGB::Color, RGB.rgb(128,255,0).randomize!.class
   end
 
   def test_rand
-    assert_equal RGB, RGB.rand.class
+    assert_equal RGB::Color, RGB.rand.class
   end
 
 end
