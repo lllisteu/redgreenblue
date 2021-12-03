@@ -104,6 +104,7 @@ pink == rose
 * _Interaction of Color_, by Josef Albers (1963), ISBN 978-0-300-17935-4
 * _配色事典 – A Dictionary of Color Combinations_, by Sanzo Wada (2010), ISBN 978-4-86152-247-5
 * _The Anatomy of Colour_, by Patrick Baty (2017), ISBN 978-0-500-51933-2
+* _Nature's Palette_, by Patrick Baty (2021), ISBN 978-0-500-25246-8
 
 ## Credits
 
