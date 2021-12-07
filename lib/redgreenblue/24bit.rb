@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
 # r, g, b methods
 
@@ -44,7 +44,7 @@ class RGB
     self.r, self.g, self.b = rgb.flatten
   end
 
-  # Creates a new object from red, green, and blue components as integers in the range 0..255 (three 8-bit values).
+  # Creates a new Color object from red, green, and blue components as integers in the range 0..255 (three 8-bit values).
   def self.rgb(*rgb)
     c = self.new
     c.rgb = rgb
@@ -62,19 +62,36 @@ class RGB
     RGB.rgb rgb
   end
 
-  # Calls the given block for each 24-bit RGB color (from black to white), passing the color as an RGB object.
-  #
-  # Returns the number of iterations.
-  def self.each_24bit_color
-    range = 0..255
-    range.each do |r|
-      range.each do |g|
-        range.each do |b|
-          yield self.rgb(r,g,b)
+end
+
+#----------------------------------------------------------------------#
+#                            Module Methods                            #
+#----------------------------------------------------------------------#
+
+module RGB
+
+  class << self
+
+    # Creates a new Color object from red, green, and blue components as integers in the range 0..255 (three 8-bit values).
+    def rgb(*rgb)
+      Color.rgb(*rgb)
+    end
+
+    # Calls the given block for each 24-bit RGB color (from black to white), passing the color as an RGB::Color object.
+    #
+    # Returns the number of iterations.
+    def each_24bit_color
+      range = 0..255
+      range.each do |r|
+        range.each do |g|
+          range.each do |b|
+            yield self.rgb(r,g,b)
+          end
         end
       end
+      range.size ** 3
     end
-    range.size ** 3
+
   end
 
 end

@@ -1,4 +1,4 @@
-class RGB
+module RGB
 
   # redgreenblue version.
   VERSION = '0.15.1'

@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   def initialize(*a)
     self.values = a.any? ? a : [ 0.5, 0.5, 0.5 ]
@@ -79,6 +79,23 @@ class RGB
   # limits to range 0..1
   def limit(n)
     n <= 0 ? 0.0 : n >= 1 ? 1.0 : n
+  end
+
+end
+
+#----------------------------------------------------------------------#
+#                            Module Methods                            #
+#----------------------------------------------------------------------#
+
+module RGB
+
+  class << self
+
+    # Creates a new Color object from red, green, and blue components as three values between 0 and 1.
+    def new(*a)
+      Color.new(*a)
+    end
+
   end
 
 end
