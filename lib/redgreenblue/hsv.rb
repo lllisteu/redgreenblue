@@ -1,7 +1,7 @@
 require 'redgreenblue/hsx_shared'
 require 'redgreenblue/math'
 
-class RGB
+class RGB::Color
 
   #----------------------------------------------------------------------#
   #                            Class Methods                             #
@@ -9,7 +9,7 @@ class RGB
 
   class << self
 
-    # Creates a new RGB object from HSV values: hue (0..360), saturation (0..1), and value (0..1).
+    # Creates a new RGB::Color object from HSV values: hue (0..360), saturation (0..1), and value (0..1).
     def hsv(*a)
       new hsv_to_values(*a)
     end
@@ -84,13 +84,30 @@ class RGB
     self
   end
 
-  # Creates one or more new RGB objects by rotating this object's HSV-hue a number of degrees.
+  # Creates one or more new RGB::Color objects by rotating this object's HSV-hue a number of degrees.
   def hsv_rotate(a_degrees, *b_degrees)
     if a_degrees.class != Array and b_degrees.none?
       RGB.hsv zip_add(hsv, [a_degrees, 0, 0])
     else
       ( [a_degrees] + b_degrees ).flatten.map { |degrees| RGB.hsv zip_add(hsv, [degrees, 0, 0]) }
     end
+  end
+
+end
+
+#----------------------------------------------------------------------#
+#                            Module Methods                            #
+#----------------------------------------------------------------------#
+
+module RGB
+
+  class << self
+
+    # Creates a new RGB::Color object from HSV values: hue (0..360), saturation (0..1), and value (0..1).
+    def hsv(*a)
+      Color.hsv(*a)
+    end
+
   end
 
 end

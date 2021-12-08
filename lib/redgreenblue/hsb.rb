@@ -1,6 +1,6 @@
 require 'redgreenblue/hsv'
 
-class RGB
+class RGB::Color
 
   #----------------------------------------------------------------------#
   #                            Class Methods                             #
@@ -8,7 +8,7 @@ class RGB
 
   class << self
 
-    # Creates a new RGB object from HSB values: hue (0..360), saturation (0..1), and brightness (0..1).
+    # Creates a new RGB::Color object from HSB values: hue (0..360), saturation (0..1), and brightness (0..1).
     alias hsb hsv
 
   end
@@ -55,7 +55,22 @@ class RGB
   # Sets red, green, and blue by rotating the object's HSB-hue a number of degrees.
   alias hsb_rotate! hsv_rotate!
 
-  # Creates one or more new RGB objects by rotating this object's HSB-hue a number of degrees.
+  # Creates one or more new RGB::Color objects by rotating this object's HSB-hue a number of degrees.
   alias hsb_rotate  hsv_rotate
+
+end
+
+#----------------------------------------------------------------------#
+#                            Module Methods                            #
+#----------------------------------------------------------------------#
+
+module RGB
+
+  class << self
+
+    # Creates a new RGB::Color object from HSB values: hue (0..360), saturation (0..1), and brightness (0..1).
+    alias hsb hsv
+
+  end
 
 end
