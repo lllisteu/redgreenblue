@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Returns gamma-expanded (inverse-companded) RGB values for the object (three values between 0 and 1).
   #

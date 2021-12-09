@@ -1,6 +1,6 @@
-class RGB
+class RGB::Color
 
-  # Returns a new RGB object with this color's Ostwald full-color,
+  # Returns a new RGB::Color object with this color's Ostwald full-color,
   # or nil for achromatic colors (white, greys, and black).
   #
   # The resulting color contains no white or black,
@@ -19,7 +19,7 @@ class RGB
     if color_portion == 0
       nil
     else
-      RGB.new( values.map { |v| ( ( v - white_portion ) / color_portion ).round(6) } )
+      RGB::Color.new( values.map { |v| ( ( v - white_portion ) / color_portion ).round(6) } )
     end
   end
 

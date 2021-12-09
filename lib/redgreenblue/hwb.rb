@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Returns the color's hue (0..360), whiteness (0..1), and blackness (0..1), as defined by the HWB color model.
   #
