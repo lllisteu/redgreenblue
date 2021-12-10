@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Returns the difference between this (reference) color and another color, according to the CIE 1994 delta E formula.
   #

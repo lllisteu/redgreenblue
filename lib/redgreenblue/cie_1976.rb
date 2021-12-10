@@ -1,27 +1,27 @@
-class RGB
+class RGB::Color
 
-  # Returns CIE 1976 L*a*b* (CIELAB) values for the RGB object.
+  # Returns CIE 1976 L*a*b* (CIELAB) values for the RGB::Color object.
   def cie_lab(round: true)
     cie_lab_luv(round: round, type: :lab)
   end
 
   alias lab cie_lab
 
-  # Returns CIE 1976 LCHab values for the RGB object, derived from L*a*b* (CIELAB).
+  # Returns CIE 1976 LCHab values for the RGB::Color object, derived from L*a*b* (CIELAB).
   #
   # When C is 0, H is nil.
   def cie_lch_ab
     cie_lch_ab_uv(type: :lab)
   end
 
-  # Returns CIE 1976 L*u*v* (CIELUV) values for the RGB object.
+  # Returns CIE 1976 L*u*v* (CIELUV) values for the RGB::Color object.
   def cie_luv(round: true)
     cie_lab_luv(round: round, type: :luv)
   end
 
   alias luv cie_luv
 
-  # Returns CIE 1976 LCHuv values for the RGB object, derived from L*u*v* (CIELUV).
+  # Returns CIE 1976 LCHuv values for the RGB::Color object, derived from L*u*v* (CIELUV).
   #
   # When C is 0, H is nil.
   def cie_lch_uv
@@ -44,7 +44,7 @@ class RGB
 
   private
 
-  # Returns either CIE 1976 L*a*b* (CIELAB) or CIE 1976 L*u*v* (CIELUV) values for the RGB object.
+  # Returns either CIE 1976 L*a*b* (CIELAB) or CIE 1976 L*u*v* (CIELUV) values for the RGB::Color object.
   #
   # L*a*b* formula based on:
   # - http://www.brucelindbloom.com/Eqn_XYZ_to_Lab.html
@@ -82,7 +82,7 @@ class RGB
     end.map { |v| v.nan? ? 0.0 : ( round ? v.round(8) : v ) }
   end
 
-  # Returns either CIE 1976 LCHab or CIE 1976 LCHuv values for the RGB object.
+  # Returns either CIE 1976 LCHab or CIE 1976 LCHuv values for the RGB::Color object.
   #
   # Based on:
   # - http://www.brucelindbloom.com/Eqn_Lab_to_LCH.html

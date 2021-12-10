@@ -1,6 +1,6 @@
-class RGB
+class RGB::Color
 
-  # Returns CIE 1931 XYZ values for the RGB object.
+  # Returns CIE 1931 XYZ values for the RGB::Color object.
   #
   # Based on:
   # - http://www.brucelindbloom.com/index.html?Eqn_RGB_to_XYZ.html
@@ -21,7 +21,7 @@ class RGB
 
   alias xyz cie_xyz
 
-  # Returns CIE 1931 xyY values for the RGB object.
+  # Returns CIE 1931 xyY values for the RGB::Color object.
   #
   # Based on:
   # - https://en.wikipedia.org/wiki/CIE_1931_color_space
@@ -41,7 +41,7 @@ class RGB
 
   alias xyy cie_xyy
 
-  # Returns CIE 1931 xy values for the RGB object.
+  # Returns CIE 1931 xy values for the RGB::Color object.
   def cie_xy
     cie_xyy[0..1]
   end
