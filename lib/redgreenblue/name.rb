@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Returns the name.
   def name

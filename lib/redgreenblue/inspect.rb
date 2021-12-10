@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   private
 
@@ -32,7 +32,7 @@ class RGB
   #
   # You can choose among several inspect styles. See the styles, style, and style= class methods.
   def inspect
-    send "_inspect_#{self.class.style}"
+    send "_inspect_#{RGB.style}"
   end
 
   # Returns a string representation of the object.
@@ -40,34 +40,46 @@ class RGB
     _inspect_default
   end
 
-  # Returns the base inspect style, dependent on the COLORTERM environment variable.
-  def self.base_style
-    if styles.include? ENV['REDGREENBLUE_STYLE']
-      ENV['REDGREENBLUE_STYLE']
-    else
-      if ENV['COLORTERM'] == 'truecolor'
-        'simple'
+end
+
+#----------------------------------------------------------------------#
+#                            Module Methods                            #
+#----------------------------------------------------------------------#
+
+module RGB
+
+  class << self
+
+    # Returns the base inspect style, dependent on the COLORTERM environment variable.
+    def base_style
+      if styles.include? ENV['REDGREENBLUE_STYLE']
+        ENV['REDGREENBLUE_STYLE']
       else
-        'default'
+        if ENV['COLORTERM'] == 'truecolor'
+          'simple'
+        else
+          'default'
+        end
       end
     end
-  end
 
-  # Returns the current inspect style.
-  def self.style
-    @@style ||= base_style
-  end
+    # Returns the current inspect style.
+    def style
+      @@style ||= base_style
+    end
 
-  # Returns a list of all available inspect styles.
-  def self.styles
-    ( self.instance_methods + self.private_instance_methods ).grep( /^_inspect_(.*)/ ) { $1 }.sort
-  end
+    # Returns a list of all available inspect styles.
+    def styles
+      ( Color.instance_methods + Color.private_instance_methods ).grep( /^_inspect_(.*)/ ) { $1 }.sort
+    end
 
-  # Selects an inspect style.
-  #
-  # Only the first few characters of your preferred style are required.
-  def self.style=(s)
-    @@style = styles.grep( /^#{s.to_s.downcase}/ ).first || style
+    # Selects an inspect style.
+    #
+    # Only the first few characters of your preferred style are required.
+    def style=(s)
+      @@style = styles.grep( /^#{s.to_s.downcase}/ ).first || style
+    end
+
   end
 
 end

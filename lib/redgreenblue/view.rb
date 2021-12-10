@@ -1,6 +1,6 @@
-class RGB
+class RGB::Color
 
-  # Prints a color swatch and details for the RGB object, using multiple lines.
+  # Prints a color swatch and details for the RGB::Color object, using multiple lines.
   #
   # You can optionally supply a second color to be shown inside the swatch, for comparison.
   def view(other=nil)
