@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Returns the color in 16-bit RGB565 format.
   def rgb565
@@ -15,11 +15,28 @@ class RGB
     self.b = ( ( v & 0x001f )       ) << 3
   end
 
-  # Creates a new RGB color from 16-bit RGB565 data.
+  # Creates a new RGB::Color from 16-bit RGB565 data.
   def self.rgb565(rgb565_string)
     c = self.new
     c.rgb565 = rgb565_string
     c
+  end
+
+end
+
+#----------------------------------------------------------------------#
+#                            Module Methods                            #
+#----------------------------------------------------------------------#
+
+module RGB
+
+  class << self
+
+    # Creates a new RGB::Color from 16-bit RGB565 data.
+    def rgb565(rgb565_string)
+      Color.rgb565(rgb565_string)
+    end
+
   end
 
 end

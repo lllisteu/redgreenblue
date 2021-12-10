@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Returns a 3-byte string containing the object's color in BGR24 format.
   def bgr24
@@ -10,11 +10,28 @@ class RGB
     self.b, self.g, self.r = bgr_string.unpack('C3')
   end
 
-  # Creates a new RGB object from BGR24 data (a 3-byte string).
+  # Creates a new RGB::Color object from BGR24 data (a 3-byte string).
   def self.bgr24(bgr)
     c = self.new
     c.bgr24 = bgr
     c
+  end
+
+end
+
+#----------------------------------------------------------------------#
+#                            Module Methods                            #
+#----------------------------------------------------------------------#
+
+module RGB
+
+  class << self
+
+    # Creates a new RGB::Color object from BGR24 data (a 3-byte string).
+    def bgr24(bgr)
+      Color.bgr24(bgr)
+    end
+
   end
 
 end

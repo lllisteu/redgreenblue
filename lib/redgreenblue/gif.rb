@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Returns a 1-pixel GIF image set to the color.
   #

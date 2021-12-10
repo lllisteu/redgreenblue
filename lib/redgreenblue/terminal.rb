@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # With help from:
   # - https://gist.github.com/XVilka/8346728
