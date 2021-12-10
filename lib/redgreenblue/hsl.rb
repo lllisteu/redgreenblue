@@ -51,7 +51,7 @@ class RGB::Color
 
   # Sets red, green, and blue using HSL values: hue (0..360), saturation (0..1), and lightness (0..1).
   def hsl=(*a)
-    self.values = RGB.hsl_to_values(*a)
+    self.values = RGB::Color.hsl_to_values(*a)
   end
 
   # Sets HSL-hue to a number of degrees (0..360) or nil.

@@ -51,7 +51,7 @@ class RGB::Color
 
   # Sets red, green, and blue using HSV values: hue (0..360), saturation (0..1), and value (0..1).
   def hsv=(*a)
-    self.values = RGB.hsv_to_values(*a)
+    self.values = RGB::Color.hsv_to_values(*a)
   end
 
   # Sets HSV-hue to a number of degrees (0..360) or nil.
