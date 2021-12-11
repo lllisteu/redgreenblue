@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Returns the color in the format used by AppleScript (a 48-bit RGB triplet).
   def applescript
