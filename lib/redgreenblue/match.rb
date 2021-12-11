@@ -1,4 +1,4 @@
-class RGB
+class RGB::Color
 
   # Matches this color to a set of colors by calculating their euclidean distance.
   #

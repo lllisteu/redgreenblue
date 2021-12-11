@@ -1,14 +1,14 @@
-class RGB
+class RGB::Color
 
-  # Changes the object's color by mixing it with a portion of another RGB color.
+  # Changes the object's color by mixing it with a portion of another RGB::Color.
   def mix!(another,portion=0.5)
     self.values = mix_values(another.values, portion)
     self
   end
 
-  # Creates a new RGB object by mixing this object's color with a portion of another RGB color.
+  # Creates a new RGB::Color by mixing this object's color with a portion of another RGB::Color.
   def mix(another,portion=0.5)
-    RGB.new mix_values(another.values, portion)
+    RGB::Color.new mix_values(another.values, portion)
   end
 
   # Changes the object's color by mixing it with a portion of white.
@@ -16,7 +16,7 @@ class RGB
     mix!(RGB.white, portion)
   end
 
-  # Creates one or more new RGB objects by mixing this object's color with a portion of white.
+  # Creates one or more new RGB::Colors by mixing this object's color with a portion of white.
   def whiten(portion=0.5, *portions)
     if (portion.class != Array) and portions.none?
       mix(RGB.white, portion)
@@ -30,7 +30,7 @@ class RGB
     mix!(RGB.black, portion)
   end
 
-  # Creates one or more new RGB objects by mixing this object's color with a portion of black.
+  # Creates one or more new RGB::Colors by mixing this object's color with a portion of black.
   def blacken(portion=0.5, *portions)
     if (portion.class != Array) and portions.none?
       mix(RGB.black, portion)
