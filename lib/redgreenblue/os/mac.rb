@@ -1,20 +1,20 @@
-class RGB
+class RGB::Color
 
-  # On Mac OS, shows the color picker to choose a color for the RGB object.
+  # On Mac OS, shows the color picker to choose a color for this object.
   # Not available on other platforms.
   def pick
-    result = RGB.mac_choose(self)
+    result = RGB::Color.mac_choose(self)
     if result
       self.rrggbb = result
     end
   end
 
-  # On Mac OS, shows the color picker and creates an RGB object with the chosen color.
+  # On Mac OS, shows the color picker and creates an RGB::Color with the chosen color.
   # Not available on other platforms.
   #
   # If no default color is specified, the picker defaults to a middle grey.
-  def self.pick(default_color=RGB.new)
-    result = RGB.mac_choose(default_color)
+  def self.pick(default_color=RGB::Color.new)
+    result = RGB::Color.mac_choose(default_color)
     if result
       RGB.rrggbb result
     else
@@ -57,6 +57,23 @@ class RGB
       nil
     else
       (result.split( /,\w*/ )).map { |s| s.to_i }
+    end
+
+  end
+
+end
+
+
+module RGB
+
+  class << self
+
+    # On Mac OS, shows the color picker and creates an RGB::Color with the chosen color.
+    # Not available on other platforms.
+    #
+    # If no default color is specified, the picker defaults to a middle grey.
+    def pick(default_color=new)
+      Color.pick(default_color)
     end
 
   end

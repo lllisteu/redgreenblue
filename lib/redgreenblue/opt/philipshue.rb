@@ -2,15 +2,15 @@
 #
 # Conforms to Bridge API 1.35 for Philips Hue, published 20-Nov-2019.
 
-# Automatically load core RGB class before loading options.
+# Automatically load core RGB module before loading options.
 require 'redgreenblue'
 
-class RGB
+class RGB::Color
 
   # Only available when optional support for Philips Hue lights is loaded.
   #
   # Returns a hash with the arguments required by the Philips Hue API,
-  # to set a light to this RGB object's hue, saturation and brightness.
+  # to set a light to this RGB::Color's hue, saturation and brightness.
   #
   # Formatted as JSON, this hash can be sent to a bridge to set a light's state.
   #
