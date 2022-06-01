@@ -10,7 +10,7 @@ It lets you express RGB colors as 24-bit triplets, 48-bit triplets, fractions, o
 
  redgreenblue can output RGB colors as [CIE](https://en.wikipedia.org/wiki/CIE_1931_color_space) XYZ or xyY coordinates, L\*a\*b\*, L\*u\*v\*, and their cylindrical representations LCHab and LCHuv.
 
-If your terminal supports "[true color](https://gist.github.com/XVilka/8346728)", redgreenblue's colorised inspect styles will display your colors in 24-bit splendour, right in the terminal.
+If your terminal supports "[true color](https://github.com/termstandard/colors)", redgreenblue's colorised inspect styles will display your colors in 24-bit splendour, right in the terminal.
 
 redgreenblue can create 1-pixel GIF's from any color and also understands some more exotic formats, such as 16-bit RGB565 and 24-bit BGR. On a Mac it can interact with the system color picker.
 
