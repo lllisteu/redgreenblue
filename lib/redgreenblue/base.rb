@@ -83,10 +83,7 @@ class RGB::Color
 
 end
 
-#----------------------------------------------------------------------#
-#                            Module Methods                            #
-#----------------------------------------------------------------------#
-
+# The main namespace for redgreenblue.
 module RGB
 
   class << self
