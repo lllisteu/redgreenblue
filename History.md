@@ -2,6 +2,16 @@
 
 # History
 
+## Unreleased
+
+This version is a drop-in replacement for version 0.15.0, with no new functionality.
+
+Some internal changes were made:
+
+  * RGB is now a _module_.
+
+  * The RGB class is now the _RGB::Color_ class.
+
 ## 0.15.0 (10 November 2021)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.15.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.15.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.15.0/RGB)
