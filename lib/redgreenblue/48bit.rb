@@ -44,7 +44,7 @@ class RGB::Color
     self.rr, self.gg, self.bb = rrggbb.flatten
   end
 
-  # Creates a new Color object from red, green, and blue components as integers in the range 0..65535 (three 16-bit values).
+  # Creates a new RGB::Color from red, green, and blue components as integers in the range 0..65535 (three 16-bit values).
   def self.rrggbb(*rrggbb)
     c = self.new
     c.rrggbb = rrggbb
@@ -53,15 +53,12 @@ class RGB::Color
 
 end
 
-#----------------------------------------------------------------------#
-#                            Module Methods                            #
-#----------------------------------------------------------------------#
 
 module RGB
 
   class << self
 
-    # Creates a new Color object from red, green, and blue components as integers in the range 0..65535 (three 16-bit values).
+    # Creates a new RGB::Color from red, green, and blue components as integers in the range 0..65535 (three 16-bit values).
     def rrggbb(*rrggbb)
       Color.rrggbb(*rrggbb)
     end

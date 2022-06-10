@@ -44,7 +44,7 @@ class RGB::Color
     self.r, self.g, self.b = rgb.flatten
   end
 
-  # Creates a new Color object from red, green, and blue components as integers in the range 0..255 (three 8-bit values).
+  # Creates a new RGB::Color from red, green, and blue components as integers in the range 0..255 (three 8-bit values).
   def self.rgb(*rgb)
     c = self.new
     c.rgb = rgb
@@ -57,22 +57,19 @@ class RGB::Color
     self
   end
 
-  # Creates a new RGB object containing the nearest 24-bit color.
+  # Creates a new RGB::Color containing the nearest 24-bit color.
   def snap
     RGB.rgb rgb
   end
 
 end
 
-#----------------------------------------------------------------------#
-#                            Module Methods                            #
-#----------------------------------------------------------------------#
 
 module RGB
 
   class << self
 
-    # Creates a new Color object from red, green, and blue components as integers in the range 0..255 (three 8-bit values).
+    # Creates a new RGB::Color from red, green, and blue components as integers in the range 0..255 (three 8-bit values).
     def rgb(*rgb)
       Color.rgb(*rgb)
     end
