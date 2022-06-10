@@ -1,12 +1,8 @@
 class RGB::Color
 
-  #----------------------------------------------------------------------#
-  #                            Class Methods                             #
-  #----------------------------------------------------------------------#
-
   class << self
 
-    # Creates a new RGB::Color object from a line of gpl (Gimp color palette) input. Returns nil if not successful.
+    # Creates a new RGB::Color from a line of gpl (Gimp color palette) input. Returns nil if not successful.
     #
     # @example
     #  RGB::Color.gpl "255 153 204\tpink"
@@ -22,9 +18,6 @@ class RGB::Color
 
   end
 
-  #----------------------------------------------------------------------#
-  #                           Instance Methods                           #
-  #----------------------------------------------------------------------#
 
   # Returns the color in the format used in .gpl files (Gimp color palettes), including its name (if present).
   #
@@ -41,7 +34,7 @@ module RGB
 
   class << self
 
-    # Creates a new RGB::Color object from a line of gpl (Gimp color palette) input. Returns nil if not successful.
+    # Creates a new RGB::Color from a line of gpl (Gimp color palette) input. Returns nil if not successful.
     #
     # @example
     #  RGB.gpl "255 153 204\tpink"

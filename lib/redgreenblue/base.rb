@@ -88,7 +88,7 @@ module RGB
 
   class << self
 
-    # Creates a new Color object from red, green, and blue components as three values between 0 and 1.
+    # Creates a new RGB::Color from red, green, and blue components as three values between 0 and 1.
     def new(*a)
       Color.new(*a)
     end

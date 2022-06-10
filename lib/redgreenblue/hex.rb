@@ -28,11 +28,8 @@ class RGB::Color
     '%02x%02x%02x' % [ r, g, b ]
   end
 
-  #----------------------------------------------------------------------#
-  #                            Class Methods                             #
-  #----------------------------------------------------------------------#
 
-  # Creates a new Color object from a 6- or 3-digit hexadecimal string representing red, green, and blue.
+  # Creates a new RGB::Color from a 6- or 3-digit hexadecimal string representing red, green, and blue.
   #
   # The string may include a '#' prefix.
   def self.hex(hex_string)
@@ -49,7 +46,7 @@ module RGB
 
   class << self
 
-    # Creates a new Color object from a 6- or 3-digit hexadecimal string representing red, green, and blue.
+    # Creates a new RGB::Color from a 6- or 3-digit hexadecimal string representing red, green, and blue.
     #
     # The string may include a '#' prefix.
     def hex(hex_string)
