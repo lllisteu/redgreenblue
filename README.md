@@ -26,67 +26,71 @@ redgreenblue has no dependencies outside the Ruby Standard Library, and works wi
 
 ## Quick start
 
-The core of redgreenblue is the __RGB class__. Each instance of the RGB class holds a color. Internally, these instances, RGB objects, store the amounts of red, green, and blue which make up the color.
+Let's create an RGB color:
 
-Let's try:
-
-```
+```ruby
 require 'redgreenblue'
 => true
 pink = RGB.hex('ff99cc')
 => RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
+pink.class
+=> RGB::Color
 ```
 
-There are many ways to create RGB objects (or simply _colors_).
+There are many ways to create `RGB::Color` objects.
 
-Here are six examples that will create the exact same color:
+These six examples will create the exact same color:
 
-```
+```ruby
+pink = RGB.hex('f9c')
 pink = RGB.new(1, 0.6, 0.8)
 pink = RGB.rgb(255, 153, 204)
 pink = RGB.rrggbb(65535, 39321, 52428)
-pink = RGB.hex('f9c')
 pink = RGB.hsl(330, 1, 0.8)
 pink = RGB.hsv(330, 0.4, 1)
 ```
 
-Now that we have a color stored in an RGB object, it can supply several pieces of information about itself:
+An `RGB::Color` object can supply many pieces of information about itself.
 
-```
+For example:
+
+```ruby
+pink.hex
+=> "ff99cc"
+pink.hex(true)
+=> "f9c"
 pink.values
 => [1.0, 0.6, 0.8]
 pink.red
 => 1.0
 pink.rgb
 => [255, 153, 204]
-pink.g
-=> 153
+pink.r
+=> 255
 pink.rrggbb
 => [65535, 39321, 52428]
-pink.bb
-=> 52428
 pink.hsl
 => [330.0, 1.0, 0.8]
 pink.hsb
 => [330.0, 0.4, 1.0]
-pink.xyz
+pink.hwb
+=> [330.0, 0.6, 0.0]
+pink.cie_xyz
 => [0.635314, 0.484064, 0.631122]
-pink.hex
-=> "ff99cc"
-pink.hex(true)
-=> "f9c"
+pink.cie_lab
+=> [75.08050605, 44.58467493, -9.72046865]
 ```
 
-Altering colors is easy:
+RGB::Color objects can easily be changed: they are _mutable_:
 
-```
+```ruby
 rose = RGB.red
 => RGB #ff0000 (red=1.00000 green=0.00000 blue=0.00000)
 rose.whiten!(0.6)
 => RGB #ff9999 (red=1.00000 green=0.60000 blue=0.60000)
 rose.hsl_rotate!(-30)
 => RGB #ff99cc (red=1.00000 green=0.60000 blue=0.80000)
-pink == rose
+rose == pink
 => true
 ```
 
