@@ -2,20 +2,12 @@ require 'redgreenblue/hsv'
 
 class RGB::Color
 
-  #----------------------------------------------------------------------#
-  #                            Class Methods                             #
-  #----------------------------------------------------------------------#
-
   class << self
 
-    # Creates a new RGB::Color object from HSB values: hue (0..360), saturation (0..1), and brightness (0..1).
+    # Creates a new RGB::Color from HSB values: hue (0..360), saturation (0..1), and brightness (0..1).
     alias hsb hsv
 
   end
-
-  #----------------------------------------------------------------------#
-  #                           Instance Methods                           #
-  #----------------------------------------------------------------------#
 
   # Returns color as HSB:
   # hue (0..360), saturation (0..1), brightness (0..1).
@@ -60,15 +52,12 @@ class RGB::Color
 
 end
 
-#----------------------------------------------------------------------#
-#                            Module Methods                            #
-#----------------------------------------------------------------------#
 
 module RGB
 
   class << self
 
-    # Creates a new RGB::Color object from HSB values: hue (0..360), saturation (0..1), and brightness (0..1).
+    # Creates a new RGB::Color from HSB values: hue (0..360), saturation (0..1), and brightness (0..1).
     alias hsb hsv
 
   end

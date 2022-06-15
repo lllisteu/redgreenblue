@@ -3,13 +3,9 @@ require 'redgreenblue/math'
 
 class RGB::Color
 
-  #----------------------------------------------------------------------#
-  #                            Class Methods                             #
-  #----------------------------------------------------------------------#
-
   class << self
 
-    # Creates a new RGB::Color object from HSL values: hue (0..360), saturation (0..1), and lightness (0..1).
+    # Creates a new RGB::Color from HSL values: hue (0..360), saturation (0..1), and lightness (0..1).
     def hsl(*a)
       new hsl_to_values(*a)
     end
@@ -22,10 +18,6 @@ class RGB::Color
     end
 
   end
-
-  #----------------------------------------------------------------------#
-  #                           Instance Methods                           #
-  #----------------------------------------------------------------------#
 
   # Returns color as HSL:
   # hue (0..360), saturation (0..1), lightness (0..1).
@@ -95,15 +87,12 @@ class RGB::Color
 
 end
 
-#----------------------------------------------------------------------#
-#                            Module Methods                            #
-#----------------------------------------------------------------------#
 
 module RGB
 
   class << self
 
-    # Creates a new RGB::Color object from HSL values: hue (0..360), saturation (0..1), and lightness (0..1).
+    # Creates a new RGB::Color from HSL values: hue (0..360), saturation (0..1), and lightness (0..1).
     def hsl(*a)
       Color.hsl(*a)
     end
