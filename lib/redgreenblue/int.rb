@@ -5,7 +5,7 @@ class RGB::Color
     ( r << 16 ) + ( g << 8 ) + b
   end
 
-  # Creates a new RGB::Color object from a 24-bit integer in the range 0..16777215.
+  # Creates a new RGB::Color from a 24-bit integer in the range 0..16777215.
   def self.at(number)
     n = number.to_i
     if (0..16777215) === n
@@ -21,15 +21,12 @@ class RGB::Color
 
 end
 
-#----------------------------------------------------------------------#
-#                            Module Methods                            #
-#----------------------------------------------------------------------#
 
 module RGB
 
   class << self
 
-    # Creates a new RGB::Color object from a 24-bit integer in the range 0..16777215.
+    # Creates a new RGB::Color from a 24-bit integer in the range 0..16777215.
     def at(number)
       Color.at(number)
     end

@@ -1,6 +1,6 @@
 class RGB::Color
 
-  # Returns a new RGB::Color object with this color's Ostwald full-color,
+  # Returns a new RGB::Color with this color's Ostwald full-color,
   # or nil for achromatic colors (white, greys, and black).
   #
   # The resulting color contains no white or black,
