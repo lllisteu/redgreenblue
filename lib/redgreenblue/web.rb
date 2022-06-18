@@ -1,9 +1,5 @@
 class RGB::Color
 
-  #----------------------------------------------------------------------#
-  #                           Instance Methods                           #
-  #----------------------------------------------------------------------#
-
   # Returns the object's RGB value in hexadecimal notation as used in CSS.
   #
   # Shortens to 3 digits when possible.
@@ -62,9 +58,6 @@ class RGB::Color
 
 end
 
-#----------------------------------------------------------------------#
-#                            Module Methods                            #
-#----------------------------------------------------------------------#
 
 module RGB
 
