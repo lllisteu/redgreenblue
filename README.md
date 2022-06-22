@@ -109,6 +109,7 @@ rose == pink
 * _配色事典 – A Dictionary of Color Combinations_, by Sanzo Wada (2010), ISBN 978-4-86152-247-5
 * _The Anatomy of Colour_, by Patrick Baty (2017), ISBN 978-0-500-51933-2
 * _Nature's Palette_, by Patrick Baty (2021), ISBN 978-0-500-25246-8
+* _Einführung in die Farbenlehre_, by Harald Küppers (2016), ISBN 978-3-8321-6403-4
 
 ## Credits
 
