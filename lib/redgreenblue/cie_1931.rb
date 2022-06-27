@@ -1,5 +1,20 @@
 class RGB::Color
 
+  class << self
+
+    # Creates a new RGB::Color from CIE 1931 XYZ values.
+    #
+    # Assumes the XYZ values are relative to D65 reference white, the same as used in sRGB.
+    def cie_xyz(*a)
+      c = self.new
+      c.cie_xyz = a
+      c
+    end
+
+    alias xyz cie_xyz
+
+  end
+
   # Returns CIE 1931 XYZ values for the RGB::Color object.
   #
   # Based on:
@@ -20,6 +35,20 @@ class RGB::Color
   end
 
   alias xyz cie_xyz
+
+  # Sets the red, green, and blue values by converting the given CIE 1931 XYZ values to RGB.
+  #
+  # Assumes the XYZ values are relative to D65 reference white, the same as used in sRGB.
+  def cie_xyz=(*a)
+    x, y, z = a.flatten
+    self.linear_values = [
+      x *  3.2404_5416_2114 + y * -1.5371_3851_2798 + z * -0.498_5314_09556,
+      x * -0.9692_6603_0505 + y *  1.8760_1084_5447 + z *  0.0415_5601_7530,
+      x *  0.0556_4343_0959 + y * -0.2040_2591_3517 + z *  1.0572_2518_8223
+    ]
+  end
+
+  alias xyz= cie_xyz=
 
   # Returns CIE 1931 xyY values for the RGB::Color object.
   #
@@ -47,5 +76,23 @@ class RGB::Color
   end
 
   alias xy cie_xy
+
+end
+
+
+module RGB
+
+  class << self
+
+    # Creates a new RGB::Color from CIE 1931 XYZ values.
+    #
+    # Assumes the XYZ values are relative to D65 reference white, the same as used in sRGB.
+    def cie_xyz(*a)
+      RGB::Color.cie_xyz(a)
+    end
+
+    alias xyz cie_xyz
+
+  end
 
 end
