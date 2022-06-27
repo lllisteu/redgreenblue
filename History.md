@@ -2,6 +2,14 @@
 
 # History
 
+## Unreleased
+
+* Added the ability to create and change colors using CIE 1931 XYZ values:
+	* `RGB.cie_xyz` method and `RGB.xyz` alias.
+	* `RGB::Color.cie_xyz` method and `RGB::Color.xyz` alias.
+	* Added `#cie_xyz=` method and `#xyz=` alias to RGB::Color class.
+* Touched up documentation.
+
 ## 0.16.0 (9 June 2022)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.16.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.16.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.16.0/RGB)
