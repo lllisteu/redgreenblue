@@ -6,17 +6,23 @@ class Test_cie_1931 < Test::Unit::TestCase
 
   # Test XYZ values from:
   # - http://www.brucelindbloom.com/ColorCalculator.html
-  def test_case_xyz
-    assert_equal [ 0.4124_5644, 0.2126_7285, 0.0193_3390 ], RGB.new( 1  , 0  , 0  ).cie_xyz
-    assert_equal [ 0.7700_3252, 0.9278_2501, 0.1385_2592 ], RGB.new( 1  , 1  , 0  ).cie_xyz
-    assert_equal [ 0.3575_7608, 0.7151_5216, 0.1191_9203 ], RGB.new( 0  , 1  , 0  ).cie_xyz
-    assert_equal [ 0.5380_1356, 0.7873_2715, 1.0694_9610 ], RGB.new( 0  , 1  , 1  ).cie_xyz
-    assert_equal [ 0.1804_3748, 0.0721_7499, 0.9503_0408 ], RGB.new( 0  , 0  , 1  ).cie_xyz
-    assert_equal [ 0.5928_9392, 0.2848_4784, 0.9696_3797 ], RGB.new( 1  , 0  , 1  ).cie_xyz
+  XYZ_TEST_VALUES = [
+    [ [ 0.4124_5644, 0.2126_7285, 0.0193_3390 ], [ 1  , 0  , 0  ] ],
+    [ [ 0.7700_3252, 0.9278_2501, 0.1385_2592 ], [ 1  , 1  , 0  ] ],
+    [ [ 0.3575_7608, 0.7151_5216, 0.1191_9203 ], [ 0  , 1  , 0  ] ],
+    [ [ 0.5380_1356, 0.7873_2715, 1.0694_9610 ], [ 0  , 1  , 1  ] ],
+    [ [ 0.1804_3748, 0.0721_7499, 0.9503_0408 ], [ 0  , 0  , 1  ] ],
+    [ [ 0.5928_9392, 0.2848_4784, 0.9696_3797 ], [ 1  , 0  , 1  ] ],
 
-    assert_equal [ 0          , 0          , 0           ], RGB.new( 0  , 0  , 0  ).cie_xyz
-    assert_equal [ 0.2034_3968, 0.2140_4114, 0.2330_5441 ], RGB.new( 0.5, 0.5, 0.5).cie_xyz
-    assert_equal [ 0.9504_7   , 1          , 1.0888_3    ], RGB.new( 1  , 1  , 1  ).cie_xyz
+    [ [ 0          , 0          , 0           ], [ 0  , 0  , 0  ] ],
+    [ [ 0.2034_3968, 0.2140_4114, 0.2330_5441 ], [ 0.5, 0.5, 0.5] ],
+    [ [ 0.9504_7   , 1          , 1.0888_3    ], [ 1  , 1  , 1  ] ],
+  ]
+
+  def test_to_xyz
+    XYZ_TEST_VALUES.each do |a|
+      assert_equal a.first, RGB.new(a.last).cie_xyz
+    end
   end
 
   # "If you add up the Y values for the Red, Blue, and Green primaries...the sum is always 1.0000".
