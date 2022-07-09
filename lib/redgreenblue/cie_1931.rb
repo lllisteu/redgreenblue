@@ -56,23 +56,21 @@ class RGB::Color
   # - https://en.wikipedia.org/wiki/CIE_1931_color_space
   # - http://www.brucelindbloom.com/index.html?Eqn_XYZ_to_xyY.html
   # - https://ninedegreesbelow.com/photography/xyz-rgb.html
-  def cie_xyy
+  def cie_xyy(round: true)
     x, y, z = cie_xyz(round: false)
 
     [
-
       x / ( x + y + z ),
       y / ( x + y + z ),
       y
-
-    ].map { |v| v.round(8) }
+    ].map { |v| round ? v.round(8) : v }
   end
 
   alias xyy cie_xyy
 
   # Returns CIE 1931 xy values for the RGB::Color object.
-  def cie_xy
-    cie_xyy[0..1]
+  def cie_xy(round: true)
+    cie_xyy(round: round)[0..1]
   end
 
   alias xy cie_xy
