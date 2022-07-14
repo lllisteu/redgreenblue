@@ -1,7 +1,7 @@
 module RGB
 
   # redgreenblue version.
-  VERSION = '0.16.2'
+  VERSION = '0.16.3'
 
   # Returns RGB::VERSION.
   def self.version

@@ -7,7 +7,9 @@
 * Added the ability to create and change colors using CIE 1931 XYZ values:
     * `RGB.cie_xyz` method and `RGB.xyz` alias.
     * `RGB::Color.cie_xyz` method and `RGB::Color.xyz` alias.
-    * Added `#cie_xyz=` method and `#xyz=` alias to RGB::Color class.
+    * `RGB::Color#cie_xyz=` method and `#xyz=` alias.
+* `RGB::Color#cie_xyy` now accepts an optional `round:` argument.
+* `RGB::Color#cie_xy` now accepts an optional `round:` argument.
 * Touched up documentation.
 
 ## 0.16.0 (9 June 2022)
@@ -17,7 +19,6 @@
 This version is a drop-in replacement for version 0.15.0, with no new functionality.
 
 * Some internal changes were made:
-
     * The RGB class is now the _RGB::Color_ class.
     * RGB is now a _module_.
 
@@ -26,7 +27,6 @@ This version is a drop-in replacement for version 0.15.0, with no new functional
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.15.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.15.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.15.0/RGB)
 
 * __Core RGB class:__
-
     * CIE 1994 processing:
         * Added `#delta_e_cie_1994` method and `#de94` alias.
         * Added `#de94g` and `#de94t` shortcut methods.
