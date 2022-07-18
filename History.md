@@ -2,14 +2,23 @@
 
 # History
 
-## Unreleased
+## 0.17.0 (18 July 2022)
 
-* Added the ability to create and change colors using CIE 1931 XYZ values:
-    * `RGB.cie_xyz` method and `RGB.xyz` alias.
-    * `RGB::Color.cie_xyz` method and `RGB::Color.xyz` alias.
-    * `RGB::Color#cie_xyz=` method and `#xyz=` alias.
-* `RGB::Color#cie_xyy` now accepts an optional `round:` argument.
-* `RGB::Color#cie_xy` now accepts an optional `round:` argument.
+[GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.17.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.17.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.17.0/RGB)
+
+Introduces the ability to create and change colors using [CIE 1931 XYZ values](https://en.wikipedia.org/wiki/CIE_1931_color_space).
+
+* `RGB` module:
+    * `cie_xyz` factory method and `xyz` alias.
+* `RGB::Color` class:
+    * `cie_xyz` factory method and `xyz` alias.
+    * `#cie_xyz=` method and `#xyz=` alias.
+
+Other changes:
+
+* `RGB::Color` class:
+    * `#cie_xyy` now accepts an optional `round:` argument.
+    * `#cie_xy` now accepts an optional `round:` argument.
 * Touched up documentation.
 
 ## 0.16.0 (9 June 2022)
