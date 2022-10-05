@@ -14,6 +14,9 @@ class Test_inspect < Test::Unit::TestCase
       RGB.style = s
       assert_equal s, RGB.style
       assert_equal String, RGB.new.inspect.class
+      RGB.corners.each do |c|
+        assert_equal String, c.inspect.class
+      end
     end
     RGB.style = old_style
   end
