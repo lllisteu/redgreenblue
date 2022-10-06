@@ -26,6 +26,17 @@ class RGB::Color
     _inspect_swatch + ( name ? ' ' + name : '' )
   end
 
+  def _inspect_wilhelm
+    _inspect_short +
+    if h = hsl_h
+      "(H:%7.3f %s   \e[0m" % [h, ostwald_color.terminal_background]
+    else
+      '(H:  -        '
+    end +
+    ' C:%5.3f W:%5.3f K:%5.3f)' % cwk +
+    ( name ? ' ' + name : '' )
+  end
+
   public
 
   # Returns a programmer-friendly representation of the object.
