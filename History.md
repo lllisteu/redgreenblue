@@ -2,6 +2,10 @@
 
 # History
 
+## Unreleased
+
+* New `'wilhelm'` inspect style.
+
 ## 0.17.0 (18 July 2022)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.17.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.17.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.17.0/RGB)
