@@ -63,4 +63,9 @@ class Test_mix < Test::Unit::TestCase
     assert_equal [RGB.grey, RGB.black], RGB.white.steps(RGB.black,2)
     assert_equal [RGB.white, RGB.grey, RGB.black], RGB.white.steps(RGB.black,2,true)
   end
+
+  def test_steps_hsl
+    assert_equal 1, RGB.red.steps_hsl(RGB.cyan).size
+  end
+
 end

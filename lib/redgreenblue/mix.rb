@@ -52,6 +52,25 @@ class RGB::Color
     [another.dup]
   end
 
+  def steps_hsl(another,step_count=1,include_begin=false)
+    src_hsl  = self.hsl
+    dest_hsl = another.hsl
+
+    # Take care of achromatic origin/destination
+    src_hsl[0]  = ( dest_hsl[0] || 0 ) unless src_hsl[0]
+    dest_hsl[0] = ( src_hsl[0]  || 0 ) unless dest_hsl[0]
+
+    step = [angle_of_travel(src_hsl[0], dest_hsl[0]), dest_hsl[1]-src_hsl[1], dest_hsl[2]-src_hsl[2] ].map { |v| v/step_count }
+
+    # origin (self, optional)
+    ( include_begin ? [self.dup] : [] ) +
+    # ...plus intermediate colors
+    (1..step_count-1).map { |c| RGB.hsl zip_add(src_hsl, step.map { |v| v*c }) } +
+    # ...plus destination color
+    [another.dup]
+
+  end
+
   private
 
   def mix_values(some_values, portion)
