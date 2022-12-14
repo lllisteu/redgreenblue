@@ -4,7 +4,12 @@
 
 ## Unreleased
 
-* New `'wilhelm'` inspect style.
+New: ability to generate HSL based gradients.
+
+* `RGB` module:
+    * New `'wilhelm'` inspect style.
+* `RGB::Color` class:
+    * Added `#steps_hsl` method.
 
 ## 0.17.0 (18 July 2022)
 
