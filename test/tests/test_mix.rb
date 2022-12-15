@@ -68,4 +68,12 @@ class Test_mix < Test::Unit::TestCase
     assert_equal 1, RGB.red.steps_hsl(RGB.cyan).size
   end
 
+  def test_steps_hsv
+    assert_equal 1, RGB.red.steps_hsv(RGB.cyan).size
+  end
+
+  def test_steps_hsb
+    assert_equal 1, RGB.red.steps_hsb(RGB.cyan).size
+  end
+
 end

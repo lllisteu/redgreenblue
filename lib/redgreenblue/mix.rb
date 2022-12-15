@@ -57,6 +57,12 @@ class RGB::Color
     steps_hsx(another,step_count,include_begin, :hsl)
   end
 
+  def steps_hsv(another,step_count=1,include_begin=false)
+    steps_hsx(another,step_count,include_begin, :hsv)
+  end
+
+  alias steps_hsb steps_hsv
+
   private
 
   def mix_values(some_values, portion)
@@ -69,7 +75,7 @@ class RGB::Color
   end
 
   def steps_hsx(another,step_count=1,include_begin=false,type)
-    raise NotImplementedError unless [:hsl].include? type
+    raise NotImplementedError unless [:hsl, :hsv].include? type
     src_hsx  = self.send(type)
     dest_hsx = another.send(type)
 
