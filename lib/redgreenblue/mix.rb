@@ -39,10 +39,9 @@ class RGB::Color
     end
   end
 
-  # Returns a set of colors between this color and another. That other color is included.
+  # Returns a number of colors, gradually changing from this color to another color.
   #
-  # The resulting colors are spaced evenly in the RGB color space using a straightforward calculation.
-  # You will likely experience these colors as not exactly evenly spaced.
+  # The resulting colors are spaced evenly in the RGB color space.
   def steps(another,step_count=1,include_begin=false)
     # origin (self, optional)
     ( include_begin ? [self.dup] : [] ) +
@@ -52,11 +51,16 @@ class RGB::Color
     [another.dup]
   end
 
-  # TODO: document
+  # Returns a number of colors, gradually changing from this color to another color.
+  #
+  # The resulting colors are spaced evenly by their HSL values (hue, saturation, and lightness).
   def steps_hsl(another,step_count=1,include_begin=false)
     steps_hsx(another,step_count,include_begin, :hsl)
   end
 
+  # Returns a number of colors, gradually changing from this color to another color.
+  #
+  # The resulting colors are spaced evenly by their HSV values (hue, saturation, and value).
   def steps_hsv(another,step_count=1,include_begin=false)
     steps_hsx(another,step_count,include_begin, :hsv)
   end
