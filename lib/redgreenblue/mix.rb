@@ -52,23 +52,9 @@ class RGB::Color
     [another.dup]
   end
 
+  # TODO: document
   def steps_hsl(another,step_count=1,include_begin=false)
-    src_hsl  = self.hsl
-    dest_hsl = another.hsl
-
-    # Take care of achromatic origin/destination
-    src_hsl[0]  = ( dest_hsl[0] || 0 ) unless src_hsl[0]
-    dest_hsl[0] = ( src_hsl[0]  || 0 ) unless dest_hsl[0]
-
-    step = [angle_of_travel(src_hsl[0], dest_hsl[0]), dest_hsl[1]-src_hsl[1], dest_hsl[2]-src_hsl[2] ].map { |v| v/step_count }
-
-    # origin (self, optional)
-    ( include_begin ? [self.dup] : [] ) +
-    # ...plus intermediate colors
-    (1..step_count-1).map { |c| RGB.hsl zip_add(src_hsl, step.map { |v| v*c }) } +
-    # ...plus destination color
-    [another.dup]
-
+    steps_hsx(another,step_count,include_begin, :hsl)
   end
 
   private
@@ -81,4 +67,25 @@ class RGB::Color
       ( blue  * (1 - portion) ) + ( some_values[2] * portion )
     ]
   end
+
+  def steps_hsx(another,step_count=1,include_begin=false,type)
+    raise NotImplementedError unless [:hsl].include? type
+    src_hsx  = self.send(type)
+    dest_hsx = another.send(type)
+
+    # Take care of achromatic origin/destination
+    src_hsx[0]  = ( dest_hsx[0] || 0 ) unless src_hsx[0]
+    dest_hsx[0] = ( src_hsx[0]  || 0 ) unless dest_hsx[0]
+
+    step = [angle_of_travel(src_hsx[0], dest_hsx[0]), dest_hsx[1]-src_hsx[1], dest_hsx[2]-src_hsx[2] ].map { |v| v/step_count }
+
+    # origin (self, optional)
+    ( include_begin ? [self.dup] : [] ) +
+    # ...plus intermediate colors
+    (1..step_count-1).map { |c| RGB.send(type, zip_add(src_hsx, step.map { |v| v*c })) } +
+    # ...plus destination color
+    [another.dup]
+
+  end
+
 end
