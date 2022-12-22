@@ -2,14 +2,20 @@
 
 # History
 
-## Unreleased
+## 0.18.0 (22 December 2022)
 
-New: ability to generate HSL based gradients.
+[GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.18.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.18.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.18.0/RGB)
+
+Adds the ability to generate HSL, HSB and HSV based gradients:
+
+* `RGB::Color` class:
+    * Added `#steps_hsl` method.
+    * Added `#steps_hsv` method and `#steps_hsb` alias.
+
+Other changes:
 
 * `RGB` module:
     * New `'wilhelm'` inspect style.
-* `RGB::Color` class:
-    * Added `#steps_hsl` method.
 
 ## 0.17.0 (18 July 2022)
 
