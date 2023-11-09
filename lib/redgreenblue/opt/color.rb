@@ -20,7 +20,7 @@ module RGB
     # @example
     #  RGB.cyan.to_color_rgb
     def to_color_rgb
-      ::Color::RGB.from_fraction *to_a
+      ::Color::RGB.from_fraction(*to_a)
     end
 
   end
