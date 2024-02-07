@@ -42,6 +42,8 @@ end
 
   rgb565 bgr24bit gif terminal web gpl mac
 
+  yuv
+
   match mix misc random
 
   os
