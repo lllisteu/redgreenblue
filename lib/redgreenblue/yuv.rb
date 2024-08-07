@@ -12,7 +12,9 @@ class RGB::Color
       red *  0.615 + green * -0.515 + blue * -0.100
     ].map { |v| round ? v.round(6) : v }
 
-    # Wikipedia suggests slightly different factors for U and V:
+    # Wikipedia (2024-Aug-7)
+    # suggests slightly different factors for U and V:
+    #
     # U = red * -0.14713 + green * -0.28886 + blue *  0.436
     # V = red *  0.615   + green * -0.51499 + blue * -0.10001
   end
