@@ -20,32 +20,47 @@ module RGB
 
 end
 
-%w(
+require 'redgreenblue/version'
 
-  version
+require 'redgreenblue/base'
 
-  base
+require 'redgreenblue/24bit'
+require 'redgreenblue/48bit'
+require 'redgreenblue/hex'
+require 'redgreenblue/int'
 
-  24bit 48bit hex int
+require 'redgreenblue/hsl'
+require 'redgreenblue/hsv'
+require 'redgreenblue/hsb'
 
-  hsl hsv hsb
+require 'redgreenblue/ostwald'
+require 'redgreenblue/hwb'
 
-  ostwald hwb
+require 'redgreenblue/gamma'
 
-  gamma
+require 'redgreenblue/cie_1931'
+require 'redgreenblue/cie_1976'
+require 'redgreenblue/cie_1994'
 
-  cie_1931 cie_1976 cie_1994
+require 'redgreenblue/name'
 
-  name
+require 'redgreenblue/inspect'
+require 'redgreenblue/view'
+require 'redgreenblue/lazy'
 
-  inspect view lazy
+require 'redgreenblue/rgb565'
+require 'redgreenblue/bgr24bit'
+require 'redgreenblue/gif'
+require 'redgreenblue/terminal'
+require 'redgreenblue/web'
+require 'redgreenblue/gpl'
+require 'redgreenblue/mac'
 
-  rgb565 bgr24bit gif terminal web gpl mac
+require 'redgreenblue/yuv'
 
-  yuv
+require 'redgreenblue/match'
+require 'redgreenblue/mix'
+require 'redgreenblue/misc'
+require 'redgreenblue/random'
 
-  match mix misc random
-
-  os
-
-).each { |m| require "redgreenblue/#{m}" }
+require 'redgreenblue/os'
