@@ -2,6 +2,11 @@
 
 # History
 
+## Unreleased
+
+* `RGB::Color` class:
+    * Added `#yuv` method.
+
 ## 0.18.0 (22 December 2022)
 
 [GitHub](https://github.com/lllisteu/redgreenblue/releases/tag/v0.18.0) • [RubyGems](https://rubygems.org/gems/redgreenblue/versions/0.18.0) • [Documentation](https://www.rubydoc.info/gems/redgreenblue/0.18.0/RGB)

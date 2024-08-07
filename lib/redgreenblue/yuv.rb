@@ -1,3 +1,5 @@
+require 'redgreenblue/base'
+
 class RGB::Color
 
   # Returns the color's YUV values.
